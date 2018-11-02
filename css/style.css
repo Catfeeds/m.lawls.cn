@@ -1,0 +1,135 @@
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clear{
+    clear: both;
+}
+.mui-bar{
+    height: 5rem;
+    background: #fff;
+} 
+.mui-bar-nav.mui-bar .mui-icon{
+    height: 5rem;
+    line-height: 2rem;
+    margin-right: 1rem;
+}
+.mui-bar span{
+    width: 4rem;
+    height: 1.6rem;
+    float: left;
+    color: #fff;
+    display: block;
+    text-align: center;
+    line-height: 1.6rem;
+    background: #626262;
+    margin-top: 1.7rem;
+    margin-left: 1rem;
+    border-radius: 1rem;
+}
+.mui-bar .mui-title{
+    margin-top: 0.2rem;
+}
+.mui-bar .mui-btn-link{
+    color:#000;
+}
+
+.mui-slider{
+    top: 5rem;
+}
+.tel-call h3{
+    font-size: 18px;
+    color: #1563ab;
+}
+.link-call h3{
+    font-size: 18px;
+    color: #f53b02;
+}
+.mui-table-view .mui-media-object{
+    line-height: 22%;
+    max-width: 22%;
+    height: auto;
+}
+.mui-table-view-cell>a:not(.mui-btn){
+    background: #fff;
+    padding: 1.5rem .3rem;
+}
+.mui-table-view .mui-media-object.mui-pull-left{
+    margin-right: 0.4rem;
+}
+.mui-table-view .call{
+    margin: 0.3rem 0 0.3rem 0.3rem;
+    box-shadow: 1px 1px 4px #888888;
+}
+
+@media (max-width: 420px){
+    .tel-call{
+        width: 100%;
+    }
+    .link-call{
+        width: 100%;
+    }
+    .mui-table-view-cell>a:not(.mui-btn){
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (min-width: 420px){
+    .tel-call{
+        width: 59%;
+    }
+    .link-call{
+        width: 38%;
+    }
+}
+.hetong{
+    width: 50%;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.write-hetong{
+    border-right: 1px solid #ccc;
+}
+.check-hetong{
+    
+}
+.guwen{
+    width: 100%;
+    text-align: center;
+}
+.guwen h3{
+    line-height: 5rem;
+}
+.qiye-guwen{
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.geren-guwen{
+    box-shadow: 1px 1px 4px #888888;
+    margin-bottom: 2rem;
+}
+.mui-table-view-cell:after{
+    background: none;
+}
+
+.news-list{
+    background: #fff;
+}
+.news-list h2{
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.list-nav{
+    width: 50%;
+    float: left;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    line-height: 5rem;
+}
+.news-list .active{
+    border-bottom: 1px solid #6EB5FF;
+}
