@@ -12,23 +12,51 @@
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 		</script>
+
 	</head>
 	<body>
 		<!-- 侧滑导航根容器 -->
 		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			<aside id="offCanvasSide" class="mui-off-canvas-right">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 菜单具体展示内容 -->
+						<div class="title">侧滑导航</div>
+						<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+							<li class="mui-table-view-cell">
+								<a href="/" class="mui-navigate-right">首页</a>
+							</li>
+							<li class="mui-table-view-cell mui-collapse">
+								<a href="/flgw/124.html" class="mui-navigate-right">法律顾问</a>
+								<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/124.html">企业法律顾问</a></li>
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/125.html">个人法律顾问</a></li>
+								</ul>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="/nsht/" class="mui-navigate-right">审查合同</a>
+							</li>
+							<li class="mui-table-view-cell mui-collapse">
+								<a href="/ask/?ct=question&ac=ask_complete" class="mui-navigate-right">法律咨询</a>
+								<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/ask/?ct=question&ac=ask_complete">在线法律咨询</a></li>
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flzx/123.html">电话法律咨询</a></li>
+								</ul>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="/zls/" class="mui-navigate-right">找律师</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="/flbk/" class="mui-navigate-right">法律百科</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</aside>
 			<!-- 主页面容器 -->
 			<div class="mui-inner-wrap">
-				<!-- 菜单容器 -->
-				<aside id="offCanvasSide" class="mui-off-canvas-right">
-					<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
-						<div class="mui-scroll">
-							<!-- 菜单具体展示内容 -->
-							...ssssssssssssss
-                            三生三世个个
-						</div>
-					</div>
-				</aside>
-				<!-- 主页面容器 -->
 				<header class="mui-bar mui-bar-nav">
 					<span>成都</span>
 					<h1 class="mui-title mui-logo"><img src="images/logo.png"></h1>
@@ -48,7 +76,7 @@
 						</div>
 						<ul class="mui-table-view" style="margin-top: 5rem;">
 							<li class="mui-table-view-cell mui-media fl call tel-call">
-								<a href="javascript:;">
+								<a href="javascript:;" class="white">
 									<img class="mui-media-object mui-pull-left" src="images/tel.jpg">
 									<div class="mui-media-body">
 										<h3>电话问律师</h3>
@@ -57,7 +85,7 @@
 								</a>
 							</li>
 							<li class="mui-table-view-cell mui-media fl call link-call">
-								<a href="javascript:;">
+								<a href="javascript:;" class="white">
 									<img class="mui-media-object mui-pull-left" style="max-width: 32%;" src="images/link.jpg">
 									<div class="mui-media-body">
 										<h3>在线咨询</h3>
@@ -69,7 +97,7 @@
 
 						<ul class="mui-table-view" style="margin-top: 5rem;">
 							<li class="mui-table-view-cell mui-media fl hetong write-hetong">
-								<a href="javascript:;">
+								<a href="javascript:;" class="white">
 									<img class="mui-media-object mui-pull-left" src="images/hetong1.jpg">
 									<div class="mui-media-body">
 										<h3>拟写和同</h3>
@@ -78,7 +106,7 @@
 								</a>
 							</li>
 							<li class="mui-table-view-cell mui-media fl hetong check-hetong">
-								<a href="javascript:;">
+								<a href="javascript:;" class="white">
 									<img class="mui-media-object mui-pull-left" src="images/hetong2.jpg">
 									<div class="mui-media-body">
 										<h3>审查合同</h3>
@@ -89,7 +117,7 @@
 						</ul>
 						<ul class="mui-table-view">
 							<li class="mui-table-view-cell mui-media fl guwen qiye-guwen">
-								<a href="javascript:;">
+								<a href="javascript:;" class="white">
 									<img class="mui-media-object mui-pull-right" src="images/qiye.jpg">
 									<div class="mui-media-body">
 										<h3>企业法律顾问</h3>
@@ -98,7 +126,7 @@
 								</a>
 							</li>
 							<li class="mui-table-view-cell mui-media fl guwen geren-guwen">
-								<a href="javascript:;">
+								<a href="javascript:;" class="white">
 									<img class="mui-media-object mui-pull-right" src="images/geren.jpg">
 									<div class="mui-media-body">
 										<h3>个人法律顾问</h3>
@@ -108,29 +136,168 @@
 							</li>
 						</ul>
 						<div class="clear"></div>
+						<!-- 推荐新闻-->
 						<div class="news-list">
-							<h2 class="mui-table-view-cell mui-collapse" href="#">法易通专注法律服务，让您远离法律风险</h2>
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell list-nav active news">
-									<a href="javascript:;">
-										<h3>法易通新闻</h3>
+							<h2 class="list-nav">法易通专注法律服务，让您远离法律风险</h2>
+							<div id="slider" class="mui-slider">
+								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+									<a class="mui-control-item" href="#item1mobile">
+										法易通新闻
 									</a>
-								</li>
-								<li class="mui-table-view-cell list-nav baike">
-									<a href="javascript:;">
-										<h3>法律百科</h3>
+									<a class="mui-control-item" href="#item2mobile">
+										法律百科
 									</a>
-								</li>
-							</ul>
-							<ul>
-								<li class="mui-table-view-cell">Item 1</li>
-								<li class="mui-table-view-cell">Item 2</li>
-								<li class="mui-table-view-cell">Item 3</li>
-							</ul>
+								</div>
+								<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+								<div class="mui-slider-group">
+									<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+										<div id="scroll1" class="mui-scroll-wrapper">
+											<div class="mui-scroll">
+												<ul class="mui-table-view">
+													<li class="mui-table-view-cell">
+														第一个选项卡子项-1
+													</li>
+													<li class="mui-table-view-cell">
+														第一个选项卡子项-2
+													</li>
+													<li class="mui-table-view-cell">
+														第一个选项卡子项-2
+													</li>
+													<li class="mui-table-view-cell">
+														第一个选项卡子项-1
+													</li>
+													<li class="mui-table-view-cell">
+														第一个选项卡子项-2
+													</li>
+													<li class="mui-table-view-cell">
+														第一个选项卡子项-2
+													</li>
+													<li class="mui-table-view-cell">
+														第一个选项卡子项-1
+													</li>
+													<li class="mui-table-view-cell">
+														第一个选项卡子项-2
+													</li>
+													<li class="mui-table-view-cell">
+														第一个选项卡子项-2
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div id="item2mobile" class="mui-slider-item mui-control-content">
+										<div id="scroll2" class="mui-scroll-wrapper">
+											<div class="mui-scroll">
+												<ul class="mui-table-view">
+													<li class="mui-table-view-cell">
+														第二个选项卡子项-1
+													</li>
+													<li class="mui-table-view-cell">
+														第er个选项卡子项-2
+													</li>
+
+												</ul>
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+								<a href="#" class="show-more">查看更多常识</a>
+							</div>
 						</div>
+						<!-- 推荐律师-->
+						<div class="flag-lawyer">
+                            <h4 class="show-more">成都推荐律师</h4>
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;" class="">
+										<img class="mui-media-object mui-pull-left lawyer-img" src="images/lawyer.jpg">
+										<div class="mui-media-body">
+											<h4>李赢律师<i></i></h4>
+											<p class="mui-ellipsis">擅长：交通事故，合同纠纷，房产纠纷，婚姻家庭</p>
+                                            <p class="mui-ellipsis"><span>执业律所</span> 四川稳点律师事务所</p>
+                                            <p class="mui-ellipsis renzheng">执业认证</p>
+                                            <p class="mui-ellipsis">执业证号：16665445226778</p>
+										</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;">
+										<img class="mui-media-object mui-pull-left lawyer-img" src="images/lawyer.jpg">
+										<div class="mui-media-body">
+											<h4>李赢律师<i></i></h4>
+											<p class="mui-ellipsis">擅长：交通事故，合同纠纷，房产纠纷，婚姻家庭</p>
+											<p class="mui-ellipsis"><span>执业律所</span> 四川稳点律师事务所</p>
+											<p class="mui-ellipsis renzheng">执业认证</p>
+											<p class="mui-ellipsis">执业证号：16665445226778</p>
+										</div>
+									</a>
+								</li>
+                                <li class="mui-table-view-cell mui-media">
+                                	<a href="javascript:;">
+                                		<img class="mui-media-object mui-pull-left lawyer-img" src="images/lawyer.jpg">
+                                		<div class="mui-media-body">
+                                			<h4>李赢律师<i></i></h4>
+                                			<p class="mui-ellipsis">擅长：交通事故，合同纠纷，房产纠纷，婚姻家庭</p>
+                                			<p class="mui-ellipsis"><span>执业律所</span> 四川稳点律师事务所</p>
+                                			<p class="mui-ellipsis renzheng">执业认证</p>
+                                			<p class="mui-ellipsis">执业证号：16665445226778</p>
+                                		</div>
+                                	</a>
+                                </li>
+                                <li class="mui-table-view-cell mui-media">
+                                	<a href="javascript:;">
+                                		<img class="mui-media-object mui-pull-left lawyer-img" src="images/lawyer.jpg">
+                                		<div class="mui-media-body">
+                                			<h4>李赢律师<i></i></h4>
+                                			<p class="mui-ellipsis">擅长：交通事故，合同纠纷，房产纠纷，婚姻家庭</p>
+                                			<p class="mui-ellipsis"><span>执业律所</span> 四川稳点律师事务所</p>
+                                			<p class="mui-ellipsis renzheng">执业认证</p>
+                                			<p class="mui-ellipsis">执业证号：16665445226778</p>
+                                		</div>
+                                	</a>
+                                </li>
+                                <li class="mui-table-view-cell mui-media">
+                                	<a href="javascript:;">
+                                		<img class="mui-media-object mui-pull-left lawyer-img" src="images/lawyer.jpg">
+                                		<div class="mui-media-body">
+                                			<h4>李赢律师<i></i></h4>
+                                			<p class="mui-ellipsis">擅长：交通事故，合同纠纷，房产纠纷，婚姻家庭</p>
+                                			<p class="mui-ellipsis"><span>执业律所</span> 四川稳点律师事务所</p>
+                                			<p class="mui-ellipsis renzheng">执业认证</p>
+                                			<p class="mui-ellipsis">执业证号：16665445226778</p>
+                                		</div>
+                                	</a>
+                                </li>
+							</ul>
+                            <a href="#" class="show-more">查看更多服务律师</a>
+						</div>
+                        <!-- 服务热线-->
+                        <div class="bottom">
+                            <div class="bottom-con">
+                                <h4>近一周，已有<span>1325人</span>获得解决方案</h4>
+                                <p>“互联网+法务团队”通过集体智慧，提供卓越的法律服务</p>
+                                <p>服务热线：<span>13545785462</span></p>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="login-reg">
+                                <a href="">登录  | </a>
+                                <a href="">注册</a>
+                            </div>
+                            <div class="foot">
+                                <ul>
+                                	<li><a href="">首页</a></li>
+                                	<li><a href="">关于易法通</a></li>
+                                	<li><a href="">易法通新闻</a></li>
+                                	<li><a href="">法律百科</a></li>
+                                </ul>
+                            </div>
+                        </div>
 					</div>
 				</div>
-                <div class="mui-off-canvas-backdrop"></div>
+				<div class="mui-off-canvas-backdrop"></div>
 			</div>
 		</div>
 	</body>
@@ -139,82 +306,47 @@
 		gallery.slider({
 			interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
 		});
-        mui.init({
-				swipeBack: false,
+		mui.init({
+			swipeBack: false,
+		});
+		//侧滑容器父节点
+		var offCanvasWrapper = mui('#offCanvasWrapper');
+		//主界面容器
+		var offCanvasInner = offCanvasWrapper[0].querySelector('.mui-inner-wrap');
+		//菜单容器
+		var offCanvasSide = document.getElementById("offCanvasSide");
+
+		//移动效果是否为整体移动
+		var moveTogether = false;
+		//侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
+		var classList = offCanvasWrapper[0].classList;
+		//主界面和侧滑菜单界面均支持区域滚动；
+		mui('#offCanvasSideScroll').scroll();
+		mui('#offCanvasContentScroll').scroll();
+		//实现ios平台的侧滑关闭页面；
+		if (mui.os.plus && mui.os.ios) {
+			offCanvasWrapper[0].addEventListener('shown', function(e) { //菜单显示完成事件
+				plus.webview.currentWebview().setStyle({
+					'popGesture': 'none'
+				});
 			});
-			 //侧滑容器父节点
-			var offCanvasWrapper = mui('#offCanvasWrapper');
-			 //主界面容器
-			var offCanvasInner = offCanvasWrapper[0].querySelector('.mui-inner-wrap');
-			 //菜单容器
-			var offCanvasSide = document.getElementById("offCanvasSide");
-			 //Android暂不支持整体移动动画
-			if (!mui.os.android) {
-				document.getElementById("move-togger").classList.remove('mui-hidden');
-				var spans = document.querySelectorAll('.android-only');
-				for (var i = 0, len = spans.length; i < len; i++) {
-					spans[i].style.display = "none";
-				}
-			}
-			 //移动效果是否为整体移动
-			var moveTogether = false;
-			 //侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
-			var classList = offCanvasWrapper[0].classList;
-			 //变换侧滑动画移动效果；
-			mui('.mui-input-group').on('change', 'input', function() {
+			offCanvasWrapper[0].addEventListener('hidden', function(e) { //菜单关闭完成事件
+				plus.webview.currentWebview().setStyle({
+					'popGesture': 'close'
+				});
+			});
+		}
+		// 选项卡
+		(function($) {
+			var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+			$('.mui-input-group').on('change', 'input', function() {
 				if (this.checked) {
-					offCanvasSide.classList.remove('mui-transitioning');
-					offCanvasSide.setAttribute('style', '');
-					classList.remove('mui-slide-in');
-					classList.remove('mui-scalable');
-					switch (this.value) {
-						case 'main-move':
-							if (moveTogether) {
-								//仅主内容滑动时，侧滑菜单在off-canvas-wrap内，和主界面并列
-								offCanvasWrapper[0].insertBefore(offCanvasSide, offCanvasWrapper[0].firstElementChild);
-								moveTogether = false;
-							}
-							break;
-						case 'main-move-scalable':
-							if (moveTogether) {
-								//仅主内容滑动时，侧滑菜单在off-canvas-wrap内，和主界面并列
-								offCanvasWrapper[0].insertBefore(offCanvasSide, offCanvasWrapper[0].firstElementChild);
-							}
-							classList.add('mui-scalable');
-							break;
-						case 'menu-move':
-							classList.add('mui-slide-in');
-							break;
-						case 'all-move':
-							moveTogether = true;
-							//整体滑动时，侧滑菜单在inner-wrap内
-							offCanvasInner.insertBefore(offCanvasSide, offCanvasInner.firstElementChild);
-							break;
-					}
-					offCanvasWrapper.offCanvas().refresh();
+					sliderSegmentedControl.className =
+						'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+					//force repaint
+					sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
 				}
 			});
-			document.getElementById('offCanvasShow').addEventListener('tap', function() {
-				offCanvasWrapper.offCanvas('show');
-			});
-			document.getElementById('offCanvasContentScroll').addEventListener('tap', function() {
-				offCanvasWrapper.offCanvas('close');
-			});
-			 //主界面和侧滑菜单界面均支持区域滚动；
-			mui('#offCanvasSideScroll').scroll();
-			mui('#offCanvasContentScroll').scroll();
-			 //实现ios平台的侧滑关闭页面；
-			if (mui.os.plus && mui.os.ios) {
-				offCanvasWrapper[0].addEventListener('shown', function(e) { //菜单显示完成事件
-					plus.webview.currentWebview().setStyle({
-						'popGesture': 'none'
-					});
-				});
-				offCanvasWrapper[0].addEventListener('hidden', function(e) { //菜单关闭完成事件
-					plus.webview.currentWebview().setStyle({
-						'popGesture': 'close'
-					});
-				});
-			}
+		})(mui);
 	</script>
 </html>
