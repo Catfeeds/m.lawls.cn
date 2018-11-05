@@ -255,7 +255,6 @@ ul li{
 /* 服务热线 */
 .bottom{
     background: #fff;
-    margin-bottom: 2rem;
     padding: 15px 0;
 }
 .bottom-con{
@@ -283,6 +282,7 @@ ul li{
     font-size: 20px;
 }
 .footer{
+    margin-top: 2rem;
     padding: 15px 0;
     background: #fff;
 }
@@ -300,19 +300,141 @@ ul li{
     padding: 20px 0;
     margin-top: 20px;
 }
-.foot ul{
-    width: 95%;
+.foot .foot-menu{
+    width: 100%;
     text-align: center;
-    padding: 0;
-    margin:0 auto;
-    padding-left: 15px;
+    margin: 0 auto;
 }
-.foot ul li{
+.foot .foot-menu a{
+    color: #000;
+    padding-right: 10px;
+}
+   
+.foot .foot-logo{
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+}
+.foot .foot-ico{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+.foot .foot-ico a{
+    color: #000;
+    padding-left: 25px;
+    padding-right: 10px;
+}
+.foot .foot-ico a.ico1{
+    background: url(../images/ico1.jpg) left center no-repeat;
+}
+.foot .foot-ico a.ico2{
+    background: url(../images/ico2.jpg) left center no-repeat;
+}
+.foot .foot-ico a.ico3{
+    background: url(../images/ico3.jpg) left center no-repeat;
+}
+.foot .foot-ico a.ico4{
+    background: url(../images/ico4.jpg) left center no-repeat;
+}
+.foot .zixun{
+    width: 80%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border: 1px solid #A0A0A0;
+    border-radius: 2rem;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.foot p{
+    text-align: center;
+}
+
+
+/* 合同列表页 */
+.hetong-list{
+    width: 100%;
+    padding: 20px 0;
+    background: #fff;
+}
+.nav{
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.nav a{
+    color: #000;
+}
+.service{
+    width: 100%;
+
+    margin: 10px 5px;
+}
+.service h4{
+    float: left;
+    height: 2rem;
+    line-height: 2rem;
+    display: inline-block;
+    padding: 0 15px;
+}
+.service span{
+    line-height: 2.8rem;
+    background: #f5f5f5;
+    height: 2.8rem;
+    padding: 10px;
+
+
+}
+.service span a{
+    line-height: 2.8rem;
+    height: 2.8rem;
+    background: #f5f5f5;
+    margin-right: 3px;
+    width: 100px;
+    padding: 3px 5px;
+    color: #3C3C3C;
+}
+.service span .active{
+    background: #f55f68;
+}
+.service span .active{
+    color: #fff;
+}
+.hetong-list .block{
+    
+}
+.service-block{
+    min-width: 130px;
     float: left;
     text-align: center;
-    font-weight: bold;
-    margin-right: 8px;
+    border: 5px solid #f5f5f5;
+    margin-left: 8px;
+    padding: 10px;
+    height: 11rem;
+    margin-bottom: 10px;
 }
-.foot ul li a{
-    color: #000;
+.service-block p{
+    line-height: 2rem;
+}
+.service-block h4{
+    line-height: 2rem;
+    max-width: 100px;
+
+}
+.service-block strong{
+    color: #e5483f;
+}
+.service-block span{
+    width: 90px;
+    font-size: 14px;
+    height: 28px;
+    margin: 0 auto;
+    line-height: 28px;
+    color: #e5483f;
+    border-radius: 2px;
+    display: block;
+    border: 1px solid #e5483f;
 }
