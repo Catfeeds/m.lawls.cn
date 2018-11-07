@@ -407,6 +407,7 @@ ul li{
     
 }
 .service-block{
+    cursor: pointer;
     min-width: 130px;
     float: left;
     text-align: center;
@@ -437,4 +438,19 @@ ul li{
     border-radius: 2px;
     display: block;
     border: 1px solid #e5483f;
+    
+}
+.service-block span:hover{
+    background: #e5483f;
+    color: #fff;
+}
+
+
+/* 电话问律师文章页 */
+.phone-ask{
+    
+}
+.big-img{
+    width: 100%;
+    height: auto;
 }
