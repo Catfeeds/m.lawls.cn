@@ -454,3 +454,25 @@ ul li{
     width: 100%;
     height: auto;
 }
+.services{
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+.services img{
+    width: 100%;
+    height: auto;
+}
+.services h3{
+    margin-top: 1rem;
+}
+.services span{
+    width: 40px;
+    height: 4px;
+    background: #f35437;
+    margin: 0 auto;
+    display: block;
+    margin-top: 5px;
+    
+}
