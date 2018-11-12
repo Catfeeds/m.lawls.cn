@@ -1,0 +1,3 @@
+114.84.150.132||/plus/carbuyaction.php||INSERT INTO `dede_shops_orders` (`oid`,`userid`,`cartcount`,`price`,`phone`,`email`,`state`,`ip`,`stime`,`pid`,`paytype`,`dprice`,`priceCount`)
+            VALUES ('S-P1534139964RN854','1','1','1000.00',13122458789,2741615036@qq.com,'0','114.84.150.132','1534140459','0','3','','1000.00');||unusual character
+114.84.150.132||/ask/admin.php?ct=adminAnswer&ac=answer&askaid=42||SELECT  m.phone FROM `dede_member` m left join `dede_ask` a on a.uid=m.mid  WHERE a.id="$askaid" LIMIT 0,1;||unusual character

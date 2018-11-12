@@ -1,0 +1,144 @@
+﻿.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.zhuanjia{
+	width: 100%;
+}
+.zj_title{
+	text-align: center;
+	width: 80%;
+	margin: 40px auto 20px;
+}
+.zj_title h3{
+	font-weight: bold;
+	line-height: 50px;
+	color: #000;
+	font-size: 28px;
+}
+.zj_title span{
+	font-size: 18px;
+	font-weight:  bold;
+	color: #a4a4a4;
+}
+.zj_con{
+	width: 100%;
+}
+.zj_bg{
+	width: 250px;
+	height: 350px;
+	float: left;
+	margin-left:20px;
+	margin-top: 20px;
+	position: relative;
+}
+.zj_block{
+	color: #fff;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 130px;
+	background-color:rgba(0,0,0,0.5);/* IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂，但解析为透明 */
+}
+.zj_block .zj_main{
+		width: 90%;
+		margin: 0 auto;
+		padding: 20px 0;
+}
+@media \0screen\,screen\9 {/* 只支持IE6、7、8 */
+	.zj_block{
+		background-color:#000000;
+		filter:Alpha(opacity=50);/* 只支持IE6、7、8、9 */
+		position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+		*zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+	}
+	.zj_block .zj_main{
+		position: relative;/* 设置子元素为相对定位，可让子元素不继承Alpha值 */
+	}
+}
+.zj_block h1{
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 40px;
+}
+.zj_block h1 a{
+	color: #fff;
+}
+.zj_block span{
+	font-weight: bold;
+	color: #f4a405;
+}
+.zj_block p{
+	
+}
+.zj_block p a{
+	color: #fff;
+}
+
+.zj_isShow{
+	color: #fff;
+	width: 100%;
+	height: 350px;
+	display: none;
+	background-color:rgba(0,0,0,0.5);/* IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂，但解析为透明 */
+}
+@media \0screen\,screen\9 {/* 只支持IE6、7、8 */
+	.zj_isShow{
+		background-color:#000000;
+		filter:Alpha(opacity=50);/* 只支持IE6、7、8、9 */
+		position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+		*zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+	}
+	.zj_isShow .zj_main{
+		position: relative;/* 设置子元素为相对定位，可让子元素不继承Alpha值 */
+	}
+}
+.zj_isShow a{
+	display:block;
+}
+.zj_isShow .zj_main{
+	width: 90%;
+	height:350px;
+	margin: 0 auto;
+	cursor:pointer;
+	padding: 20px 0;
+}
+.zj_isShow h1{
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 30px;
+}
+.zj_isShow h1 a{
+	color:#fff;
+}
+.zj_isShow span{
+	font-weight: bold;
+	color: #f5954b;
+	line-height: 30px;
+}
+.zj_isShow h3{
+	width: 105px;
+	height: 22px;
+	background: url('/images/phone.png') no-repeat 5px center;
+	padding-left: 20px;
+	border-radius: 20px;
+	border: 1px solid #ccc;
+	line-height: 22px;
+}
+.zj_isShow p{
+	margin-top: 10px;
+}
+.zj_isShow .zj_addr p.addr{
+	padding-left: 15px;
+	background: url('/images/addr.png') no-repeat 1px center;
+}
+.zj_isShow p a{
+	color: #fff;
+}
+.zj_isShow .zj_addr{
+	width: 96%;
+	line-height: 40px;
+}

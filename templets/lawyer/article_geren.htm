@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>{dede:field.title/}_{dede:global.cfg_indexname/}</title>
+		<meta name="keywords" content="{dede:field name='keywords'/}" />
+		<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+		<script src="/js/mui.min.js"></script>
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+
+	</head>
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			{dede:include filename='aside.htm'/}
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				{dede:include filename='header.htm'/}
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 幻灯片 -->
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/guwen.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/guwen.jpg" /></a></div>
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/guwen.jpg" /></a></div>
+							</div>
+						</div>
+						<!-- 主体 -->
+						<div class="qiyeguwen" style="margin-top: 6rem;">
+							<div id="slider">
+								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+									<div class="guwen-title">
+										<h3>个人法律顾问</h3>
+									</div>
+
+								</div>
+								<div class="mui-slider-group">
+									<div class="services">
+										<div class="liucheng pdt10">
+											<ul class="mui-table-view mui-grid-view">
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-right: 1px solid #dcdcdc;border-bottom: 1px solid #dcdcdc;padding:2px;padding-bottom: 9px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/geren1.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>股权风险</h4>
+															<p>股权架构随意，怎么分蛋糕？</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-bottom: 1px solid #dcdcdc;padding:2px;padding-bottom: 8px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/geren2.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>用工风险</h4>
+															<p>员工说走就走，还要仲裁赔钱？</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-right: 1px solid #dcdcdc;border-bottom: 1px solid #dcdcdc;padding:2px;padding-bottom: 9px;">
+													<a href="#"><img class="mui-media-object" src="/images/geren3.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>合同风险</h4>
+															<p>合同无人审，责任模糊风险大</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-bottom: 1px solid #dcdcdc;padding:2px;padding-bottom: 8px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/geren4.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>债权风险</h4>
+															<p>用张图被起诉，赔成冤大头</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-right: 1px solid #dcdcdc;padding:2px;padding-bottom: 9px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/geren5.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>税务风险</h4>
+															<p>税务管理不规范，一不注意就罚款</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="padding:2px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/geren6.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>债务风险</h4>
+															<p>客户欠款不还，如何追讨和预防</p>
+														</div>
+													</a></li>
+											</ul>
+										</div><br>
+
+										<div class="pinpai"><img src="/images/pinpai.jpg"></div>
+										<a href="" class="show_more">点击咨询更多法律问题</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+
+					</div>
+					<div class="buy">
+						<a href="" class="call">客服咨询</a>
+						<a href="" class="buynow">立即购买</a>
+					</div>
+				</div>
+
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+
+	</body>
+    {dede:include filename='commonJs.htm'/}
+	<script type="text/javascript">
+		function goto1() {
+			window.location.hash = "#goto1";
+		}
+
+		function goto2() {
+			window.location.hash = "#goto2";
+		}
+
+		function goto3() {
+			window.location.hash = "#goto3";
+		}
+	</script>
+</html>

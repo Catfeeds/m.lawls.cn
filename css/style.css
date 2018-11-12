@@ -39,7 +39,7 @@ ul li{
 }
 
 .mui-bar span {
-	width: 4rem;
+	
 	height: 1.6rem;
 	float: left;
 	color: #fff;
@@ -49,6 +49,8 @@ ul li{
 	background: #626262;
 	margin-top: 1.7rem;
 	margin-left: 1rem;
+  padding-left: 8px;
+  padding-right: 8px;
 	border-radius: 1rem;
 }
 
@@ -181,6 +183,13 @@ ul li{
 .mui-fullscreen .mui-segmented-control~.mui-slider-group {
 	position: initial;
 	top: auto;
+}
+
+.news-list .mui-table-view-cell{
+    
+}
+.news-list .mui-table-view-cell a{
+    padding: 5px 15px;
 }
 
 #offCanvasSideScroll .title {

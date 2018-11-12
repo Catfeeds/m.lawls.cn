@@ -1,0 +1,1 @@
+<a target="_blank" class="item-hide-product" href="[field:arcurl/]">[field:title/]</a>

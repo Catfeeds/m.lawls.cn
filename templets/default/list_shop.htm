@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.seotitle/}_{dede:global.cfg_indexname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/templets/lawyer/css/animate.min.css" rel="stylesheet">
+<link href="/templets/lawyer/css/product.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-new.css" />
+<script type="text/javascript" src="/templets/lawyer/js/jquery.min.js"></script>
+</head>
+
+<body style="background-color: #f5f5f5;">
+<link href="/templets/lawyer/css/global.css" rel="stylesheet">
+{dede:include filename='header.htm'/}
+<div id="product" class="bg" >
+    <div class="inside">
+        <ul class="select">
+            <li class="select-result title">
+                <div class="wod">{dede:field name='position'/}</div>
+            </li>
+            <li class="select-list">
+                <dl id="select1">
+                    <dt>服务类型</dt>
+                    <dd class="select-all  allObj"><a href="/nsht/">所有</a></dd>
+                    {dede:channel typeid='10' type='son'}
+                    <dd><a href="[field:typeurl/]">[field:typename/]</a></dd>
+                    {/dede:channel}
+                </dl>
+            </li>
+        </ul>
+    </div>
+    <ul class="proList">
+        {dede:list addfields='trueprice' channelid='6' pagesize='20'}
+        <li>
+            <h2><a href="[field:arcurl/]">[field:title/]</a></h2>
+            <a href="[field:arcurl/]" class="buy">
+            <p><small>￥</small>[field:trueprice/]<small>元</small></p>
+            <b>查看详情</b> </a> </li>
+        {/dede:list}
+    </ul>
+    <div class="more">加载更多...</div>
+</div>
+<script src="/templets/lawyer/js/loading.js"></script> 
+<script type="text/javascript">
+	//选中类型高亮
+	var pathname = window.location.pathname;
+	$("#select1 dd").click(function(){
+		var selurl = $(this).next().attr("href");
+		if(pathname == selurl){
+			$(this).addClass("selected");
+		}
+	});
+    //过少行数 高度重置
+    var product_row = "5";
+    var dd = $(document).height();
+    if(product_row <= 15) $('.proList').height((product_row / 5 + 1) * 282);
+    var liHeight=$('.proList li').outerHeight(true);
+    var count=$('.proList li').length;
+    var dheight=$('.proList').outerHeight();
+    var n=1;
+    var allheight = (Math.ceil(count/5))*liHeight;
+    //给第五个li 加去除右边距
+    $(".proList li").each(function() {
+        var thisIndex = $(this).index();
+        if((thisIndex+1)%5 == 0 ) {
+            $(this).addClass('five');
+        }
+    });
+    $('.keyWord').bind('keypress',function(event){  
+
+        if(event.keyCode == "13"){  
+
+           var keyword  = $("#input_id").val();
+
+           var _csrf    = "TVdLYnhEODYKAyoaASlwRHsICQFODVVyDjUhW0kCWwEXMh8HFXFJcA==";
+
+           $.ajax({
+
+                url:"/product/souproduct",
+
+                type: "POST",
+
+                async: false,
+
+                dataType: "json",
+
+                data: {"keyword":keyword,'_csrf':_csrf},
+
+                success: function(Data) {
+
+                    if(Data.data){
+
+                      $(".proList").text("");// 清空数据
+
+                      $(".proList").append(Data.data); // 添加Html内容，不能用Text 或 Val  
+
+                    }   
+
+
+
+                    liHeight=$('.proList li').outerHeight(true);
+
+                    count=$('.proList li').length;
+
+                    dheight=$('.proList').outerHeight();
+
+                    allheight = (Math.ceil(count/5))*liHeight;
+
+
+
+                    $('.proList').height(Data.num * 282);
+
+                },
+
+                error: function() {
+
+                    alert('网络错误！');
+
+                }
+
+            });
+
+            return false;
+
+        }
+
+    });
+</script>
+<div class="model-box p-a" ></div>
+{dede:include filename='footer.htm'/}
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>产品&文章搜索结果 - 法易通法律法务</title>
+<meta name="robots" content="nofollow" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-new.css" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/layout.css" />
+<script type="text/javascript" src="/templets/lawyer/js/jquery-1.8.1.min.js"></script>
+<script>
+$(function(){
+	$(".nh-nav-container .nh-nav-item").hover(function() {
+		/* Stuff to do when the mouse enters the element */
+		$(this).children('.nh-nav-item-hide').addClass('nh-nav-item-show');
+		$(this).siblings('.nh-nav-item').children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
+	}, function() {
+		/* Stuff to do when the mouse leaves the element */
+		$(this).children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
+	});
+})
+</script>
+<script type="text/javascript" src="/templets/lawyer/js/jquery.pin.min.js"></script>
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+	function CheckLogin(){
+	  var taget_obj = document.getElementById('_userlogin');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_loginsta.php");
+	  DedeXHTTP = null;
+	}
+-->
+</script>
+</head>
+<body>
+<div class="header blue-bg">
+    <div class="main-width">
+        <div class="logo fl"><a href="/"><img src="/templets/lawyer/images/logo.png" width="180px" /></a><span><img src="/templets/lawyer/images/header_text.png" alt="合同起草审查服务" /></span></div>
+        <div class="header-top fr mt" style="margin-top:40px;">
+            <div class="nh-info-items fr" id="_userlogin"> 
+                <!-- 未登录 --> 
+                <img class="link-flgw" width="189" height="26" src="/templets/lawyer/images/400.png" alt="服务热线" /> <a class="link" rel="nofollow" href="/member/login.php" class="load">登录</a> <a class="link" rel="nofollow" href="/member/reg_new.php" class="regist">注册</a> 
+                <!-- 登录 --> 
+                <script language="javascript" type="text/javascript">CheckLogin();</script> 
+            </div>
+        </div>
+        <div class="clear" style="height:0;"></div>
+    </div>
+    <div class="dark-blue-bg menu-wrap">
+        <div class="main-width">
+            <div class="orange-bg fl product-search-wrap">
+                <form action="/plus/search.php" method="get">
+                    <h6 class="fl">合同起草审查</h6>
+                    <input  maxLength="100" name="keyword" type="text" class="input fl" />
+                    <input type="submit" class="btn" />
+                </form>
+            </div>
+            <div class="dark-blue-bg fr menu">
+                <ul>
+                    <li style="padding-right: 19px;"><a href="/nsht/">审查合同</a></li>
+                    <li style="padding-right: 19px;"><a href="/ask">在线法律咨询</a></li>
+                    <li style="padding-right: 18px;"><a href="/zls/">找律师</a></li>
+                    <li style="padding-right: 18px;"><a href="/flgw/">法律顾问</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header end -->
+<div class="cpgb-fixed"> <a id="BizQQBottomCommon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2448211596&amp;site=qq&amp;menu=yes" class="cpgb-fixed-zixun">
+    <p><img src="/templets/lawyer/images/qq.png" alt="QQ"><br>
+        在线咨询</p>
+    </a> <a class="cpgb-fixed-zixun cpgb-fixed-dianhua">
+    <p><span class="ico-font tubiao">&#xea89;</span><br>
+        400电话</p>
+    <span class="zx-haoma"> 18202835355 <img src="/templets/lawyer/images/jiantou.png" alt="箭头"> </span> </a> <a class="cpgb-fixed-zixun cpgb-fixed-dingbu">
+    <p><img src="/templets/lawyer/images/dingbu.png" alt="QQ"><br>
+        返回顶部</p>
+    </a> </div>
+<!-------------- javascript -------------->
+<div class="main-width">
+    <h6 class="position lh30 mt"><a href="/">首页</a> - 搜索结果</h6>
+    <div class="box search-page-wrap clear"> 
+        <!--left-->
+        <div class="left-colunm fl">
+            <h5>产品&文章搜索结果</h5>
+            <div class="title-bullet"><span></span></div>
+            <p class="lh40">搜索:<em> <b class="orange">{dede:global name='keyword' function='RemoveXSS(@me)'/}</b>的结果</em></p>
+            <!-- search -->
+            <div class="search-bar clear">
+                <form action="/plus/search.php" method="get">
+                    <input maxLength="100" name="keyword" type="text" class="input fl" onblur="if(this.value=='' || this.value==null){this.value='搜索产品/相关法律...'}" onfocus="if(this.value=='搜索产品/相关法律...'){this.value=''}" value="搜索产品/相关法律..." />
+                    <input type="submit" value="搜索" class="orange-go-btn btn fl"/>
+                </form>
+            </div>
+            <!-- search -->
+            <div class="search-result-list">
+                <div class="search-product-list">
+                    <h5>搜索<strong>{dede:global name='keyword' function='RemoveXSS(@me)'/}</strong>的相关文章</h5>
+                    <div class="title-bullet"><span></span></div>
+                    {dede:list perpage='20'}
+                    <div class="search-result">
+                        <ul>
+                            <li>
+                                <p class="name"> <a href="[field:arcurl/]"> [field:title/] </a> </p>
+                                <p  class="grey2 lh25">[field:typename/]</p>
+                                <p class="lh25">[field:description/]... </p>
+                            </li>
+                        </ul>
+                    </div>
+                    {/dede:list}
+                    <div class="fl dede_pages">
+                        <ul class="pagelist">
+                            {dede:pagelist listsize='4'/}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<!-- footer start -->
+{dede:include filename='footer.htm'/} 
+</body>
+</html>

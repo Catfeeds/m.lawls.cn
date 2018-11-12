@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.title/}_{dede:global.cfg_indexname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/layout-new.css?v=201805021933" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-xin.css?v=201805021933" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-new.css?v=201805021933" />
+<script type="text/javascript" src="/templets/lawyer/js/jquery-1.8.1.min.js"></script>
+</head>
+<body>
+{dede:include filename='header.htm'/}
+<div class="diannao-mianbaoxie">
+    <p><span class="ico-font tubiao"></span>{dede:field name='position'/}</a> </p>
+</div>
+<div class="phone-consultant">
+    <div class="pcpay-banner">
+        <div class="pcpay-banner-l">
+            <div class="l-tu"> <img id="falvImg" src="/templets/lawyer/images/zixun-ls.jpg" alt="咨询"> </div>
+            <div class="l-yizhanshi"> <img src="/templets/lawyer/images/nonghangtu.jpg" alt="法律顾问"> </div>
+        </div>
+        <div class="pcpay-banner-r">
+            <div class="r-title">
+                <h2><span class="biaoti">电话问律师</span><span class="qipao"><span class="sjx"></span><span class="sjx-inner"></span><span class="qp-wenzi"></span></span></h2>
+                <p>200万咨询经验的专业律师团 即时响应</p>
+            </div>
+            <div class="r-jiage">
+                <h2>价格：<span class="hongse">¥ <span class="da">{dede:field.onetime/}</span> <span class="jiagedanwei">元/半小时</span></span></h2>
+            </div>
+            <div class="r-youhuixinxi">
+                <p>提示：已购买电话问律师（包月咨询）的客户，购买律师审查合同服务可享8折优惠</p>
+            </div>
+            <div class="r-yifuwu">
+                <p>已<span class="jianju">服</span>务：<span class="lanse" id='service'>0</span><span class="shuxian">|</span><a href="javascript:void(0);" id="BizQQWPA2">已<span class="jianju">咨</span>询：<span class="lanse ls-hover" id='consult'>0</span></a><span class="shuxian">|</span>累计评价：<span class="lanse ls-hover">1269</span></p>
+            </div>
+            <div class="r-button">
+                <p> <span class="zi"><span class="jianju">类</span>型：</span>
+                    <label for="banxiaoshi" class="jia-radio banxiaoshi falvchengkuang" 
+						series="52d0e53093a9b" price="{dede:field.onetime/}" 
+						service="0" consult="0"> <span class="huikuang">电话问律师（半小时一次）</span>
+                        <input class="hide-radio" id="banxiaoshi" value="baoyue" name="fuwu" type="radio">
+                    </label>
+                    <label for="sishiba" class="jia-radio sishiba " 
+						series="5a73fb0f4d2a1" price="{dede:field.oneday/}" 
+						service="1030" consult="3324"> <span class="huikuang">电话问律师（48小时内不限次）</span>
+                        <input class="hide-radio" checked="checked" id="sishiba" value="qiyeguwen" name="fuwu" type="radio">
+                    </label>
+                </p>
+            </div>
+            <div class="r-byws-tishi"  style="display:none">
+                <p>文书服务仅一份，且仅限易法通单价300元以下的合同服务，下单后，您可与律师沟通确定您需要制定的合同文书。<br>
+                    单价300元以下的合同包括但不限于：《劳动合同》、《劳动仲裁申请书》、《销售合同》、《采购合同》、《借款合同》、《催款函》、《离婚协议》……</p>
+                <span class="sanjiaoxing"></span> </div>
+            <div class="r-goumai"> <a href="/Orders/create/52d0e53093a9b" class="gm-btn btnBuy">马上购买</a> <a id="BizQQBottom1" class="gm-btn youbian"><span class="tu"><img src="/templets/lawyer/images/list-qq.png" alt="QQ"></span>咨询售前律师</a> </div>
+        </div>
+    </div>
+    <div class="pc-chanpingaiban">
+    {dede:include filename='common.htm'/}
+	</div>
+</div>
+<!-- 法律顾问底部 -->
+{dede:include filename='footer.htm'/} 
+<!-- javascript --> 
+<script type="text/javascript">
+$(function(){
+	//导航切换
+	$(".fw-title-inner ul li").click(function(event) {
+		/* Act on the event */
+		$(this).addClass('lanzibaidi').siblings('li').removeClass('lanzibaidi')
+	});
+	// 类型切换事件
+	$(".r-button p .banxiaoshi").click(function(event) {
+		//$("#zengzhi")[0].checked = false;
+		changeContent(this,"电话问律师",false,false,true,'',false,"元/半小时");
+	});
+
+	$(".r-button p .sishiba").click(function(event) {
+		changeContent(this,"电话问律师（48小时）",true,false,false,"48小时内 不限次数咨询",false,"元/48小时");
+	});
+	//选中增值服务
+	/*$("#zengzhi").click(function(){
+		this.checked ? changeBuyUrl(this) : changeBuyUrl($(".r-button p .banxiaoshi")[0]);
+	});*/
+
+	})
+
+//切换选择 改变购买链接
+function changeBuyUrl(obj){
+	$('#service').html($(obj).attr('service'));
+	$('#consult').html($(obj).attr('consult'));
+	$('.r-jiage h2 .hongse .da').html($(obj).attr('price'));
+	$('a.btnBuy').attr('href',"/Orders/create/"+$(obj).attr('series'));
+}
+//切换选择  改变显示内容
+function changeContent(obj,biaotitext,showqipao,showtishi,showzengzhi,qipaotext,showyouhui,danweiqiehuan){
+	changeBuyUrl(obj);
+	showyouhui ? $(".r-youhuixinxi").show() : $(".r-youhuixinxi").hide();
+	$(".r-jiage h2 .hongse .jiagedanwei").html(danweiqiehuan);
+
+	$(obj).addClass('falvchengkuang').siblings('.jia-radio').removeClass('falvchengkuang');
+	$(".r-title h2 .biaoti").html(biaotitext);
+	if(showqipao)
+		$(".r-title h2 .qipao").css("display","inline-block").children('.qp-wenzi').html(qipaotext);
+	else
+		$(".r-title h2 .qipao").css("display","none");
+	showtishi ? $(".r-byws-tishi").show() : $(".r-byws-tishi").hide();
+}
+
+BizQQWPA.addCustom({aty: '1', a: '1005', nameAccount: 4008515666, selector: 'BizQQBottom1'});
+</script> 
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+    <title>织梦猫评论助手</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.serializeJSON/2.8.1/jquery.serializejson.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+    <script src="comment/js/common.js"></script>
+    <style>
+        #myTab li{
+            width:25%;
+            float:left;
+            height:40px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #myTab li img{
+            float:left;
+            height: 40px;
+        }
+
+        #myTab li a{
+            color:white;
+            text-align: center;
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+        }
+
+        .blue{
+            background:#0f9af2;
+        }
+        .gray{
+            background: #dfdfdf;
+        }
+        li.gray a{
+            color:#252525 !important;
+        }
+        .tabPaneUl{
+            width: 700px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .tabPaneUl li{
+            height: 40px;
+            line-height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <h2>织梦评论助手 V<?php echo $ver;?></h2>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="basic">
+            <table class="table table-bordered">
+                <tr>
+                    <th>说明</th>
+                </tr>
+                <?php
+                  if (!function_exists('curl_init')):
+          ?>
+                <tr>
+                    <th class="text-danger">错误提示：php没有开启curl！</th>
+                </tr>
+                <?php
+             endif;
+        ?>
+                <tr>
+                    <td>《织梦评论助手》是织梦猫发布的一款评论插件。
+                        <p>当前版本：<?php echo $ver?> 免费版</p>
+                        <p>使用步骤：</p>
+                        <ul>
+                            <li>1.修改配置信息，点击保存按钮。</li>
+                            <li>2.在模板内容页想添加评论框的位置添加标签：<code>{dede:include file='plus/comment.htm' /}</code></li>
+                            <li>3.更新并生成文档HTML</li>
+                            <li>4.每次修改基本设置后，都需要重新生成文档HTML</li>
+                            <li>5.在“核心”->“常用操作”->“<a href="feedback_main.php">评论管理</a>”中查看和管理评论</li>
+                        </ul>
+                        <p><a target="_blank" href="http://www.dedemao.com/dedeplug/comment.html">详情参见</a></p>
+                    </td>
+                </tr>
+            </table>
+            <h3>基本设置</h3>
+            <form id="form1" action="" method="post" name="form1">
+                <input type="hidden" name="dopost" value="save">
+                <table class="table table-bordered">
+                    <tr>
+                        <th style="width: 200px;">每页显示多少条评论</th>
+                        <td><input name="basic[comment_pagesize]" id="comment_pagesize" type="text" value="<?php echo $data['comment_pagesize']?>" class="form-control" />
+                        </td>
+                        <input type="hidden" name="info[comment_pagesize]" value="每页显示多少条评论" style="width:80%">
+                    </tr>
+                    <tr>
+                        <th>是否显示支持/反对</th>
+                        <td>
+                            <select class="form-control" name="basic[showZan]" id="showZan">
+                                <option value="1" <?php echo (isset($data['showZan']) && $data['showZan']==1) ? 'selected' : ''?>>只显示支持</option>
+                                <option value="2" <?php echo (isset($data['showZan']) && $data['showZan']==2) ? 'selected' : ''?>>只显示反对</option>
+                                <option value="3" <?php echo (isset($data['showZan']) && $data['showZan']==3) ? 'selected' : ''?>>都显示</option>
+                                <option value="4" <?php echo (isset($data['showZan']) && $data['showZan']==4) ? 'selected' : ''?>>都不显示</option>
+                            </select>
+                            <input type="hidden" name="info[showZan]" value="是否显示支持/反对" style="width:80%">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>是否显示QQ表情</th>
+                        <td>
+                            <select class="form-control" name="basic[showQQ]" id="showQQ">
+                                <option value="1" <?php echo (isset($data['showQQ']) && $data['showQQ']==1) ? 'selected' : ''?>>是</option>
+                                <option value="2" <?php echo (isset($data['showQQ']) && $data['showQQ']==2) ? 'selected' : ''?>>否</option>
+                            </select>
+                            <input type="hidden" name="info[showQQ]" value="是否显示QQ表情" style="width:80%">
+                         </td>
+                    </tr>
+                    <tr>
+                        <th>主题颜色</th>
+                        <td>
+                             <input name="basic[comment_basecolor]" id="comment_basecolor" type="text" value="<?php echo $data['comment_basecolor']?>" class="form-control" />
+                         </td>
+                        <input type="hidden" name="info[comment_basecolor]" value="主题颜色" style="width:80%">
+                    </tr>
+                    <tr>
+                        <th>评论框默认提示语</th>
+                        <td>
+                             <input name="basic[comment_tips]" id="comment_tips" type="text" value="<?php echo $data['comment_tips']?>" class="form-control" />
+                         </td>
+                        <input type="hidden" name="info[comment_tips]" value="评论框默认提示语" style="width:80%">
+                    </tr>
+                    <tr>
+                        <th>是否显示楼层</th>
+                        <td>
+                            <select class="form-control" name="basic[show_floor]" id="show_floor">
+                                <option value="1" <?php echo (isset($data['show_floor']) && $data['show_floor']==1) ? 'selected' : ''?>>是</option>
+                                <option value="2" <?php echo (isset($data['show_floor']) && $data['show_floor']==2) ? 'selected' : ''?>>否</option>
+                            </select>
+                         </td>
+                        <input type="hidden" name="info[show_floor]" value="是否显示楼层" style="width:80%">
+                    </tr>
+                    <tr>
+                        <th>是否显示IP所属地</th>
+                        <td>
+                            <select class="form-control" name="basic[comment_ipaddr]" id="comment_ipaddr">
+                                <option value="1" <?php echo (isset($data['comment_ipaddr']) && $data['comment_ipaddr']==1) ? 'selected' : ''?>>是</option>
+                                <option value="2" <?php echo (isset($data['comment_ipaddr']) && $data['comment_ipaddr']==2) ? 'selected' : ''?>>否</option>
+                            </select>
+                         </td>
+                        <input type="hidden" name="info[comment_ipaddr]" value="是否显示IP所属地" style="width:80%">
+                    </tr>
+                </table>
+                <h3>评论提醒（免费版无此功能）</h3>
+                <table class="table table-bordered">
+                    <tr>
+                        <th style="width: 200px;">邮件提醒</th>
+                        <td>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="basic[comment_inform]" value="1" <?php echo (isset($data['comment_inform']) && $data['comment_inform']==1) ? 'checked' : ''?>>
+                                    每条新回复都提醒我
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="basic[comment_inform]" value="0" <?php echo empty($data['comment_inform']) ? 'checked' : ''?>>
+                                    任何时候都不要提醒我
+                                </label>
+                            </div>
+                        </td>
+                        <input type="hidden" name="info[comment_inform]" value="是否邮件提醒" style="width:80%">
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th style="width: 200px;">邮箱</th>
+                        <td>
+                            <input name="basic[comment_email]" id="comment_email" type="text" value="<?php echo $data['comment_email']?>" class="form-control" />
+                        </td>
+                        <input type="hidden" name="info[comment_email]" value="评论提醒邮箱" style="width:80%">
+                        <td>你的网站上有评论产生时，向此邮箱发送邮件</td>
+                    </tr>
+                    <tr>
+                        <th style="width: 200px;">SMTP服务器</th>
+                        <td>
+                            <input name="basic[smtp_server]" id="smtp_server" type="text" value="<?php echo $data['smtp_server'] ? $data['smtp_server']: $GLOBALS['cfg_smtp_server']?>" class="form-control" />
+                        </td>
+                        <input type="hidden" name="info[smtp_server]" value="smtp服务器" style="width:80%">
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th style="width: 200px;">SMTP服务器端口</th>
+                        <td>
+                            <input name="basic[smtp_port]" id="smtp_port" type="text" value="<?php echo $data['smtp_port'] ? $data['smtp_port']: $GLOBALS['cfg_smtp_port']?>" class="form-control" />
+                        </td>
+                        <input type="hidden" name="info[smtp_port]" value="smtp服务器端口" style="width:80%">
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th style="width: 200px;">SMTP服务器的用户邮箱</th>
+                        <td>
+                            <input name="basic[smtp_usermail]" id="smtp_usermail" type="text" value="<?php echo $data['smtp_usermail'] ? $data['smtp_usermail']: $GLOBALS['cfg_smtp_usermail']?>" class="form-control" />
+                        </td>
+                        <input type="hidden" name="info[smtp_usermail]" value="SMTP服务器的用户邮箱" style="width:80%">
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th style="width: 200px;">SMTP服务器的用户帐号</th>
+                        <td>
+                            <input name="basic[smtp_user]" id="smtp_user" type="text" value="<?php echo $data['smtp_user'] ? $data['smtp_user']: $GLOBALS['cfg_smtp_user']?>" class="form-control" />
+                        </td>
+                        <input type="hidden" name="info[smtp_user]" value="SMTP服务器的用户帐号" style="width:80%">
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th style="width: 200px;">SMTP服务器的用户密码</th>
+                        <td>
+                            <input name="basic[smtp_password]" id="smtp_password" type="text" value="<?php echo $data['smtp_password'] ? $data['smtp_password']: $GLOBALS['cfg_smtp_password']?>" class="form-control" />
+                        </td>
+                        <input type="hidden" name="info[smtp_password]" value="SMTP服务器的用户密码" style="width:80%">
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th style="width: 200px;">邮件发送测试</th>
+                        <td>
+                            <input id="sendemail" class="btn btn-primary" type="button" value="发信测试" data-loading-text="正在发送...">
+                        </td>
+                        <input type="hidden" name="info[smtp_password]" value="SMTP服务器的用户密码" style="width:80%">
+                        <td>提示：修改SMTP信息后，请先保存，再点击测试按钮，如果收到邮件则表示配置成功</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <button class="btn btn-primary center-block">保存</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <br>
+    <h5 class="text-center">Powered by <a href="https://www.dedemao.com/"><span class="label label-primary">织梦猫</span></a></h5>
+    <br>
+</div>
+</body>
+<script>
+    $(function () {
+        $("#sendemail").click(function () {
+            alert('免费版无此功能');
+        });
+    });
+
+</script>
+</html>

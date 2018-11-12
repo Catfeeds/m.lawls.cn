@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>{dede:global.cfg_webname/}</title>
+		<meta name="description" content="{dede:global.cfg_description/}" />
+		<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+		<script src="/js/mui.min.js"></script>
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</head>
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			{dede:include filename='aside.htm'/}
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 头部 -->
+				{dede:include filename='header.htm'/}
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/banner1.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/banner1.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/banner1.jpg" /></a></div>
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/banner1.jpg" /></a></div>
+							</div>
+						</div>
+						<ul class="mui-table-view" style="margin-top: 5rem;">
+							<li class="mui-table-view-cell mui-media fl call tel-call">
+								<a href="javascript:;" class="white">
+									<img class="mui-media-object mui-pull-left" src="/images/tel.jpg">
+									<div class="mui-media-body">
+										<h3>电话问律师</h3>
+										<p class='mui-ellipsis'>遇到事情，电话问律师</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media fl call link-call">
+								<a href="javascript:;" class="white">
+									<img class="mui-media-object mui-pull-left" style="max-width: 32%;" src="/images/link.jpg">
+									<div class="mui-media-body">
+										<h3>在线咨询</h3>
+										<p class='mui-ellipsis'>告别敷衍解答</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+
+						<ul class="mui-table-view" style="margin-top: 5rem;">
+							<li class="mui-table-view-cell mui-media fl hetong write-hetong">
+								<a href="/ndht/" class="white">
+									<img class="mui-media-object mui-pull-left" src="/images/hetong1.jpg">
+									<div class="mui-media-body">
+										<h3>拟写和同</h3>
+										<p class='mui-ellipsis'>专业分工、量身起草</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media fl hetong check-hetong">
+								<a href="/nsht/" class="white">
+									<img class="mui-media-object mui-pull-left" src="/images/hetong2.jpg">
+									<div class="mui-media-body">
+										<h3>审查合同</h3>
+										<p class='mui-ellipsis'>审查合同、规范保障</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell mui-media fl guwen qiye-guwen">
+								<a href="/flgw/124.html" class="white">
+									<img class="mui-media-object mui-pull-right" src="/images/qiye.jpg">
+									<div class="mui-media-body">
+										<h3>企业法律顾问</h3>
+										<p class='mui-ellipsis'>专业律师团队，为您规避企业风险</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media fl guwen geren-guwen">
+								<a href="/flgw/125.html" class="white">
+									<img class="mui-media-object mui-pull-right" src="/images/geren.jpg">
+									<div class="mui-media-body">
+										<h3>个人法律顾问</h3>
+										<p class='mui-ellipsis'>专业律师团队，为您提供私人咨询</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<!-- 推荐新闻-->
+						<div class="news-list">
+							<h2 class="list-nav">法易通专注法律服务，让您远离法律风险</h2>
+							<div id="slider" class="mui-slider">
+								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+									<a class="mui-control-item" href="#item1mobile">
+										法易通新闻
+									</a>
+									<a class="mui-control-item" href="#item2mobile">
+										法律百科
+									</a>
+								</div>
+								<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+								<div class="mui-slider-group">
+									<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+										<div id="scroll1" class="mui-scroll-wrapper">
+											<div class="mui-scroll">
+												<ul class="mui-table-view">
+													{dede:arclist typeid='71' row='6'}
+													<li class="mui-table-view-cell"><a href="[field:arcurl/]">[field:title/]</a></li>
+													{/dede:arclist}
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div id="item2mobile" class="mui-slider-item mui-control-content">
+										<div id="scroll2" class="mui-scroll-wrapper">
+											<div class="mui-scroll">
+												<ul class="mui-table-view">
+													{dede:arclist typeid='27' row='6'}
+													<li class="mui-table-view-cell"><a href="[field:arcurl/]">[field:title/]</a></li>
+													{/dede:arclist}
+												</ul>
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+								<a href="/flbk/" class="show-more">查看更多常识</a>
+							</div>
+						</div>
+						<!-- 推荐律师-->
+						<div class="flag-lawyer">
+							<h4 class="show-more">成都推荐律师</h4>
+							<ul class="mui-table-view">
+								{dede:arclistsg flag='p' row='10' addfields='skill,addr,license' typeid='16' channelid="-8"}
+								<li class="mui-table-view-cell mui-media">
+									<a href="[field:arcurl/]">
+										<img class="mui-media-object mui-pull-left lawyer-img" src="http://www.lawls.cn[field:picname/]">
+										<div class="mui-media-body">
+											<h4>[field:title/]<i></i></h4>
+											<p class="mui-ellipsis">擅长：[field:skill/]</p>
+											<p class="mui-ellipsis"><span>执业律所</span> [field:addr/]</p>
+											<p class="mui-ellipsis renzheng">执业认证</p>
+											<p class="mui-ellipsis">执业证号：[field:license/]</p>
+										</div>
+									</a>
+								</li>
+								{/dede:arclistsg}
+							</ul>
+							<a href="/zls/" class="show-more">查看更多服务律师</a>
+						</div>
+						<!-- 服务热线-->
+						<div class="bottom">
+							<div class="bottom-con">
+								<h4>近一周，已有<span>1325人</span>获得解决方案</h4>
+								<p>“互联网+法务团队”通过集体智慧，提供卓越的法律服务</p>
+								<p>服务热线：<span>18202835355</span></p>
+							</div>
+						</div>
+						<!-- 底部 -->
+                        {dede:include filename='footer.htm'/}
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+	</body>
+	{dede:include filename='commonJs.htm'/}
+</html>

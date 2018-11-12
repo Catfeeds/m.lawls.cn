@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit" />
+<title>{dede:field.title/}_{dede:global.cfg_indexname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="stylesheet" href="/templets/lawyer/find/css/base_v.2.0.css" />
+<link rel="stylesheet" href="/templets/lawyer/find/css/unit_v.2.0.css" />
+<link rel="stylesheet" href="/templets/lawyer/find/css/module_v.2.0.css" />
+<link rel="stylesheet" href="/templets/lawyer/find/css/headfooter_v.3.0.css">
+<link rel="stylesheet" href="/templets/lawyer/find/css/lawyerinfo.css" />
+<link rel="stylesheet" href="/templets/lawyer/find/css/lawyerinfo-new.css" />
+<link rel="stylesheet" href="/templets/lawyer/find/css/traffic-calculator.css" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-xin.css?v=201805021933" />
+<script type="text/javascript" src="/templets/lawyer/find/js/jquery-1.10.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+	function CheckLogin(){
+	  var taget_obj = document.getElementById('_userlogin');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_loginsta.php");
+	  DedeXHTTP = null;
+	}
+-->
+</script>
+<style>
+</style>
+</head>
+<body>
+<div class="g-hd">
+    <div class="g-s">
+        <div class="w1200 ma clearfix">
+            <ul class="fl s-mu ml20">
+                <li><a href="/">首页</a></li>
+                <li><a href="/flgw/">法律顾问</a></li>
+                <li><a href="/nsht/">审查合同</a></li>
+                <li><a href="/ask/?ct=question&ac=ask_complete">法律咨询</a></li>
+                <li><a href="/zls/">找律师</a></li>
+                <li><a href="/flbk/">法律百科</a></li>
+            </ul>
+            <ul class="fr s-nav">
+                <div class="nh-info-items fr" id="_userlogin"> 
+                    <!-- 未登录 -->
+                    <li><img class="link-flgw" width="189" height="26" src="/templets/lawyer/images/400.png" alt="服务热线" /> <a class="link" rel="nofollow" href="/member/login.php" class="load">登录</a> <a class="link" rel="nofollow" href="/member/reg_new.php" class="regist">注册</a></li>
+                    <!-- 登录 --> 
+                    <script language="javascript" type="text/javascript">CheckLogin();</script> 
+                </div>
+                <li class="s-n-line"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <div class="bg-blue2 pb60">
+        <div class="w1200 ma">
+            <div class="lawyer-l-h clearfix"> <a class="fl mr40 law-photo"> <img width="240" height="240" src="{dede:field.picname/}" alt="{dede:field.title/}" title="{dede:field.title/}" /> </a>
+                <div class="fl law-info">
+                    <p class="pt15" style="height: 48px; line-height: 40px;"> <a class="fl f24 fb s-cfff">{dede:field.title/}</a> <em class="rz-bq ml10 mr20" title="平台认证"><i class="ico-diag i-diag13 mr5"></i>平台认证</em> <!--<em class="s-c828"> <i class="ico-own i-own40 mr5"></i>四川 成都 </em>--> </p>
+                    <p class="mt20 f18 s-cfff">{dede:field.tags/}</p>
+                    <p class="mt30 s-c828" style="line-height: 30px;"> 执业律所： {dede:field.addr/} </p>
+                    <p class="mt10 s-c828" style="line-height: 30px;"> 办公地址：{dede:field.address/} </p>
+                    <span>业务领域：{dede:field.skill/}</span> </div>
+                <div class="law-zc pt30 fr">
+                    <div class="law-w-phone"> <b>{dede:field.tel/}</b> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ {dede:include filename='common4.htm'/}
+<div class="clear"></div>
+{dede:include filename='footer.htm'/}
+</body>
+</html>

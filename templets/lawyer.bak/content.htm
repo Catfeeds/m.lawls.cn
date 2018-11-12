@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.title/}_{dede:global.cfg_indexname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-xin.css?v=201805021933" />
+<link href="/templets/lawyer/css/page.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/templets/lawyer/js/jquery-1.8.1.min.js"></script>
+<script>
+$(function(){
+    $(".nh-nav-container .nh-nav-item").hover(function() {
+        /* Stuff to do when the mouse enters the element */
+        $(this).children('.nh-nav-item-hide').addClass('nh-nav-item-show');
+        $(this).siblings('.nh-nav-item').children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
+    }, function() {
+        /* Stuff to do when the mouse leaves the element */
+        $(this).children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
+    });
+})
+</script>
+</head>
+<body>
+{dede:include filename='header.htm'/} 
+<!-------------- javascript -------------->
+<div class="cpgb-fixed"> <a id="BizQQBottomCommon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2448211596&amp;site=qq&amp;menu=yes" class="cpgb-fixed-zixun">
+    <p><img src="/templets/lawyer/images/qq.png" alt="QQ"><br>
+        在线咨询</p>
+    </a> <a class="cpgb-fixed-zixun cpgb-fixed-dianhua">
+    <p><span class="ico-font tubiao">&#xea89;</span><br>
+        联系方式</p>
+    <span class="zx-haoma"> 18202835355 <img src="/templets/lawyer/images/jiantou.png" alt="箭头"> </span> </a> <a class="cpgb-fixed-zixun cpgb-fixed-dingbu">
+    <p><img src="/templets/lawyer/images/dingbu.png" alt="QQ"><br>
+        返回顶部</p>
+    </a> </div>
+<!-------------- javascript -------------->
+<div class="diannao-mianbaoxie">
+    <p><span class="ico-font tubiao">&#xea47;</span>{dede:field name='position'/}</p>
+</div>
+<div class="clear"></div>
+<div class="content main">
+    {dede:include filename="left.htm"/}
+    <div class="com_right fr">
+        <div class="com_right_div">
+            <div class="com_right_pos">
+                <div class="h25"></div>
+                <div class="w60 fl"></div>
+                <div class="com_right_pos_tit fl">{dede:field.typename/}</div>
+                <div class="w30 fr"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="com_right_con">
+                <div class="page_arc_body">
+                    <div class="page_arc_title">{dede:field.typename/}</div>
+                    <div class="h25"></div>
+                    <div class="page_arc_con">{dede:field.content/}</div>
+                    <div class="h50"> </div>
+                </div>
+                <div class="h50"></div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="h40"></div>
+</div>
+<!--主体内容 结束-->
+{dede:include filename='footer.htm'/} 
+<script type="text/javascript">
+$(function(){
+$('.cpgb-fixed-dingbu').click(function(){
+    $(window).scrollTop(0);
+});
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 1018 ) {			
+        $(".cpgb-fixed-dingbu").css("display","block");
+    }else if($(window).scrollTop() < 1016){			
+        $(".cpgb-fixed-dingbu").css("display","none");
+    }
+});
+})
+BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'BizQQBottomCommon'});
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.title/}_{dede:global.cfg_indexname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/layout-new.css?v=201805021933" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-new.css?v=201805021933" />
+<script type="text/javascript" src="/templets/lawyer/js/jquery-1.8.1.min.js"></script>
+<script>
+
+$(function(){
+
+	$(".nh-nav-container .nh-nav-item").hover(function() {
+
+		/* Stuff to do when the mouse enters the element */
+
+		$(this).children('.nh-nav-item-hide').addClass('nh-nav-item-show');
+
+		$(this).siblings('.nh-nav-item').children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
+
+	}, function() {
+
+		/* Stuff to do when the mouse leaves the element */
+
+		$(this).children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
+
+	});
+
+})
+
+</script>
+</head>
+
+<body>
+{dede:include filename='header.htm'/} 
+<script type="text/javascript" src="/templets/lawyer/js/jquery.pin.min.js"></script> 
+<script type="text/javascript">
+
+$(function(){
+
+$(".pin").pin({
+
+	containerSelector: ".lvshizhinan-neiye"
+
+});
+
+});
+
+</script>
+<div class="lvshizhinan-tou">
+    <div class="lszn-miaobao">
+        <div class="lszn-mb-inner">
+            <p><span class="ico-font">&#xea47;</span> {dede:field name='position'/} </p>
+        </div>
+    </div>
+    <div class="lvshizhinan-neiye">
+        <div class="lszn-ny-mod">
+            <div class="ny-mod-l">
+                <div class="lszn-ny-l">
+                    <div class="ny-l-title">
+                        <h2>{dede:field.title/}</h2>
+                        <p><span class="fabiao">发表于：{dede:field.pubdate function="MyDate('Y-m-d',@me)"/}</span>阅读量：（<script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script>）</p>
+                    </div>
+                    <div class="ny-l-zhengwen"> {dede:field.body/} </div>
+                </div>
+                <div class="lszn-ny-fanye">
+                    <p><span class="f-l">{dede:prenext get='pre'/}</span><span class="f-r">{dede:prenext get='next'/}</span></p>
+                </div>
+                <div class="lszn-ny-remen">
+                    <div class="ny-rm-title">
+                        <h2><span class="lankuai"></span>热门排行<span class="huixian"></span></h2>
+                    </div>
+                    <div class="ny-rm-inner">
+                        <div class="rm-l"> {dede:arclist titlelen='30' row='6'}
+                            <p><a target="_blank" href="[field:arcurl/]">[field:title/]</a>
+                                <time>（[field:pubdate function="MyDate('Y-m-d',@me)"/]）</time>
+                            </p>
+                            {/dede:arclist} </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ny-mod-r">
+                <div class="pin">
+                    <div class="ny-r-banner"> <a href="/ask/?ct=question&ac=ask_complete" target="_blank"><img src="/templets/lawyer/images/zaixian.jpg" alt="" /></a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{dede:include filename='footer.htm'/}
+</body>
+</html>

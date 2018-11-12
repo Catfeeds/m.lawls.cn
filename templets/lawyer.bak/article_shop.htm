@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.title/}_{dede:global.cfg_indexname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-xin.css?v=201805021933" />
+<script type="text/javascript" src="/templets/lawyer/js/jquery-1.8.1.min.js"></script>
+<script>
+$(function(){
+    $(".nh-nav-container .nh-nav-item").hover(function() {
+        /* Stuff to do when the mouse enters the element */
+        $(this).children('.nh-nav-item-hide').addClass('nh-nav-item-show');
+        $(this).siblings('.nh-nav-item').children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
+    }, function() {
+        /* Stuff to do when the mouse leaves the element */
+        $(this).children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
+    });
+})
+</script>
+</head>
+<body>
+{dede:include filename='header.htm'/} 
+<!-------------- javascript -------------->
+<div class="cpgb-fixed"> <a id="BizQQBottomCommon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2448211596&amp;site=qq&amp;menu=yes" class="cpgb-fixed-zixun">
+    <p><img src="/templets/lawyer/images/qq.png" alt="QQ"><br>
+        在线咨询</p>
+    </a> <a class="cpgb-fixed-zixun cpgb-fixed-dianhua">
+    <p><span class="ico-font tubiao">&#xea89;</span><br>
+        联系方式</p>
+    <span class="zx-haoma"> 18202835355 <img src="/templets/lawyer/images/jiantou.png" alt="箭头"> </span> </a> <a class="cpgb-fixed-zixun cpgb-fixed-dingbu">
+    <p><img src="/templets/lawyer/images/dingbu.png" alt="QQ"><br>
+        返回顶部</p>
+    </a> </div>
+<!-------------- javascript -------------->
+<div class="diannao-mianbaoxie">
+    <p><span class="ico-font tubiao">&#xea47;</span>{dede:field name='position'/}</p>
+</div>
+<div class="pc-chanpingaiban">
+    <div class="cpgb-banner">
+        <div class="cpgb-banner-l">
+            <div class="l-tu"> <img id="falvImg" src="/templets/lawyer/images/banner-cp.jpg" alt="咨询"> </div>
+        </div>
+        <div class="cpgb-banner-r">
+            <div class="r-title">
+                <h2>{dede:field.title/}</h2>
+                <p>互联网+法务品牌团队，通过集体智慧，提供卓越的法律服务质量保证</p>
+            </div>
+            <div class="r-jiage">
+                <h2>市<span class="jianju">场</span>价：<del>&yen; {dede:field.price/}</del></h2>
+                <p>法易通价：<span class="hongse">&yen; <span class="hongda" id='spProductPrice'>{dede:field.trueprice/}</span>元</span> </p>
+            </div>
+            <div class="r-yifuwu">
+                <p>已<span class="jianju">服</span>务：<span class="lanse"><script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script></span><span class="shuxian">|</span><a href="javascript:void(0)" onclick="openZoosUrl();LR_HideInvite();return false;" rel="nofollow" target="_blank">已<span class="jianju">咨</span>询：<span class="lanse">239</span></a><span class="shuxian">|</span><a href="#gogo4">累计评价：<span class="lanse">1258</span></a></p>
+            </div>
+            <div class="r-button" style='position:relative;'>
+                <div class="btn-inner"> 增值服务： <span class="huikuang chengkuang meitishi-box">普通：一个工作日</span> <span class="huikuang tishi-box"> 合同加急（加收50%）
+                    <div class="tishi"> <span class="shijian">08: 30-12: 00下单，当天15: 00前加急完成；</span> <span class="shijian">12: 01-17: 30下单，当天22: 00前加急完成；</span> <span class="shijian">17: 30到次日8: 30间下单，次日12: 00完成</span> </div>
+                    </span> </div>
+            </div>
+            <div class="r-chengnuo">
+                <p>服务承诺：<span class="tubiao"><img src="/templets/lawyer/images/qitian.png" alt="承诺" /></span>七天不限修改，满意为止</p>
+            </div>
+            <form id="formcar" name="formcar" method="post" action="{dede:field name='phpurl'/}/posttocar.php">
+                <input type="hidden" name="id" value="{dede:field.id/}" />
+                <input type="hidden" name="title" value="{dede:field.title/}" />
+                <input type="hidden" name="price" value="{dede:field.trueprice/}" />
+                <input type="hidden" name="choose" id="choose" value="0">
+                <div class="r-goumai">
+                    <input type="submit" class="gm-btn btnBuy" value="马上购买">
+                    <a class="gm-btn youbian" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2448211596&amp;site=qq&amp;menu=yes" rel="nofollow" target="_blank" id="zx02"><span class="tu"><img style="width:100%;" src="/templets/lawyer/images/list-qq.png" alt="QQ"></span>咨询售前律师</a> </div>
+            </form>
+        </div>
+    </div>
+    {dede:include filename='common.htm'/} </div>
+</div>
+{dede:include filename='footer.htm'/} 
+<script type="text/javascript" charset="utf-8">
+$(function(){
+//导航切换
+$(".fw-title-inner ul li").click(function(event) {
+	/* Act on the event */
+	$(this).addClass('lanzibaidi').siblings('li').removeClass('lanzibaidi')
+});
+//切换增值服务 及价格
+$(".meitishi-box").click(function(event) {//普通按钮
+    /* Act on the event */
+    $(this).siblings('.tishi-box').children('.tishi').hide();
+    var price0={dede:field.trueprice/};
+    $("span#spProductPrice").html(price0);
+    /*$("a.btnBuy").attr("href","/Orders/create/52a93101cfa33?increment=0");*/
+	$("#choose").attr("value",0);
+});
+$(".tishi-box").click(function(event) {	//加急按钮
+    /* Act on the event */
+    $(this).children('.tishi').show();
+    var price1={dede:field.jiaji/};			
+    $("span#spProductPrice").html(price1);
+	$("#choose").attr("value",1);
+});
+//切换增值服务边框
+$(".r-button .btn-inner .huikuang").click(function(event) {
+    /* Act on the event */
+    $(this).addClass('chengkuang').siblings('.huikuang').removeClass('chengkuang');
+});
+})
+var currentType = '';
+function getPage(num,type)
+{
+    if(type == '')
+    {
+	if(currentType != '')
+		type = currentType;
+    }
+    else
+    {
+        currentType = type;
+        $(".chooseAll").removeClass("lanse");
+        $("#current_"+type).addClass("lanse");
+    }
+    $.ajax({
+        type: "POST",
+        url: 'Products/ajaxGetReview',
+        data: {'page':num,'type':type},
+        //async : false,
+        success: function(data)
+        {
+            if(data)
+            {						
+                $("#orderReviewPage").html(data);																
+            }							
+        }
+    });
+}
+BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'zx01'});
+BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'zx02'});
+BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'zx03'});
+BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'zx04'});
+</script> 
+<script type="text/javascript">
+$(function(){
+$('.cpgb-fixed-dingbu').click(function(){
+    $(window).scrollTop(0);
+});
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 1018 ) {			
+        $(".cpgb-fixed-dingbu").css("display","block");
+    }else if($(window).scrollTop() < 1016){			
+        $(".cpgb-fixed-dingbu").css("display","none");
+    }
+});
+})
+BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'BizQQBottomCommon'});
+</script>
+</body>
+</html>

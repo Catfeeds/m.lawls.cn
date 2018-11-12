@@ -1,0 +1,18 @@
+<?php
+if(!isset($GLOBALS['_vars'])) $GLOBALS['_vars'] = array(); 
+$fields = array();
+?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>去支付</title>
+    <script>
+        window.location.href='<?php echo $GLOBALS['_vars']['button']; ?>';
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

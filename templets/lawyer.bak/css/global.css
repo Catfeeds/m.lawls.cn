@@ -1,0 +1,45 @@
+/*CSS Document reset */
+@charset "utf-8";
+*,body,html{padding:0;margin:0;font-family:"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;}
+ul,li,dl{list-style: none;}
+body{overflow-x: hidden;}
+a{color:#323232;text-decoration: none;}
+a:hover{color:#e43c43;}
+
+/*   头部   */
+#header {width: 100%; height: 120px;border-bottom: 1px solid #d7d7d7;background-color:#fff; }
+#header .inside{width: 1200px;margin: 0 auto;padding:31px 0;}
+#header .inside .logo{width: 390px;text-align: left;float: left}
+#header .inside .logo img{border:0;}
+#header .inside .nav {width: 750px; margin-top: 5px;margin-left: 10px;margin-right: 20px;}
+#header .inside .Fl {float: left;}
+#header .inside .navs {width: 100%;height: 50px;}
+#header .inside .navs li {float: left;position: relative;width: 150px;line-height: 50px;text-align: center;background: url(../images/li.png) no-repeat right 50%;}
+#header .inside .navs li:last-child{background: 0;}
+#header .inside .navs li a {display: block;cursor: pointer;font-size: 18px;}
+#header .inside .navs li a i{position: absolute;background: url(../images/xiala.png)no-repeat center bottom;width: 9px;height:5px;bottom: 20px;right: 20px;}
+#header .inside .navs li .sub-menu {display: none;}
+#header .inside .fadeInDown {-webkit-animation-name: fadeInDown;animation-name: fadeInDown;}
+#header .inside .animated {-webkit-animation-duration: 1s;animation-duration: 1s;-webkit-animation-fill-mode: both;animation-fill-mode: both;}
+#header .inside .navs li .sub-menu li {width: 150px;text-align: center;font-size: 12px;padding: 0;background: 0;}
+#header .inside .navs li .sub-menu li a {color:#333;font-size: 15px;}
+#header .inside .navs li .sub-menu li a:hover{color:#e43c43;}
+#header .inside .navs li:hover .sub-menu{display: block;position: absolute;border-bottom: 1px solid #f3f3f3;top: 50px;background: url(../images/xialabg.png) no-repeat;background-size:100% 100%;width: 150px;padding-left: 0;z-index: 999;padding-top: 20px;}
+#header .inside .user{float: right;margin-top: 20px}
+
+
+
+/*  脚部   */
+#footer{border-top: 3px solid #e3e3e3;padding-top: 30px;overflow: hidden}
+#footer .inside{width: 1200px;margin: 0 auto;}
+#footer .inside dl{width: 120px;float: left;margin-right: 100px;}
+#footer .inside dl dt{margin-bottom: 15px;color:#333;font-size: 16px;font-weight: 700;}
+#footer .inside dl dd a{display: inline-block;font-size: 14px;color:#666;margin: 5px 0;}
+#footer .inside .erweima{text-align: center;width: 365px;float: left;background: url("../images/fot_line.png")no-repeat left center;}
+#footer .inside .erweima p{font-size: 14px;color:#333;}
+#footer .inside .erweima img{margin-top: 5px;}
+#footer .inside .server{float: left;margin: 0;width: 175px;}
+#footer .inside .telNum{font-size: 24px;color:#333;margin: 10px 0;font-weight:700; }
+#copyright p{width: 1200px;border-top: 1px solid #e3e3e3;margin: 30px auto 0 auto;text-align: center;height: 50px;line-height: 50px;font-size: 14px;color:#666;}
+
+#footer2{text-align: center;padding:15px 0;background: #fff;font-size: 14px;color:#666;}

@@ -1,0 +1,77 @@
+<link href="{dede:field name='phpurl'/}/dedemao-comment/css.css" rel="stylesheet">
+<div class="dedemao-comment">
+    <div class="dedemao-comment-box">
+        <img class="b-head-img" src="{dede:field name='phpurl'/}/dedemao-comment/img/default_head_img.gif">
+        <div class="b-box-textarea">
+            <div class="b-box-textarea-body">
+            <div class="b-box-content" contenteditable="true" onfocus="delete_hint(this)">{dede:global.comment_tips/}</div>
+            <ul class="b-emote-submit">
+                <li class="b-emote">
+                    <a class="ds-toolbar-button ds-add-emote" title="插入表情" onclick="getTuzki(this)"></a>
+                    <div class="b-tuzki"></div>
+                </li>
+                <li class="b-submit-button">
+                    <input type="button" value="评 论" aid="{dede:field.id/}" pid="0" onclick="comment(this)" style="background-color: {dede:global.comment_basecolor/};">
+                </li>
+                <li class="b-clear-float"></li>
+            </ul>
+            </div>
+            <div class="error-tip"></div>
+        </div>
+        <div class="b-clear-float"></div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+
+<script>
+
+    var jDedemao = jQuery.noConflict(true);
+
+    jDedemao(function () {
+
+        jDedemao(".comment-load").show();
+
+        get_ajax_comment('{dede:field.id/}', 0, {dede:global.comment_pagesize/});
+
+        getHeadPic();
+
+    });
+
+    jDedemao("input[name='commentorder']").change(function () {
+
+        jDedemao(".comment-load").show();
+
+        var orderWay = $(this).val();
+
+        get_ajax_comment('{dede:field.id/}', 0, {dede:global.comment_pagesize/},orderWay,'refresh');
+
+    });
+
+    var showZan = '{dede:global.showZan/}';
+
+    var comment_tips = '{dede:global.comment_tips/}';
+
+    var show_floor = '{dede:global.show_floor/}';
+
+    var showQQ = '{dede:global.showQQ/}';
+
+    var comment_ipaddr = '{dede:global.comment_ipaddr/}';
+
+    var PLUS_URL = "{dede:field name='phpurl'/}";
+
+</script>
+
+<script src="{dede:field name='phpurl'/}/dedemao-comment/myaskcomment.js"></script>
+
+<script>
+
+    var a = jDedemao.noConflict(true);
+
+    //其它库的代码
+
+    window.$ = window.jQuery = a;
+
+</script>

@@ -1,0 +1,1 @@
+<li class="mui-table-view-cell"><a href="[field:arcurl/]">[field:title/]</a></li>

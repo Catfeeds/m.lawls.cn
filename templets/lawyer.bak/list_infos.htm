@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.seotitle/}_{dede:global.cfg_indexname/}</title> 
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/layout-new.css" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-new.css" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/box.css" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/find-lawyer_v3.css" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/unit_v.2.0.css" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/base_v.2.0.css" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/zhuanjia.css" />
+<script type="text/javascript" src="/templets/lawyer/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="/templets/lawyer/js/modal.min.js"></script>
+<script type="text/javascript" src="/templets/lawyer/js/box.js"></script>
+<script type="text/javascript" src="/templets/lawyer/js/iealert.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('.web-header .user-box ul > li:nth-of-type(2) div.fl b').click(function(){
+        $('.web-header .user-box ul > li:nth-of-type(2) div.fl ol').show();
+        $('.model-box').show();
+    });
+    $('.model-box').click(function(){
+        $('.web-header .user-box ul > li:nth-of-type(2) div.fl ol').hide();
+        $('.web-header .inner-box .fr > div.dropdown ul.menu').hide();
+        $(this).hide();
+    });
+    $('.web-header .inner-box .fr > div.dropdown span').click(function(){
+        $('.web-header .inner-box .fr > div.dropdown ul.menu').show();
+        $('.model-box').show();
+    })
+    $("#search-btn").leanModal();
+    $("body").iealert();
+    $('footer .link .row .inner-box .top-box ul li').click(function(){
+        $(this).addClass('click').siblings().removeClass('click');
+        var numb = $(this).index()
+        $('footer .link .row .inner-box .bottom-box div').eq(numb).show().siblings().hide()
+    });
+
+});
+</script>
+</head>
+<body>
+<script type="text/javascript" src="/templets/lawyer/js/jquery.pin.min.js"></script> 
+{dede:include filename='header.htm'/} 
+<!-- 找律师头部 -->
+<div id="lean_overlay">
+    <form class="form-inline p-r" action="/lawyers/search" method="get">
+        <div class="search-bar">
+            <div class="input-part">
+                <input id="exampleInputEmail2"  type="text" placeholder="搜索律师" name="q">
+            </div>
+            <button class="text-white btn btn-link " type="submit"><img width="29" height="25" alt="搜索" src="/templets/lawyer/images/search.png"></button>
+        </div>
+        <div class="inner-box"></div>
+    </form>
+</div>
+<script type="text/javascript" src="/templets/lawyer/js/move.min.js"></script> 
+<script type="text/javascript" src="/templets/lawyer/js/mask.js"></script>
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/mask.css" />
+<!-- 预约成功弹出框区end -->
+<div class="findlawyer-mod">
+    <div class="top-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcrumb-box visible-lg clean-m clean-p">
+                        <p> <span class="icon-font text-blue"></span> {dede:field name='position'/} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="l-box">
+                   {dede:infolink}
+                    <div class="choose-block">
+                        <div class="city-bar">
+                            <div class="title-part">
+                                <h3>所在城市：</h3>
+                            </div>
+                            <div class="content-part"> 
+								[field:linkallplace /]
+								<select id="province" onchange="provinceSelect(this,[field:channelid/],[field:typeid/],'[field:selyears/]','[field:skill/]')">
+									<option value="">选择省份</option>
+									[field:topplace /]
+								</select>
+								<select id="city" onchange="citySelect(this,[field:channelid/],[field:typeid/],'[field:selyears/]','[field:skill/]')">
+										<option value="">选择县市</option>
+                                        [field:nativeplace /]
+								</select>
+                            </div>
+                        </div>
+                        <div class="special-bar">
+                            <div class="title-part">
+                                <h3>专长领域：</h3>
+                            </div>
+                            <div class="content-part">
+								[field:typename /]
+							</div>
+                        </div>
+                        <div class="year-bar">
+                            <div class="title-part">
+                                <h3>执业年限：</h3>
+                            </div>
+                            <div class="content-part" style="border-bottom: none;">[field:linkalltype/] [field:infotype /]</div>
+                        </div>
+                    </div>
+                    <script>
+						$("input[name='years']").click(function(){
+							var yearsval = $(this).val();
+							window.location.href="/plus/list.php?channelid=[field:channelid/]&tid=[field:typeid/]&skill=[field:skill/]&nativeplace=[field:selnat/]&infotype="+yearsval;
+						})
+					</script>
+                {/dede:infolink}
+                    <div class="box-bor1">
+                        <div class="hot-rank clearfix">
+                            <h1 href="javascript:void(0)" class="btn3s btn-gn2 fl curStyle" style="margin: 0px;">全国在线律师</h1>
+                            <!--<em class="s-c999 f14 ml20 fl mt10">带<i class="ico-new i-new63"></i>标示的律师已加入<a>放心律师保障计划</a>，律师已缴纳保证金，出现问题支持双倍赔付</em>-->
+                            <!--<p><em class="fb">1</em>/ 14</p>-->
+                        </div>
+                    </div>
+                    <div class="zhuanjia">
+                    	<div class="zj_title">
+                    		<h3>您的专属律师</h3>
+                    		<span>找律师打官司，您的专属律师</span>
+                    	</div>
+                    	<div class="zj_con">
+                    		{dede:list pagesize='20'}
+                    		<div class="zj_bg" style="background: url('[field:picname/]') no-repeat;background-size:cover;">
+                    			<div class="zj_block">
+                    				<div class="zj_main">
+                    					<h1><a href="[field:arcurl/]">[field:title/]</a></h1>
+                    					<span>[field:tags/]</span>
+                    					<p>擅长领域：[field:skill/]</p>
+                    				</div>
+                    			</div>
+               					<div class="zj_isShow">
+									<div class="zj_main" url="[field:arcurl/]">
+										<h1>[field:title/]</h1>
+										<span>[field:addr/]</span>
+										<h3>[field:tel/]</h3>
+										<p><font style="font-size: 18px;">“</font>[field:body function='cn_substr(html2text(@me),400)'/]...[详情]<font style="font-size:18px;">”</font></p>
+										<div class="zj_addr">
+											<p class="fl"><span>半小时</span>内响应>></p>
+											<p class="fr addr">[field:nativeplace/]</p>
+										</div>
+									</div>
+								</div>
+                    		</div>
+                    		{/dede:list}
+                    	</div>
+                    </div>
+                    <!-- 分写 开始-->
+                    <div class="web-page">
+                       <ul>{dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/}</ul>
+                    </div>
+                    <br>
+                    <br>
+                    <!-- 分页结束 -->
+                    <div class="info-block">
+                        <div class="phone-bar text-center"> <img  height="40" alt="服务热线" src="/templets/lawyer/images/footer-tel.png"> </div>
+                        <div class="safe-bar">
+                            <p>法易通法律法务的全部律师都已加入<span>放心找律师，赔付有保</span>障的计划中，出现问题，法易通法律法务平台会全额赔付。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{dede:include filename='footer.htm'/} 
+<!--  debug --> 
+<!-- javascript --> 
+<script type="text/javascript">
+$(function(){
+	//专家鼠标滑过显示详情
+	$('.zj_bg').mouseover(function(){
+		$(this).children('.zj_block').hide();
+		$(this).children('.zj_isShow').show();
+	});
+	$('.zj_bg').mouseout(function(){
+		$(this).children('.zj_block').show();
+		$(this).children('.zj_isShow').hide();
+	});
+	$('.zj_main').click(function(){
+		var gourl = $(this).attr('url');
+		window.open(gourl);
+	});
+    $('.findlawyer-mod .r-box .list-block .select-bar .new-part, .findlawyer-mod .r-box .list-block .select-bar .num-part').click(function(){
+        var num = $(this).index()
+        $('.findlawyer-mod .r-box .list-block ul').eq(num).show().siblings('ul').hide();
+    })
+    $('.findlawyer-mod .r-box .count-block .inner-block .before .form-box input[type="submit"]').click(function(){
+        lawyerFeeCaculation();
+
+        if(tag)
+        {
+            submitFeeCase();
+            addFee();
+            $('.findlawyer-mod .r-box .count-block .inner-block .before').hide();
+            // $('.findlawyer-mod .r-box .count-block .inner-block .after').show();
+        }					
+    });		
+    $('.findlawyer-mod .r-box .count-block .inner-block .after b.back').click(function(){
+        $('.findlawyer-mod .r-box .count-block .inner-block .before').show();
+        // $('.findlawyer-mod .r-box .count-block .inner-block .after').hide();
+    });
+    $('.findlawyer-mod .r-box .list-block .select-bar .new-part h5, .findlawyer-mod .r-box .list-block .select-bar .num-part h5').click(function(){
+        $(this).children('b').show();
+        $(this).parent('div').siblings('div').children('h5').children('b').hide();
+    });		
+});
+var wasSubmitted = false;    
+function checkBeforeSubmit()
+{
+    if(!wasSubmitted) 
+    {
+        wasSubmitted = true;
+        return wasSubmitted;
+    }
+    return false;
+}    
+function lawyerSort(self)
+{
+    window.location.href="/"+$(self).val();
+}
+function selectLawyer(id,name)
+{
+    $("#lawyer1").val(id);
+    $("#lawyer2").val(id);
+    $("#lawyer3").val(id);
+    $("#selectLawyerName").html(name);
+    
+    mask("contact-lawyer-box");
+}
+function accountOnBlur(num)
+{
+    if($("#CustomerAccount"+num).val() != '')
+    {
+        $.ajax({
+            type: "POST",
+            url: 'Customers/validateField2',
+            data: {'account':$("#CustomerAccount"+num).val()},
+            async : false,
+            success: function(data)
+            {
+                if(!data)
+                {		
+                    if(num == '1')			
+                    {
+                        $("#CustomerAccount2").val($("#CustomerAccount1").val());										
+                        $("#contact-lawyer-1").hide();											
+                        $("#contact-lawyer-2").show();
+                        $("#phone-warning").show()
+                    }												
+                }
+                else
+                {
+                    if(num == '2')
+                    {
+                        $("#CustomerAccount1").val($("#CustomerAccount2").val());											
+                        $("#contact-lawyer-2").hide();					
+                        $("#contact-lawyer-1").show();
+                        $('#phone-warning').show();
+                    }	
+                }
+                                
+            }
+        });
+    }	
+}
+function provinceSelect(obj,channel,typeid,infotype,skill)
+{
+	var proval = $(obj).val();
+	window.location.href="/plus/list.php?channelid="+channel+"&tid="+typeid+"&skill="+skill+"&nativeplace="+proval+"&infotype="+infotype;
+}
+function citySelect(obj,channel,typeid,infotype,skill)
+{
+    var proval2=$(obj).val();
+    window.location.href="/plus/list.php?channelid="+channel+"&tid="+typeid+"&skill="+skill+"&nativeplace="+proval2+"&infotype="+infotype;
+}
+</script> 
+<script type="text/javascript">
+$(function(){
+$('.cpgb-fixed-dingbu').click(function(){
+    $(window).scrollTop(0);
+});
+
+$(window).scroll(function () {
+
+    if ($(window).scrollTop() > 1018 ) {			
+        $(".cpgb-fixed-dingbu").css("display","block");
+    }else if($(window).scrollTop() < 1016){			
+        $(".cpgb-fixed-dingbu").css("display","none");
+    }
+});
+})
+BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'BizQQBottomCommon'});
+</script>
+</body>
+</html>

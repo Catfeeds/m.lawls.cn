@@ -1,0 +1,1 @@
+<span class="huikuang [field:global name=autoindex runphp='yes'](@me==1)? @me='chengkuang meitishi-box':@me='tishi-box';[/field:global]">~name~</span>

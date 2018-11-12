@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.seotitle/}_{dede:global.cfg_indexname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/layout-new.css?v=201805021933" />
+<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-new.css?v=201805021933" />
+<script type="text/javascript" src="/templets/lawyer/js/jquery-1.8.1.min.js"></script>
+<script>
+
+$(function(){
+
+	$(".nh-nav-container .nh-nav-item").hover(function() {
+
+		/* Stuff to do when the mouse enters the element */
+
+		$(this).children('.nh-nav-item-hide').addClass('nh-nav-item-show');
+
+		$(this).siblings('.nh-nav-item').children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
+
+	}, function() {
+
+		/* Stuff to do when the mouse leaves the element */
+
+		$(this).children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
+
+	});
+
+})
+
+</script>
+</head>
+
+<body>
+{dede:include filename='header.htm'/}
+<div class="lvshizhinan-body">
+    <div class="lszn-banner">
+        <div class="lszn-banner-l"> <img src="/templets/lawyer/images/banner.jpg" alt="法易通法律法务" /> </div>
+        <div class="lszn-banner-r">
+            <div class="r-title"> <span>免费咨询</span> </div>
+            <div class="r-erweima">
+                <div class="ewm-tou"> <img src="/templets/lawyer/images/suishen.png" alt="法易通法律法务" /> </div>
+                <div class="ewm-shaoma">
+                    <div class="shm-l"> <span class="erweima"><img src="/templets/lawyer/images/erweima.jpg" alt="法易通法律法务" /></span>
+                        <p>扫一扫，加关注 </p>
+                    </div>
+                    <div class="shm-r">
+                        <p><span class="dian"></span>免费法律咨询</p>
+                        <p><span class="dian"></span>微信找律师</p>
+                        <p><span class="dian"></span>律师审查合同</p>
+                        <p><span class="dian"></span>私人律师服务</p>
+                        <p><span class="dian"></span>更多功能敬请期待</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lszn-zaixian" id="ggh" name="ggh"> <a href="/ask/?ct=question&ac=ask_complete" target="_blank" class="lszn-zx-inner"> <span class="tupian"><img src="/templets/lawyer/images/1.png" alt="法易通法律法务" /></span>
+        <h2>在线法律咨询</h2>
+        <p>全程耐心解答</p>
+        </a> <a target="_blank" href="/flzx/123.html" class="lszn-zx-inner"> <span class="tupian"><img src="/templets/lawyer/images/2.png" alt="法易通法律法务" /></span>
+        <h2>电话问律师</h2>
+        <p>让您从法律难题的困扰中解脱</p>
+        </a> <a class="lszn-zx-inner"> <span class="tupian"><img src="/templets/lawyer/images/3.png" alt="法易通法律法务" /></span>
+        <h2>业务咨询热线</h2>
+        <p>18202835355 </p>
+        </a> </div>
+    <div class="lszn-leimu">
+        <div class="lszn-lm-title">
+            <div class="title-l">
+                <h2><span class="lankuai"></span>按类目搜索</h2>
+            </div>
+            <form method="get" action="/plus/search.php">
+                <div class="title-r">
+                    <input class="sousuo" type="text" maxlength="200" name="keyword" placeholder="搜索律师指南..." />
+                    <input class="fangdajing" type="submit" value=""/>
+                </div>
+            </form>
+        </div>
+        <div class="lszn-lm-inner"> <a target="_blank" href="/gsjy/" class="lm-kuai"> <span class="tubiao"><img src="/templets/lawyer/images/yelan.png" alt=""></span> 公司经营 </a> <a target="_blank" href="/ldgs/"class="lm-kuai "> <span class="tubiao"><img src="/templets/lawyer/images/laohei.jpg" alt=""></span> 劳动工伤 </a> <a target="_blank" href="/htsw/"class="lm-kuai "> <span class="tubiao"><img src="/templets/lawyer/images/hehei.jpg" alt=""></span> 合同事务 </a> <a target="_blank" href="/zscq/"class="lm-kuai "> <span class="tubiao"><img src="/templets/lawyer/images/biaohei.jpg" alt=""></span> 知识产权 </a> <a target="_blank" href="/shpc/"class="lm-kuai "> <span class="tubiao"><img src="/templets/lawyer/images/canhei.jpg" alt=""></span> 损害赔偿 </a> <a target="_blank" href="/fcjf/"class="lm-kuai "> <span class="tubiao"><img src="/templets/lawyer/images/zuhei.jpg" alt=""></span> 房产纠纷 </a> <a target="_blank" href="/jtsg/" class="lm-kuai "> <span class="tubiao"><img src="/templets/lawyer/images/jiaohei.jpg" alt=""></span> 交通事故 </a> <a target="_blank" href="/hyjt/"class="lm-kuai "> <span class="tubiao"><img src="/templets/lawyer/images/yinhei.jpg" alt=""></span> 婚姻家庭 </a> <a target="_blank" href="/xsbh/" class="lm-kuai "> <span class="tubiao"><img src="/templets/lawyer/images/hunhei.jpg" alt=""></span> 刑事辩护 </a> <a target="_blank" href="/zqzw/"class="lm-kuai "> <span class="tubiao"><img src="/templets/lawyer/images/suhei.jpg" alt=""></span> 债权债务 </a> <a target="_blank" href="/yljf/"class="lm-kuai "> <span class="tubiao"><img src="/templets/lawyer/images/hehei.jpg" alt=""></span> 医疗纠纷 </a> <a target="_blank" href="/zdcq/"class="lm-kuai "> <span class="tubiao"><img src="/templets/lawyer/images/qihei.jpg" alt=""></span> 法律知识 </a> </div>
+    </div>
+    <div class="lszn-wenji">
+        <h2> <span class="lankuai"></span> {dede:field.typename/} </h2>
+        {dede:list pagesize='20'}
+        <div class="wz-zhengwen">
+            <h3><span class="chengdi"></span><a target="_blank" href="[field:arcurl/]">[field:title/]</a></h3>
+            <p><a target="_blank" href="[field:arcurl/]">[field:description/]</a></p>
+            <h4>分类：<a href="[field:typeurl/]">[field:typename/]</a><span class="jiange">阅读：[field:click/]次</span>
+                <time>[field:pubdate function="GetDateTimeMK(@me)"/]</time>
+            </h4>
+        </div>
+        {/dede:list} </div>
+    <div class="web-page">
+        <ul class="pagelist">
+            {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+        </ul>
+        
+        <!-- <h1><span class="current">1</span> <span><a href="/Posts/index/1/p2.html">2</a></span> <span><a href="/Posts/index/1/p3.html">3</a></span> <span><a href="/Posts/index/1/p4.html">4</a></span> <span><a href="/Posts/index/1/p5.html">5</a></span> <span><a href="/Posts/index/1/p6.html">6</a></span> <span><a href="/Posts/index/1/p7.html">7</a></span> <span><a href="/Posts/index/1/p8.html">8</a></span> <span><a href="/Posts/index/1/p9.html">9</a></span> <span><a href="/Posts/index/1/p37.html" rel="last"> ...尾页</a></span></h1> --> 
+        
+    </div>
+</div>
+</div>
+{dede:include filename='footer.htm'/} 
+
+<!--  debug --> 
+
+<!-- javascript --> 
+
+<script type="text/javascript">
+//选中类型高亮
+var pathname = window.location.pathname;
+$(".lszn-lm-inner a").each(function(){
+	var selurl = $(this).attr("href");
+	if(pathname == selurl){
+		$(this).addClass("lanse");
+	}
+});
+
+
+$(function(){
+
+
+
+	$.ajax({
+
+
+
+		type: "GET",
+
+
+
+		url: 'Contracts/ajaxGetCount',			
+
+
+
+		dataType: "html",
+
+
+
+		success: function(data)
+
+
+
+		{
+
+
+
+			$("#contractCount").html(data);
+
+
+
+		},
+
+
+
+		error:function(xhr,t,tr){				
+
+
+
+			//alert(tr);
+
+
+
+		}
+
+
+
+	});
+
+
+
+})
+
+
+
+</script>
+</body>
+</html>

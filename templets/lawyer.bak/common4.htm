@@ -1,0 +1,276 @@
+<link href="/templets/lawyer/css/page.css" rel="stylesheet" type="text/css" />
+<style>
+ul li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+.clear {
+	clear: both;
+}
+.lawyer {
+	width: 100%;
+}
+.lawyernav {
+	width: 100%;
+	height: 70px;
+	background: #36bbce;
+	line-height: 70px;
+}
+.lawyer ul.menunav {
+	width: 1100px;
+	height: 70px;
+	margin: 0 auto;
+}
+.fixedtop {
+	position: fixed;
+	left: 0;
+	width: 100%;
+	top: 0;
+	text-align: center;
+	padding-left: 3px;
+}
+.lawyer ul.menunav li {
+	width: 230px;
+	height: 70px;
+	float: left;
+	line-height: 70px;
+	text-align: center;
+	font-size: 26px;
+	font-weight: bold;
+	color: #fff;
+}
+.lawyer ul.menunav li a {
+	display: block;
+	color: #fff;
+}
+.lawyer ul.menunav li.active {
+	background: #50ddf1;
+}
+.lawyer h3 {
+	width: 100%;
+	height: 50px;
+	display: block;
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+}
+.lawyer h3 span {
+	width: 160px;
+	height: 50px;
+	float: left;
+	line-height: 50px;
+	text-align: center;
+	font-size: 26px;
+	background: #ccc;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	font-weight: bold;
+	color: #fff;
+}
+.lawyerinfo {
+	width: 1100px;
+	margin: 0 auto;
+	font-size: 16px;
+	position: relative;
+}
+.lawyerinfo .infos {
+	width: 100%;
+}
+.infoscon {
+	text-indent: 2em;
+	line-height: 35px;
+}
+.lawyerinfo .cases {
+	width: 100%;
+}
+.lawyerinfo .articles {
+	width: 100%;
+}
+.lawyerinfo .services {
+	width: 100%;
+}
+.servicecon {
+	line-height: 35px;
+}
+.servicecon img {
+	max-width: 100%;
+	height: auto;
+}
+ul.page_arclist {
+	width: 100%;
+}
+.page_arclist li {
+	height: 140px;
+	width: 100%;
+	border-bottom: 1px solid #e9e9e9;
+}
+.page_arclist .pic {
+	width: 170px;
+}
+.page_arclist .pic img {
+	width: 130px;
+	height: 100px;
+}
+.page_arclist .tit_info {
+	width: 100%;
+}
+.page_arclist .title {
+	font-size: 18px;
+}
+.page_arclist .info {
+	color: #999;
+	height: 60px;
+	overflow: hidden;
+	line-height: 20px;
+}
+.page_arclist .date {
+	width: 109px;
+	height: 95px;
+	position: relative;
+	top: 8px;
+	text-align: center;
+	font-size: 18px;
+	color: #999;
+}
+.page_arclist .date .date_y {
+	height: 50px;
+	line-height: 50px;
+}
+.page_arclist .date .date_md {
+	line-height: 30px;
+}
+.page_arclist li.none {
+	height: 34px;
+	background: url(../images/case_li.png) no-repeat left top;
+	text-indent: 30px;
+	line-height: 36px;
+	border-bottom: 1px solid #e9e9e9;
+}
+.page_arclist li.none .date1 {
+	font-size: 14px;
+	color: #999;
+	padding-right: 6px;
+}
+.go {
+	margin-top: -60px;
+}
+.ads{
+	float: right;
+	width: 320px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 14px;
+	box-shadow:  0px 2px 4px darkgrey;
+	margin-bottom: 20px;
+}
+.tab_content{
+	margin-top: 14px;
+	width: 770px;
+	box-shadow:  0px 2px 4px darkgrey;
+	float: left;
+	padding: 5px 10px;
+	box-sizing: border-box;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+</style>
+<div class="lawyer">
+    <div class="lawyernav">
+        <ul class="menunav">
+            <li class="active"><a href="#goinfos">律师介绍</a></li>
+            <li><a href="#gocases">亲办案件</a></li>
+            <li><a href="#goarticles">律师文集</a></li>
+            <li><a href="#goservices">服务承诺</a></li>
+        </ul>
+    </div>
+    <div class="lawyerinfo">
+        <div id="goinfos" class="tab_content" style="display: block;">
+            <div class="infoscon"> {dede:field.body/} </div>
+            <br>
+        </div>
+        <div id="gocases" class="tab_content" style="display: block;">
+            <div class="clear"></div>
+            <ul class="ul_fl page_arclist">
+                <!--循环开始--> 
+               	{dede:likesql sql='Select * from dede_archives as a LEFT JOIN dede_lawyerinfos AS l ON l.tolawyer like "~license~%" where a.id = l.aid and a.typeid=79 and arcrank=0 ORDER BY aid desc limit 0,20'}
+                <li>
+                    <div class="h15"></div>
+                    <div class="tit_info fl">
+                        <div class="title h40"><a href="[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]" target="_blank" title="[field:title/]">[field:title/]</a></div>
+                        <div class="info">[field:description/]</div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                {/dede:likesql}
+            </ul>
+        </div>
+        <div id="goarticles" class="tab_content" style="display: block;">
+            <div class="clear"></div>
+            <ul class="ul_fl page_arclist">
+                <!--循环开始--> 
+                {dede:likesql sql='Select * from dede_archives as a LEFT JOIN dede_lawyerinfos AS l ON l.tolawyer like "~license~%" where a.id = l.aid and a.typeid=80 and arcrank=0 ORDER BY aid desc limit 0,20'}
+                <li>
+                    <div class="h15"></div>
+                    <div class="tit_info fl">
+                        <div class="title h40"><a href="[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]" target="_blank" title="[field:title/]">[field:title/]</a></div>
+                        <div class="info">[field:description/]</div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                {/dede:likesql}
+            </ul>
+        </div>
+        <div id="goservices" class="tab_content" style="width: 100%; display: block;">
+            <div class="clear"></div>
+            <div class="servicecon"> {dede:sql sql='Select content from dede_arctype where id=16'}
+                [field:content/]
+                {/dede:sql} </div>
+		</div>
+		<div class="ads"><a href="/ask/?ct=question&amp;ac=ask_complete" target="_blank"><img src="/templets/lawyer/images/zaixian.jpg" width="320px" alt=""></a></div>
+    </div>
+</div>
+<script>
+//导航悬浮
+$(function(){
+$(window).scroll(function () {
+	if ($(window).scrollTop() > 580 ) {
+		$(".lawyernav").addClass('fixedtop');
+		$(".lawyer").css("padding-top","71px");
+	}else if($(window).scrollTop() < 580){
+		$(".lawyernav").removeClass('fixedtop');
+		$(".lawyer").css("padding-top","0");
+	}
+});
+});
+</script> 
+<script>
+//导航切换
+$(".tab_content").hide();  
+$(".menunav li:first").addClass("active").show(); 
+$(".tab_content:first").show();
+
+
+$(".menunav li").click(function() {
+	$(".ads").show();
+	$(".menunav li").removeClass("active");  
+	$(this).addClass("active"); 
+	$(".tab_content").hide();
+	var activeTab = $(this).find("a").attr("href");   
+	$(activeTab).fadeIn();  
+	return false;
+});  
+$(".menunav li:last-child").click(function() {
+	$(".ads").hide();
+});
+/*$(".menunav li").click(function(event) {
+	$(this).addClass('active').siblings('li').removeClass('active');
+});*/
+</script>
