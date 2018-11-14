@@ -714,3 +714,45 @@ ul li{
 .car h4{
   padding: 10px;
 }
+.r-jiage h3{
+    line-height: 30px;
+}
+.ddgb-zf-xuanzhe {
+    overflow: hidden;
+    border-top: 2px solid #7eabfd;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+.ddgb-zf-xuanzhe .zf-xz-inner {
+    float: left;
+    margin-right: 30px;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+}
+.ddgb-zf-xuanzhe .zf-xz-inner .guanlian {
+    min-width: 252px;
+    padding: 0 10px;
+    height: 37px;
+    border: 1px solid #dcdcdc;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+}
+.ddgb-zf-xuanzhe .zf-xz-inner-cheng .guanlian {
+    background: url(../images/jiajic.png) no-repeat right 0 bottom 0;
+    border: 1px solid #ff9242;
+    color: #ff9242;
+}
+.ddgb-zf-xuanzhe .zf-xz-inner {
+    float: left;
+    margin-right: 30px;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+}
+.ddgb-zf-xuanzhe .zf-xz-inner:nth-last-of-type(1) {
+    margin-right: 0;
+}

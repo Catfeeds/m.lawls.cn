@@ -103,9 +103,9 @@
 										<h3>企业法律顾问</h3>
 									</div>
 									<div class="r-jiage">
-										<h2>市<span class="jianju">场</span>价：<del>&yen; 1000-2000</del></h2>
-										<p>法易通价：<span class="hongse">&yen; <span class="hongda" id='spProductPrice'>550</span>元</span>
-										</p>
+										<h3>市场价：<del>&yen; 1000-2000</del></h3>
+										<h3>法易通价：<strong id='spProductPrice'>550</strong>元
+										</h3>
 									</div>
 									<form class="mui-input-group" id="formcar" name="formcar" method="post" action="/plus/posttocar.php">
 										<input type="hidden" name="id" value="160" />
@@ -113,11 +113,11 @@
 										<input type="hidden" name="price" value="550" />
 										<input type="hidden" name="choose" class="choose" value="0">
 										<div class="mui-input-row mui-radio mui-left">
-											<label>普通：一个工作日</label>
+											<label for="trueprice">普通：一个工作日</label>
 											<input name="price" id="trueprice" value="550" type="radio" checked="">
 										</div>
 										<div class="mui-input-row mui-radio mui-left">
-											<label>合同加急（加收50%）</label>
+											<label for="jiaji">合同加急（加收50%）</label>
 											<input name="price" id="jiaji" value="825" type="radio">
 										</div>
 										<button type="submit" class="mui-btn mui-btn-primary mui-btn-block">立即购买</button>
@@ -323,13 +323,13 @@
 		//点击普通按钮
 		$("#trueprice").click(function(event) {
 			var price1="550";
-			$("span#spProductPrice").html(price1);
+			$("#spProductPrice").html(price1);
 			$(".choose").attr("value", 0);
 		});
 		//点击加急按钮
 		$("#jiaji").click(function(event) {
 			var price1="825";
-			$("span#spProductPrice").html(price1);
+			$("#spProductPrice").html(price1);
 			$(".choose").attr("value", 1);
 		});
 

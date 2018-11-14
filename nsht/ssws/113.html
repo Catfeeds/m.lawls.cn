@@ -102,22 +102,23 @@
 									<div class="guwen-title">
 										<h3>企业法律顾问</h3>
 									</div>
-                                    <div class="r-jiage">
-                                    	<h2>市<span class="jianju">场</span>价：<del>&yen; 1000—3000</del></h2>
-                                    	<p>法易通价：<span class="hongse">&yen; <span class="hongda" id='spProductPrice'>500</span>元</span> </p>
-                                    </div>
+									<div class="r-jiage">
+										<h3>市场价：<del>&yen; 1000—3000</del></h3>
+										<h3>法易通价：<strong id='spProductPrice'>500</strong>元
+										</h3>
+									</div>
 									<form class="mui-input-group" id="formcar" name="formcar" method="post" action="/plus/posttocar.php">
 										<input type="hidden" name="id" value="113" />
 										<input type="hidden" name="title" value="审查经济仲裁申请书" />
 										<input type="hidden" name="price" value="500" />
-										<input type="hidden" name="choose" id="choose" value="0">
+										<input type="hidden" name="choose" class="choose" value="0">
 										<div class="mui-input-row mui-radio mui-left">
-											<label>普通：一个工作日</label>
-											<input name="price" value="500" type="radio" checked="">
+											<label for="trueprice">普通：一个工作日</label>
+											<input name="price" id="trueprice" value="500" type="radio" checked="">
 										</div>
 										<div class="mui-input-row mui-radio mui-left">
-											<label>合同加急（加收50%）</label>
-											<input name="price" value="750" type="radio">
+											<label for="jiaji">合同加急（加收50%）</label>
+											<input name="price" id="jiaji" value="750" type="radio">
 										</div>
 										<button type="submit" class="mui-btn mui-btn-primary mui-btn-block">立即购买</button>
 									</form>
@@ -251,10 +252,17 @@
 						<div class="clear"></div>
 
 					</div>
-					<div class="buy">
-						<a href="" class="call">客服咨询</a>
-						<a href="" class="buynow">立即购买</a>
-					</div>
+					<form class="mui-input-group" id="formcar" name="formcar" method="post" action="/plus/posttocar.php">
+						<input type="hidden" name="id" value="113" />
+						<input type="hidden" name="title" value="审查经济仲裁申请书" />
+						<input type="hidden" name="price" value="500" />
+						<input type="hidden" name="choose" class="choose" value="0">
+						<div class="buy">
+							<a href="" class="call">客服咨询</a>
+							<!-- <a href="" class="buynow">立即购买</a> -->
+                            <input type="submit" class="buynow" value="立即购买">
+						</div>
+					</form>
 				</div>
 
 				<div class="mui-off-canvas-backdrop"></div>
@@ -312,13 +320,19 @@
 </script>
 
 	<script type="text/javascript">
-        $("input[name='price']").click(function(event) {	//加急按钮
-        	var price1=750;		
-        	$("span#spProductPrice").html(price1);
-        	var price = $("input[name='price']:checked").val();
-        	$("span#spProductPrice").html(price);
-        	$("#choose").attr("value",1);
-        });
+		//点击普通按钮
+		$("#trueprice").click(function(event) {
+			var price1="500";
+			$("#spProductPrice").html(price1);
+			$(".choose").attr("value", 0);
+		});
+		//点击加急按钮
+		$("#jiaji").click(function(event) {
+			var price1="750";
+			$("#spProductPrice").html(price1);
+			$(".choose").attr("value", 1);
+		});
+
 		function goto1() {
 			window.location.hash = "#goto1";
 		}

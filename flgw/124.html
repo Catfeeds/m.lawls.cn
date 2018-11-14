@@ -102,15 +102,24 @@
 									<div class="guwen-title">
 										<h3>企业法律顾问</h3>
 									</div>
-									<form class="mui-input-group">
+                                    <div class="r-jiage">
+                                    	<h2>市<span class="jianju">场</span>价：<del>&yen; </del></h2>
+                                    	<h2>法易通价：<span class="hongse">&yen; <span class="hongda" id='spProductPrice'>5000</span>元</span> </h2>
+                                    </div>
+                                    <form class="mui-input-group" id="formcar" name="formcar" method="post" action="/plus/posttocar.php">
+                                    	<input type="hidden" name="id" value="124" />
+                                    	<input type="hidden" name="title" value="企业包月法务" />
+                                    	<input type="hidden" name="price" value="5000" />
+                                    	<input type="hidden" name="choose" class="choose" value="0">
 										<div class="mui-input-row mui-radio mui-left">
 											<label>普通：一个工作日</label>
-											<input name="radio1" type="radio">
+											<input name="price" id="trueprice" value="5000" type="radio" checked="">
 										</div>
 										<div class="mui-input-row mui-radio mui-left">
 											<label>合同加急（加收50%）</label>
-											<input name="radio1" type="radio" checked="">
+											<input name="price" id="jiaji" value="" type="radio">
 										</div>
+                                        <button type="submit" class="mui-btn mui-btn-primary mui-btn-block">立即购买</button>
 									</form>
 									<div class="guwen-menu">
 										<a class="mui-control-item  mui-active" onclick="goto1()">
@@ -242,10 +251,17 @@
 						<div class="clear"></div>
 
 					</div>
-					<div class="buy">
-						<a href="" class="call">客服咨询</a>
-						<a href="" class="buynow">立即购买</a>
-					</div>
+					<form class="mui-input-group" id="formcar" name="formcar" method="post" action="/plus/posttocar.php">
+						<input type="hidden" name="id" value="124" />
+						<input type="hidden" name="title" value="企业包月法务" />
+						<input type="hidden" name="price" value="5000" />
+						<input type="hidden" name="choose" class="choose" value="0">
+						<div class="buy">
+							<a href="" class="call">客服咨询</a>
+							<!-- <a href="" class="buynow">立即购买</a> -->
+							<input type="submit" class="buynow" value="立即购买">
+						</div>
+					</form>
 				</div>
 
 				<div class="mui-off-canvas-backdrop"></div>
@@ -289,7 +305,7 @@
 		});
 	}
 	// 选项卡
-	(function($) {
+	/* (function($) {
 		var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
 		$('.mui-input-group').on('change', 'input', function() {
 			if (this.checked) {
@@ -299,10 +315,22 @@
 				sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
 			}
 		});
-	})(mui);
+	})(mui); */
 </script>
 
 	<script type="text/javascript">
+        //点击普通按钮
+        $("#trueprice").click(function(event) {
+            var price1="5000";		
+            $("span#spProductPrice").html(price1);
+        	$(".choose").attr("value",0);
+        });
+        //点击加急按钮
+        $("#jiaji").click(function(event) {
+            var price1="";
+            $("span#spProductPrice").html(price1);
+        	$(".choose").attr("value",1);
+        });
 		function goto1() {
 			window.location.hash = "#goto1";
 		}
