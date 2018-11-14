@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>审查仓库租赁合同_法易通法律咨询</title>
+		<meta name="keywords" content="仓库,租赁,合同,仓库,租赁,合同," />
+		<meta name="description" content="" />
+		<script src="/js/mui.min.js"></script>
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</head>
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			<aside id="offCanvasSide" class="mui-off-canvas-right">
+	<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<!-- 菜单具体展示内容 -->
+			<div class="title">侧滑导航</div>
+			<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+				<li class="mui-table-view-cell">
+					<a href="/" class="mui-navigate-right">首页</a>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a href="/flgw/124.html" class="mui-navigate-right">法律顾问</a>
+					<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/124.html">企业法律顾问</a></li>
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/125.html">个人法律顾问</a></li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/nsht/" class="mui-navigate-right">审查合同</a>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a href="/ask/?ct=question&ac=ask_complete" class="mui-navigate-right">法律咨询</a>
+					<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/ask/?ct=question&ac=ask_complete">在线法律咨询</a></li>
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flzx/123.html">电话法律咨询</a></li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/zls/" class="mui-navigate-right">找律师</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/flbk/" class="mui-navigate-right">法律百科</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</aside>
+
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+	<span id="spCurrentCity">正在加载...</span>
+	<h1 class="mui-title mui-logo"><a href="/"><img src="/images/logo.png"></a></h1>
+	<a id="offCanvasBtn" href="#offCanvasSide" class="mui-pull-right mui-btn-link mui-icon mui-icon-bars"></a>
+</header>
+<div id="allmap" style="display: none"></div>
+<!-- <script type="text/javascript" src="/js/rem.js"></script> -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MuNvHFgbfd42G9ZcLoB7sBvSECNMwzUW"></script>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(116.331398, 39.897445);
+	map.centerAndZoom(point, 12);
+
+	function myFun(result) {
+		var cityName = result.name;
+		map.setCenter(cityName);
+		$("#spCurrentCity").html(cityName);
+	}
+	var myCity = new BMap.LocalCity();
+	myCity.get(myFun);
+</script>
+
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 幻灯片 -->
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/guwen.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/guwen.jpg" /></a></div>
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/guwen.jpg" /></a></div>
+							</div>
+						</div>
+						<!-- 主体 -->
+						<div class="qiyeguwen" style="margin-top: 6rem;">
+							<div id="slider">
+								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+									<div class="guwen-title">
+										<h3>企业法律顾问</h3>
+									</div>
+                                    <div class="r-jiage">
+                                    	<h2>市<span class="jianju">场</span>价：<del>&yen; 1000-2000</del></h2>
+                                    	<p>法易通价：<span class="hongse">&yen; <span class="hongda" id='spProductPrice'>200</span>元</span> </p>
+                                    </div>
+									<form class="mui-input-group" id="formcar" name="formcar" method="post" action="/plus/posttocar.php">
+										<input type="hidden" name="id" value="51" />
+										<input type="hidden" name="title" value="审查仓库租赁合同" />
+										<input type="hidden" name="price" value="200" />
+										<input type="hidden" name="choose" id="choose" value="0">
+										<div class="mui-input-row mui-radio mui-left">
+											<label>普通：一个工作日</label>
+											<input name="price" value="200" type="radio" checked="">
+										</div>
+										<div class="mui-input-row mui-radio mui-left">
+											<label>合同加急（加收50%）</label>
+											<input name="price" value="300" type="radio">
+										</div>
+										<button type="submit" class="mui-btn mui-btn-primary mui-btn-block">立即购买</button>
+									</form>
+									<div class="guwen-menu">
+										<a class="mui-control-item  mui-active" onclick="goto1()">
+											服务流程
+										</a>
+										<a class="mui-control-item" onclick="goto2()">
+											服务说明
+										</a>
+										<a class="mui-control-item" onclick="goto3()">
+											服务优势
+										</a>
+										<a class="mui-control-item" onclick="goto4()">
+											用户评价
+										</a>
+									</div>
+								</div>
+								<div class="mui-slider-group">
+									<div class="services">
+										<div class="liucheng pdt10">
+											<h3 id="goto1">为什么需要我们</h3><span></span>
+											<h5>专业的服务，意味着降低风险</h5>
+											<ul class="mui-table-view mui-grid-view">
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-right: 1px solid #dcdcdc;border-bottom: 1px solid #dcdcdc;padding:2px;padding-bottom: 9px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/qiye1.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>股权风险</h4>
+															<p>股权架构随意，怎么分蛋糕？</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-bottom: 1px solid #dcdcdc;padding:2px;padding-bottom: 8px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/qiye2.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>用工风险</h4>
+															<p>员工说走就走，还要仲裁赔钱？</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-right: 1px solid #dcdcdc;border-bottom: 1px solid #dcdcdc;padding:2px;padding-bottom: 9px;">
+													<a href="#"><img class="mui-media-object" src="/images/qiye3.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>合同风险</h4>
+															<p>合同无人审，责任模糊风险大</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-bottom: 1px solid #dcdcdc;padding:2px;padding-bottom: 8px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/qiye4.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>债权风险</h4>
+															<p>用张图被起诉，赔成冤大头</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-right: 1px solid #dcdcdc;padding:2px;padding-bottom: 9px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/qiye5.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>税务风险</h4>
+															<p>税务管理不规范，一不注意就罚款</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="padding:2px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/qiye6.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>债务风险</h4>
+															<p>客户欠款不还，如何追讨和预防</p>
+														</div>
+													</a></li>
+											</ul>
+										</div><br>
+
+										<div class="shuoming pdt10">
+											<h3 id="goto2">我们的优势</h3><span></span>
+											<h5>您的满意，是我们最大的动力</h5>
+											<img src="/images/dongli.jpg" alt="">
+										</div>
+										<div id="goto3" class="changjian pdt10" style="padding-left: 0px;padding-right: 0px;">
+											<h3 id="goto3">法易通-企业法律顾问-一站式服务</h3>
+											<dl>
+												<dd>
+													<h4>公司设立法律咨询</h4>
+													<p>公司风险评估建议<br>组织形式选择建议<br>股权构成及股东出资相关事宜<br>工商注册相关法律事项</p>
+												</dd>
+												<dd>
+													<h4>股权治理法律事务咨询</h4>
+													<p>股权分配增资扩股法律意见<br>股东权益纠纷咨询解答<br>股东转让/代持注意释明<br>股权激励操作方法法律建议<br>股权纠纷法律意见</p>
+												</dd>
+												<dd>
+													<h4>劳动人事法律事务咨询</h4>
+													<p>劳动合同/保密协议/竞业禁止协议</p>
+													<p>违纪离职额处理及操作方法意见</p>
+													<p>工伤/意外事故处理意见</p>
+													<p>劳动争议解决法律建议</p>
+													<p>劳动关系法律问题解答</p>
+												</dd>
+												<dd>
+													<h4>公司运营法律事务咨询</h4>
+													<p>合同订立履行及管理相关事项<br>商业密码管理及保护法律建议<br>投融资担保等业务的风险评估<br>债权债务纠纷法律意见</p>
+
+												</dd>
+												<dd>
+													<h4>知识产权法律事务咨询</h4>
+													<p>商标相关法律问题解答</p>
+													<p>著作权相关法律问题解答</p>
+													<p>专利权相关法律问题解答</p>
+												</dd>
+												<dd>
+													<h4>股权事务类合同</h4>
+													<p>公司章程、合伙协议、股东协议、股东会议协议、股权转让协议、增资扩股协议、股权激励方案、股权代持协议、分支机构设立协议、法律风险评估建议、法律风险评估建议</p>
+												</dd>
+												<dd>
+													<h4>劳动人事合同类</h4>
+													<p>劳动合同、集体合同、实习协议、保密协议、竞业限制协议、劳务合同、培训协议、工伤赔偿协议、人事规章制度合法性审查</p>
+												</dd>
+												<dd>
+													<h4>公司运营类合同</h4>
+													<p>销售合同、运输合同、采购合同、居间合同、抵押担保合同、加工承揽合同、软件开发合同、其他合同</p>
+												</dd>
+											</dl>
+											<div class="clear"></div>
+										</div>
+										<div class="pinpai"><img src="/images/pinpai.jpg"></div>
+										<h3 class="show_more" style="color: #d2deea;">全国服务热线：18202835355</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+
+					</div>
+					<div class="buy">
+						<a href="" class="call">客服咨询</a>
+						<a href="" class="buynow">立即购买</a>
+					</div>
+				</div>
+
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+	var gallery = mui('.mui-slider');
+	gallery.slider({
+		interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
+	});
+	mui.init({
+		swipeBack: false,
+	});
+	//侧滑容器父节点
+	var offCanvasWrapper = mui('#offCanvasWrapper');
+	//主界面容器
+	var offCanvasInner = offCanvasWrapper[0].querySelector('.mui-inner-wrap');
+	//菜单容器
+	var offCanvasSide = document.getElementById("offCanvasSide");
+
+	//移动效果是否为整体移动
+	var moveTogether = false;
+	//侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
+	var classList = offCanvasWrapper[0].classList;
+	//主界面和侧滑菜单界面均支持区域滚动；
+	mui('#offCanvasSideScroll').scroll();
+	mui('#offCanvasContentScroll').scroll();
+	//实现ios平台的侧滑关闭页面；
+	if (mui.os.plus && mui.os.ios) {
+		offCanvasWrapper[0].addEventListener('shown', function(e) { //菜单显示完成事件
+			plus.webview.currentWebview().setStyle({
+				'popGesture': 'none'
+			});
+		});
+		offCanvasWrapper[0].addEventListener('hidden', function(e) { //菜单关闭完成事件
+			plus.webview.currentWebview().setStyle({
+				'popGesture': 'close'
+			});
+		});
+	}
+	// 选项卡
+	/* (function($) {
+		var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+		$('.mui-input-group').on('change', 'input', function() {
+			if (this.checked) {
+				sliderSegmentedControl.className =
+					'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+				//force repaint
+				sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+			}
+		});
+	})(mui); */
+</script>
+
+	<script type="text/javascript">
+        $("input[name='price']").click(function(event) {	//加急按钮
+        	var price1=300;		
+        	$("span#spProductPrice").html(price1);
+        	var price = $("input[name='price']:checked").val();
+        	$("span#spProductPrice").html(price);
+        	$("#choose").attr("value",1);
+        });
+		function goto1() {
+			window.location.hash = "#goto1";
+		}
+
+		function goto2() {
+			window.location.hash = "#goto2";
+		}
+
+		function goto3() {
+			window.location.hash = "#goto3";
+		}
+	</script>
+</html>

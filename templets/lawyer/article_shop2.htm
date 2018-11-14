@@ -42,6 +42,25 @@
 									<div class="guwen-title">
 										<h3>企业法律顾问</h3>
 									</div>
+                                    <div class="r-jiage">
+                                    	<h2>市<span class="jianju">场</span>价：<del>&yen; {dede:field.price/}</del></h2>
+                                    	<p>法易通价：<span class="hongse">&yen; <span class="hongda" id='spProductPrice'>{dede:field.trueprice/}</span>元</span> </p>
+                                    </div>
+                                    <form class="mui-input-group" id="formcar" name="formcar" method="post" action="{dede:field name='phpurl'/}/posttocar.php">
+                                    	<input type="hidden" name="id" value="{dede:field.id/}" />
+                                    	<input type="hidden" name="title" value="{dede:field.title/}" />
+                                    	<input type="hidden" name="price" value="{dede:field.trueprice/}" />
+                                    	<input type="hidden" name="choose" class="choose" value="0">
+										<div class="mui-input-row mui-radio mui-left">
+											<label>普通：一个工作日</label>
+											<input name="price" id="trueprice" value="{dede:field.trueprice/}" type="radio" checked="">
+										</div>
+										<div class="mui-input-row mui-radio mui-left">
+											<label>合同加急（加收50%）</label>
+											<input name="price" id="jiaji" value="{dede:field.jiaji/}" type="radio">
+										</div>
+                                        <button type="submit" class="mui-btn mui-btn-primary mui-btn-block">立即购买</button>
+									</form>
 									<div class="guwen-menu">
 										<a class="mui-control-item  mui-active" onclick="goto1()">
 											服务流程
@@ -125,43 +144,43 @@
 													<h4>公司设立法律咨询</h4>
 													<p>公司风险评估建议<br>组织形式选择建议<br>股权构成及股东出资相关事宜<br>工商注册相关法律事项</p>
 												</dd>
-                                                <dd>
-                                                	<h4>股权治理法律事务咨询</h4>
-                                                	<p>股权分配增资扩股法律意见<br>股东权益纠纷咨询解答<br>股东转让/代持注意释明<br>股权激励操作方法法律建议<br>股权纠纷法律意见</p>
-                                                </dd>
-                                                <dd>
-                                                	<h4>劳动人事法律事务咨询</h4>
-                                                	<p>劳动合同/保密协议/竞业禁止协议</p>
-                                                	<p>违纪离职额处理及操作方法意见</p>
-                                                	<p>工伤/意外事故处理意见</p>
-                                                	<p>劳动争议解决法律建议</p>
-                                                	<p>劳动关系法律问题解答</p>
-                                                </dd>
-                                                <dd>
-                                                	<h4>公司运营法律事务咨询</h4>
-                                                	<p>合同订立履行及管理相关事项<br>商业密码管理及保护法律建议<br>投融资担保等业务的风险评估<br>债权债务纠纷法律意见</p>
-                                                	
-                                                </dd>
-                                                <dd>
-                                                	<h4>知识产权法律事务咨询</h4>
-                                                	<p>商标相关法律问题解答</p>
-                                                	<p>著作权相关法律问题解答</p>
-                                                	<p>专利权相关法律问题解答</p>
-                                                </dd>
-                                                <dd>
-                                                	<h4>股权事务类合同</h4>
-                                                	<p>公司章程、合伙协议、股东协议、股东会议协议、股权转让协议、增资扩股协议、股权激励方案、股权代持协议、分支机构设立协议、法律风险评估建议、法律风险评估建议</p>
-                                                </dd>
-                                                <dd>
-                                                	<h4>劳动人事合同类</h4>
-                                                	<p>劳动合同、集体合同、实习协议、保密协议、竞业限制协议、劳务合同、培训协议、工伤赔偿协议、人事规章制度合法性审查</p>
-                                                </dd>
-                                                <dd>
-                                                	<h4>公司运营类合同</h4>
-                                                	<p>销售合同、运输合同、采购合同、居间合同、抵押担保合同、加工承揽合同、软件开发合同、其他合同</p>
-                                                </dd>
+												<dd>
+													<h4>股权治理法律事务咨询</h4>
+													<p>股权分配增资扩股法律意见<br>股东权益纠纷咨询解答<br>股东转让/代持注意释明<br>股权激励操作方法法律建议<br>股权纠纷法律意见</p>
+												</dd>
+												<dd>
+													<h4>劳动人事法律事务咨询</h4>
+													<p>劳动合同/保密协议/竞业禁止协议</p>
+													<p>违纪离职额处理及操作方法意见</p>
+													<p>工伤/意外事故处理意见</p>
+													<p>劳动争议解决法律建议</p>
+													<p>劳动关系法律问题解答</p>
+												</dd>
+												<dd>
+													<h4>公司运营法律事务咨询</h4>
+													<p>合同订立履行及管理相关事项<br>商业密码管理及保护法律建议<br>投融资担保等业务的风险评估<br>债权债务纠纷法律意见</p>
+
+												</dd>
+												<dd>
+													<h4>知识产权法律事务咨询</h4>
+													<p>商标相关法律问题解答</p>
+													<p>著作权相关法律问题解答</p>
+													<p>专利权相关法律问题解答</p>
+												</dd>
+												<dd>
+													<h4>股权事务类合同</h4>
+													<p>公司章程、合伙协议、股东协议、股东会议协议、股权转让协议、增资扩股协议、股权激励方案、股权代持协议、分支机构设立协议、法律风险评估建议、法律风险评估建议</p>
+												</dd>
+												<dd>
+													<h4>劳动人事合同类</h4>
+													<p>劳动合同、集体合同、实习协议、保密协议、竞业限制协议、劳务合同、培训协议、工伤赔偿协议、人事规章制度合法性审查</p>
+												</dd>
+												<dd>
+													<h4>公司运营类合同</h4>
+													<p>销售合同、运输合同、采购合同、居间合同、抵押担保合同、加工承揽合同、软件开发合同、其他合同</p>
+												</dd>
 											</dl>
-                                            <div class="clear"></div>
+											<div class="clear"></div>
 										</div>
 										<div class="pinpai"><img src="/images/pinpai.jpg"></div>
 										<h3 class="show_more" style="color: #d2deea;">全国服务热线：18202835355</h3>
@@ -172,10 +191,17 @@
 						<div class="clear"></div>
 
 					</div>
-					<div class="buy">
-						<a href="" class="call">客服咨询</a>
-						<a href="" class="buynow">立即购买</a>
-					</div>
+					<form class="mui-input-group" id="formcar" name="formcar" method="post" action="{dede:field name='phpurl'/}/posttocar.php">
+						<input type="hidden" name="id" value="{dede:field.id/}" />
+						<input type="hidden" name="title" value="{dede:field.title/}" />
+						<input type="hidden" name="price" value="{dede:field.trueprice/}" />
+						<input type="hidden" name="choose" class="choose" value="0">
+						<div class="buy">
+							<a href="" class="call">客服咨询</a>
+							<!-- <a href="" class="buynow">立即购买</a> -->
+							<input type="submit" class="buynow" value="立即购买">
+						</div>
+					</form>
 				</div>
 
 				<div class="mui-off-canvas-backdrop"></div>
@@ -183,14 +209,28 @@
 		</div>
 
 	</body>
-    {dede:include filename='commonJs.htm'/}
+	{dede:include filename='commonJs.htm'/}
 	<script type="text/javascript">
+        //点击普通按钮
+        $("#trueprice").click(function(event) {
+            var price1="{dede:field.trueprice/}";		
+            $("span#spProductPrice").html(price1);
+        	$(".choose").attr("value",0);
+        });
+        //点击加急按钮
+        $("#jiaji").click(function(event) {
+            var price1="{dede:field.jiaji/}";
+            $("span#spProductPrice").html(price1);
+        	$(".choose").attr("value",1);
+        });
 		function goto1() {
 			window.location.hash = "#goto1";
 		}
+
 		function goto2() {
 			window.location.hash = "#goto2";
 		}
+
 		function goto3() {
 			window.location.hash = "#goto3";
 		}

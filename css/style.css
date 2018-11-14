@@ -535,6 +535,14 @@ ul li{
     line-height: 3rem;
     font-weight: bold;
 }
+.buy input {
+    color: #fff;
+    float: left;
+    height: 2rem;
+    line-height: 2rem;
+    font-weight: bold;
+    font-size: 16px;
+}
 .buy .call{
     width: 45%;
     background: url(../images/call.jpg) left 9% center no-repeat #ffa904;
@@ -697,4 +705,12 @@ ul li{
 }
 .qnas-box{
     margin-left: 10px;
+}
+
+/* 购物车页面 */
+.car{
+  background: #fff;
+}
+.car h4{
+  padding: 10px;
 }

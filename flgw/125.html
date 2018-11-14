@@ -1,701 +1,318 @@
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>个人法律顾问_法易通法律咨询</title>
-<meta name="keywords" content="个人,法律顾问,个人,法律顾问," />
-<meta name="description" content="" />
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-xin.css?v=201805021933" />
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-new.css?v=201805021933" />
-<script type="text/javascript" src="/templets/lawyer/js/jquery-1.8.1.min.js"></script>
-<script>
-$(function(){
-    $(".nh-nav-container .nh-nav-item").hover(function() {
-        /* Stuff to do when the mouse enters the element */
-        $(this).children('.nh-nav-item-hide').addClass('nh-nav-item-show');
-        $(this).siblings('.nh-nav-item').children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
-    }, function() {
-        /* Stuff to do when the mouse leaves the element */
-        $(this).children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
-    });
-})
-</script>
-</head>
-<body>
-<script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
-<script>
-$(function(){
-	$(".nh-nav-container .nh-nav-item").hover(function() {
-		/* Stuff to do when the mouse enters the element */
-		$(this).children('.nh-nav-item-hide').addClass('nh-nav-item-show');
-		$(this).siblings('.nh-nav-item').children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
-	}, function() {
-		/* Stuff to do when the mouse leaves the element */
-		$(this).children('.nh-nav-item-hide').removeClass('nh-nav-item-show');
-	});
-})
-</script>
-<script type="text/javascript" src="/templets/lawyer/js/jquery.pin.min.js"></script>
-<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
-<script language="javascript" type="text/javascript">
-<!--
-	function CheckLogin(){
-	  var taget_obj = document.getElementById('_userlogin');
-	  myajax = new DedeAjax(taget_obj,false,false,'','','');
-	  myajax.SendGet2("/member/ajax_loginsta.php");
-	  DedeXHTTP = null;
-	}
--->
-</script>
-<header class="new-header">
-    <div class="nh-info">
-        <div class="inner-box o-h">
-            <div class="nh-info-logo fl"> <a href="/"><img height="60" src="/templets/lawyer/images/yifatonglogo_whithout_word.png" alt="法易通法律法务"></a> </div>
-            <div class="nh-info-items fr" id="_userlogin"> 
-                <!-- 未登录 --> 
-                <img class="link-flgw" width="189" height="26" src="/templets/lawyer/images/400.png" alt="服务热线" /> <a class="link" rel="nofollow" href="/member/login.php" class="load">登录</a> <a class="link" rel="nofollow" href="/member/reg_new.php" class="regist">注册</a> 
-                <!-- 登录 --> 
-                <script language="javascript" type="text/javascript">CheckLogin();</script> 
-            </div>
-        </div>
-    </div>
-    <nav class="nh-nav">
-        <div class="inner-box p-r">
-            <div class="nh-nav-container"> <span class="diwei-dizhi"><span class="ico-font"></span><span id="spCurrentCity"></span></span>
-                <div class="nh-nav-item"> <a class="daohang" target="_blank" href="/" class="click">首页</a> </div>
-                <div class="nh-nav-item p-r"> <a class="daohang" target="_blank" href="/flgw/124.html">法律顾问</a>
-                    <ol class="p-a">
-                        <li><a class="yaobianse" href="/flgw/124.html">企业法律顾问</a></li>
-                        <li><a class="yaobianse" href="/flgw/125.html">个人法律顾问</a></li>
-                    </ol>
-                </div>
-                <div class="nh-nav-item p-r"> <a class="daohang" target="_blank" href="/nsht/">审查合同</a></div>
-                <!--<div class="nh-nav-item"> <a class="daohang youbiankuang" target="_blank" href="/nsht/">审查合同</a>
-                    <div class="nh-nav-item-hide">
-                        <div class="nnih-inner">
-                            <h2><a href="/nsht/cyjy/">婚姻家庭</a></h2>
-                            <p><a href="/nsht/cyjy/37.html" class="lianjie" target="_blank">审查离婚协议书</a></p>
-<p><a href="/nsht/cyjy/38.html" class="lianjie" target="_blank">审查婚前财产协议书</a></p>
-<p><a href="/nsht/cyjy/39.html" class="lianjie" target="_blank">审查婚内财产协议书</a></p>
-<p><a href="/nsht/cyjy/40.html" class="lianjie" target="_blank">审查子女抚养协议书</a></p>
-<p><a href="/nsht/cyjy/41.html" class="lianjie" target="_blank">审查离婚起诉状</a></p>
-<p><a href="/nsht/cyjy/42.html" class="lianjie" target="_blank">审查离婚答辩状</a></p>
-<p><a href="/nsht/cyjy/43.html" class="lianjie" target="_blank">审查财产分割协议</a></p>
- </div>
-                        <div class="nnih-inner">
-                            <h2><a href="/nsht/ldrs/">遗产继承</a></h2>
-                            <p><a href="/nsht/ycjc/44.html" class="lianjie" target="_blank">审查代书遗嘱</a></p>
-<p><a href="/nsht/ycjc/45.html" class="lianjie" target="_blank">审查遗赠扶养协议</a></p>
-<p><a href="/nsht/ycjc/46.html" class="lianjie" target="_blank">审查遗产继承起诉状</a></p>
-<p><a href="/nsht/ycjc/47.html" class="lianjie" target="_blank">审查遗产继承答辩状</a></p>
- </div>
-                        <div class="nnih-inner">
-                            <h2><a href="/nsht/zlht/">租赁合同</a></h2>
-                            <p><a href="/nsht/zlht/48.html" class="lianjie" target="_blank">审查住宅租赁合同</a></p>
-<p><a href="/nsht/zlht/49.html" class="lianjie" target="_blank">审查商铺租赁合同</a></p>
-<p><a href="/nsht/zlht/50.html" class="lianjie" target="_blank">审查写字楼租赁合同</a></p>
-<p><a href="/nsht/zlht/51.html" class="lianjie" target="_blank">审查仓库租赁合同</a></p>
-<p><a href="/nsht/zlht/52.html" class="lianjie" target="_blank">审查厂房租赁合同</a></p>
-<p><a href="/nsht/zlht/53.html" class="lianjie" target="_blank">审查广告位租赁合同</a></p>
- </div>
-                        <div class="nnih-inner">
-                            <h2><a href="/nsht/dgs/">交通事故</a></h2>
-                            <p><a href="/nsht/dgs/54.html" class="lianjie" target="_blank">审查交通事故赔偿协议</a></p>
-<p><a href="/nsht/dgs/55.html" class="lianjie" target="_blank">审查交通事故赔偿起诉状</a></p>
-<p><a href="/nsht/dgs/56.html" class="lianjie" target="_blank">审查交通事故答辩状</a></p>
-<p><a href="/nsht/dgs/57.html" class="lianjie" target="_blank">审查伤残等级重新鉴定申</a></p>
- </div>
-                        <div class="nnih-inner">
-                            <h2><a href="/nsht/ldrs/">劳动人事</a></h2>
-                            <p><a href="/nsht/ldrs/7.html" class="lianjie" target="_blank">审查规章制度</a></p>
-<p><a href="/nsht/ldrs/58.html" class="lianjie" target="_blank">审查劳动合同</a></p>
-<p><a href="/nsht/ldrs/59.html" class="lianjie" target="_blank">审查培训协议</a></p>
-<p><a href="/nsht/ldrs/60.html" class="lianjie" target="_blank">审查保密协议</a></p>
-<p><a href="/nsht/ldrs/61.html" class="lianjie" target="_blank">审查解除劳动合同</a></p>
-<p><a href="/nsht/ldrs/62.html" class="lianjie" target="_blank">审查劳务派遣合同</a></p>
-<p><a href="/nsht/ldrs/63.html" class="lianjie" target="_blank">审查实习协议</a></p>
-<p><a href="/nsht/ldrs/64.html" class="lianjie" target="_blank">审查劳动者保密协议</a></p>
-<p><a href="/nsht/ldrs/65.html" class="lianjie" target="_blank">审查服务期协议</a></p>
-<p><a href="/nsht/ldrs/66.html" class="lianjie" target="_blank">审查劳动纠纷上诉状</a></p>
-<p><a href="/nsht/ldrs/67.html" class="lianjie" target="_blank">审查劳动纠纷答辩状</a></p>
-<p><a href="/nsht/ldrs/68.html" class="lianjie" target="_blank">审查禁业限制合同</a></p>
-<p><a href="/nsht/ldrs/69.html" class="lianjie" target="_blank">审查劳动仲裁申请书</a></p>
-<p><a href="/nsht/ldrs/70.html" class="lianjie" target="_blank">审查劳动纠纷起诉状</a></p>
- </div>
-                        <div class="nnih-inner">
-                            <h2><a href="/nsht/zscq/">知识产权</a></h2>
-                            <p><a href="/nsht/zscq/71.html" class="lianjie" target="_blank">审查专利权转让合同</a></p>
-<p><a href="/nsht/zscq/72.html" class="lianjie" target="_blank">审查专利实施许可合同</a></p>
-<p><a href="/nsht/zscq/73.html" class="lianjie" target="_blank">审查著作权转让合同</a></p>
-<p><a href="/nsht/zscq/74.html" class="lianjie" target="_blank">审查著作权许可合同</a></p>
-<p><a href="/nsht/zscq/75.html" class="lianjie" target="_blank">审查商标转让合同</a></p>
-<p><a href="/nsht/zscq/76.html" class="lianjie" target="_blank">审查注册商标使用许可合</a></p>
-<p><a href="/nsht/zscq/77.html" class="lianjie" target="_blank">审查计算机软件著作权转</a></p>
-<p><a href="/nsht/zscq/78.html" class="lianjie" target="_blank">审查计算机软件著作权许</a></p>
- </div>
-                        <div class="nnih-inner">
-                            <h2><a href="/nsht/gqsw/">股权事务</a></h2>
-                            <p><a href="/nsht/gqsw/3.html" class="lianjie" target="_blank">审查股权转让协议</a></p>
-<p><a href="/nsht/gqsw/79.html" class="lianjie" target="_blank">审查股权转让协议</a></p>
-<p><a href="/nsht/gqsw/80.html" class="lianjie" target="_blank">审查股东会决议</a></p>
-<p><a href="/nsht/gqsw/81.html" class="lianjie" target="_blank">审查董事会决议</a></p>
-<p><a href="/nsht/gqsw/82.html" class="lianjie" target="_blank">审查增资扩股协议</a></p>
-<p><a href="/nsht/gqsw/83.html" class="lianjie" target="_blank">审查投资协议</a></p>
-<p><a href="/nsht/gqsw/84.html" class="lianjie" target="_blank">审查合伙协议</a></p>
-<p><a href="/nsht/gqsw/85.html" class="lianjie" target="_blank">审查出资协议</a></p>
-<p><a href="/nsht/gqsw/86.html" class="lianjie" target="_blank">审查委托持股协议</a></p>
- </div>
-                       <div class="nnih-inner">
-                            <h2><a href="/nsht/swht/">商务合同</a></h2>
-                            <p><a href="/nsht/swht/87.html" class="lianjie" target="_blank">审查合作协议</a></p>
-<p><a href="/nsht/swht/88.html" class="lianjie" target="_blank">审查采购合同</a></p>
-<p><a href="/nsht/swht/89.html" class="lianjie" target="_blank">审查销售合同</a></p>
-<p><a href="/nsht/swht/90.html" class="lianjie" target="_blank">审查装修合同</a></p>
-<p><a href="/nsht/swht/91.html" class="lianjie" target="_blank">审查加工合同</a></p>
-<p><a href="/nsht/swht/92.html" class="lianjie" target="_blank">审查加盟合同</a></p>
-<p><a href="/nsht/swht/93.html" class="lianjie" target="_blank">审查行纪合同</a></p>
-<p><a href="/nsht/swht/94.html" class="lianjie" target="_blank">审查居间合同</a></p>
-<p><a href="/nsht/swht/95.html" class="lianjie" target="_blank">审查二手房买卖合同</a></p>
-<p><a href="/nsht/swht/96.html" class="lianjie" target="_blank">审查技术合同</a></p>
-<p><a href="/nsht/swht/97.html" class="lianjie" target="_blank">审查软件开发合同</a></p>
-<p><a href="/nsht/swht/98.html" class="lianjie" target="_blank">审查承包经营合同</a></p>
-<p><a href="/nsht/swht/99.html" class="lianjie" target="_blank">审查工程施工合同</a></p>
-<p><a href="/nsht/swht/100.html" class="lianjie" target="_blank">审查运输合同</a></p>
-<p><a href="/nsht/swht/101.html" class="lianjie" target="_blank">审查装修合同</a></p>
-<p><a href="/nsht/swht/102.html" class="lianjie" target="_blank">审查服务协议</a></p>
-<p><a href="/nsht/swht/103.html" class="lianjie" target="_blank">审查代理协议</a></p>
-<p><a href="/nsht/swht/104.html" class="lianjie" target="_blank">审查经营权代理协议</a></p>
-<p><a href="/nsht/swht/105.html" class="lianjie" target="_blank">审查承揽合同</a></p>
-<p><a href="/nsht/swht/106.html" class="lianjie" target="_blank">审查广告合同</a></p>
- </div>
-                       <div class="nnih-inner">
-                            <h2><a href="/nsht/ssws/">诉讼文书</a></h2>
-                            <p><a href="/nsht/ssws/107.html" class="lianjie" target="_blank">审查起诉书</a></p>
-<p><a href="/nsht/ssws/108.html" class="lianjie" target="_blank">审查答辩状</a></p>
-<p><a href="/nsht/ssws/110.html" class="lianjie" target="_blank">审查调查取证申请书</a></p>
-<p><a href="/nsht/ssws/111.html" class="lianjie" target="_blank">审查鉴定评估申请书</a></p>
-<p><a href="/nsht/ssws/112.html" class="lianjie" target="_blank">审查强制执行申请书</a></p>
-<p><a href="/nsht/ssws/113.html" class="lianjie" target="_blank">审查经济仲裁申请书</a></p>
-<p><a href="/nsht/ssws/114.html" class="lianjie" target="_blank">审查经济仲裁答辩状</a></p>
-<p><a href="/nsht/ssws/115.html" class="lianjie" target="_blank">审查刑事上诉状</a></p>
-<p><a href="/nsht/ssws/116.html" class="lianjie" target="_blank">审查刑事附带民事诉状</a></p>
- </div>
-                       <div class="nnih-inner">
-                            <h2><a href="/nsht/qtht/">其他合同</a></h2>
-                            <p><a href="/nsht/qtht/118.html" class="lianjie" target="_blank">审查委托合同</a></p>
-<p><a href="/nsht/qtht/119.html" class="lianjie" target="_blank">审查借款合同</a></p>
-<p><a href="/nsht/qtht/120.html" class="lianjie" target="_blank">审查担保合同</a></p>
-<p><a href="/nsht/qtht/121.html" class="lianjie" target="_blank">审查其他合同</a></p>
- </div>
-                    </div>
-                </div>-->
-                <div class="nh-nav-item p-r"> <a class="daohang" target="_blank" href="/ask/?ct=question&ac=ask_complete">法律咨询</a>
-                    <ol class="p-a">
-                        <li><a class="yaobianse" href="/ask/?ct=question&ac=ask_complete">在线法律咨询</a></li>
-                        <li><a class="yaobianse" href="/flzx/123.html">电话法律咨询</a></li>
-                    </ol>
-                </div>
-                <div class="nh-nav-item"> <a class="daohang youbiankuang" target="_blank" href="/zls/">找律师</a>
-                    <div class="nh-nav-item-hide nh-nav-item-kuan">
-                        <div class="nnih-inner width144"> <p><a href="/zls/ldzc/" class="lianjie" target="_blank">劳动仲裁</a></p><p><a href="/zls/zwjf/" class="lianjie" target="_blank">债务纠纷</a></p><p><a href="/zls/fcjf/" class="lianjie" target="_blank">房产纠纷</a></p> </div>
-                        <div class="nnih-inner width144"> <p><a href="/zls/htjf/" class="lianjie" target="_blank">合同纠纷</a></p><p><a href="/zls/qslh/" class="lianjie" target="_blank">起诉离婚</a></p><p><a href="/zls/jtsg/" class="lianjie" target="_blank">交通事故</a></p> </div>
-                        <div class="nnih-inner width144"> <p><a href="/zls/xsbh/" class="lianjie" target="_blank">刑事辩护</a></p><p><a href="/zls/zscq/" class="lianjie" target="_blank">知识产权</a></p><p><a href="/zls/rssh/" class="lianjie" target="_blank">人身损害</a></p> </div>
-                        <div class="nnih-inner width144">
-                            <p><a href="/zls/qtjf/" class="lianjie" target="_blank">其他纠纷</a></p>
-                        </div>
-                        <div class="nnih-tupian nnih-tupian-xiao"> <a href="/zls/"><img src="/templets/lawyer/images/zhaolvshi.png" alt="找律师"></a> </div>
-                    </div>
-                </div>
-                <div class="nh-nav-item p-r"> <a class="daohang" target="_blank" href="/flbk/">法律百科</a></div>
-            </div>
-            <div class="nh-nav-search p-a">
-                <form target="_blank" action="/plus/search.php" method="get">
-                    <input type="text" placeholder="搜索法律问题"  name="keyword" />
-                    <input type="submit" value="" />
-                    <b class="p-a ico-font"></b>
-                </form>
-            </div>
-        </div>
-    </nav>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>个人法律顾问_法易通法律咨询</title>
+		<meta name="keywords" content="个人,法律顾问,个人,法律顾问," />
+		<meta name="description" content="" />
+		<script src="/js/mui.min.js"></script>
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</head>
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			<aside id="offCanvasSide" class="mui-off-canvas-right">
+	<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<!-- 菜单具体展示内容 -->
+			<div class="title">侧滑导航</div>
+			<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+				<li class="mui-table-view-cell">
+					<a href="/" class="mui-navigate-right">首页</a>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a href="/flgw/124.html" class="mui-navigate-right">法律顾问</a>
+					<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/124.html">企业法律顾问</a></li>
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/125.html">个人法律顾问</a></li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/nsht/" class="mui-navigate-right">审查合同</a>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a href="/ask/?ct=question&ac=ask_complete" class="mui-navigate-right">法律咨询</a>
+					<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/ask/?ct=question&ac=ask_complete">在线法律咨询</a></li>
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flzx/123.html">电话法律咨询</a></li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/zls/" class="mui-navigate-right">找律师</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/flbk/" class="mui-navigate-right">法律百科</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</aside>
+
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+	<span id="spCurrentCity">正在加载...</span>
+	<h1 class="mui-title mui-logo"><a href="/"><img src="/images/logo.png"></a></h1>
+	<a id="offCanvasBtn" href="#offCanvasSide" class="mui-pull-right mui-btn-link mui-icon mui-icon-bars"></a>
 </header>
 <div id="allmap" style="display: none"></div>
+<!-- <script type="text/javascript" src="/js/rem.js"></script> -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MuNvHFgbfd42G9ZcLoB7sBvSECNMwzUW"></script>
-<script>
-// 百度地图API功能
-var map = new BMap.Map("allmap");
-var point = new BMap.Point(116.331398,39.897445);
-map.centerAndZoom(point,12);
-function myFun(result){
-	var cityName = result.name;
-	map.setCenter(cityName);
-	$("#spCurrentCity").html(cityName);
-}
-var myCity = new BMap.LocalCity();
-myCity.get(myFun);
-</script> 
-<!-------------- javascript -------------->
-<div class="cpgb-fixed"> <a id="BizQQBottomCommon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2448211596&amp;site=qq&amp;menu=yes" class="cpgb-fixed-zixun">
-    <p><img src="/templets/lawyer/images/qq.png" alt="QQ"><br>
-        在线咨询</p>
-    </a> <a class="cpgb-fixed-zixun cpgb-fixed-dianhua">
-    <p><span class="ico-font tubiao">&#xea89;</span><br>
-        联系方式</p>
-    <span class="zx-haoma"> 18202835355 <img src="/templets/lawyer/images/jiantou.png" alt="箭头"> </span> </a> <a class="cpgb-fixed-zixun cpgb-fixed-dingbu">
-    <p><img src="/templets/lawyer/images/dingbu.png" alt="QQ"><br>
-        返回顶部</p>
-    </a> </div>
-<!-------------- javascript -------------->
-<div class="diannao-mianbaoxie">
-    <p><span class="ico-font tubiao">&#xea47;</span><a href='/'>法易通法律咨询</a> > <a href='/flgw/'>法律顾问</a> > </p>
-</div>
-<div class="pc-chanpingaiban">
-    <div class="cpgb-banner">
-        <div class="cpgb-banner-l">
-            <div class="l-tu"> <img id="falvImg" src="/templets/lawyer/images/bannerqy.jpg" alt="咨询"> </div>
-        </div>
-        <div class="cpgb-banner-r">
-            <div class="r-title">
-                <h2 id="combName">个人法律顾问</h2>
-                <p>互联网+法务品牌团队，通过集体智慧，提供卓越的法律服务质量保证</p>
-            </div>
-            <div class="r-jiage">
-                <h2>市<span class="jianju">场</span>价：<del>¥ 2000-40000</del></h2>
-                <p>法易通价：<span class="hongse">&yen; <span class="hongda" id='spProductPrice'>2000</span>元</span> </p>
-            </div>
-            <div class="r-yifuwu">
-                <p>已<span class="jianju">服</span>务：<span class="lanse"><script src="/plus/count.php?view=yes&aid=125&mid=1" type='text/javascript' language="javascript"></script></span><span class="shuxian">|</span><a href="javascript:void(0)" onclick="openZoosUrl();LR_HideInvite();return false;" rel="nofollow" target="_blank">已<span class="jianju">咨</span>询：<span class="lanse">239</span></a><span class="shuxian">|</span><a href="#gogo4">累计评价：<span class="lanse">1258</span></a></p>
-            </div>
-            <div class="r-button" style='position:relative;'>
-                <div class="btn-inner"> 服务类型： <span class="huikuang chengkuang meitishi-box" style="width: 80px">包月法务</span> <span class="huikuang tishi-box" style="width: 100px">企业法律顾问</span><span class="huikuang company-box">中小企业特惠服务方案</span> </div>
-            </div>
-            <form id="formcar" name="formcar" method="post" action="/plus/advisercar.php">
-                <input type="hidden" name="id" value="125" />
-                <input type="hidden" name="title" value="个人法律顾问" />
-                <input type="hidden" name="price" value="2000" />
-                <input type="hidden" name="choose" id="choose" value="0">
-                <div class="r-goumai">
-                    <input type="submit" class="gm-btn btnBuy" value="马上购买">
-                    <a class="gm-btn youbian" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2448211596&amp;site=qq&amp;menu=yes" rel="nofollow" target="_blank" id="zx02"><span class="tu"><img style="width:100%;" src="/templets/lawyer/images/list-qq.png" alt="QQ"></span>咨询售前律师</a> </div>
-            </form>
-        </div>
-    </div>
-    <div class="cpgb-fuwu" style="padding-top: 0px;">
-    <div class="cpgb-fw-title">
-        <div class="fw-title-inner">
-            <ul>
-                <li class="lanzibaidi"><a href="#gogo1">服务流程</a></li>
-                <li><a href="#gogo2">服务说明</a></li>
-                <li><a href="#gogo3">服务优势</a></li>
-                <li><a href="#gogo4">用户评价</a></li>
-                <li><a href="#gogo5">常见问题</a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- 普通产品 -->
-    <div class="cpgb-fw-liucheng" style="background: none;"> <a class="gogo1" name="gogo1"></a>
-        <div class="lc-title"> <img src="/templets/lawyer/images/whyus.png" alt="说明"> </div>
-        <div class="lc-par"> <img src="/templets/lawyer/images/whyusdetail.png" alt="普通产品"> </div>
-    </div>
-    <div class="cpgb-fw-shuoming" style="margin-top: 0px;"> <a class="gogo2" name="gogo2"></a>
-        <div class="sm-title"> <img src="/templets/lawyer/images/ouradv.png" alt=""> </div>
-        <div class="sm-biaoges"> <img src="/templets/lawyer/images/ouradvdetail.png"> </div>
-    </div>
-    <div class="cpgb-fw-qianqianwan" style="background: none; margin-bottom: 20px;"> <a class="gogo3" name="gogo3"></a> <img src="/templets/lawyer/images/services.png" alt="服务" /> </div>
-    <section class="main_wrapper customer_evaluation module_one">
-        <h1>客户评价</h1>
-        <h2>金杯银杯，不如客户的口碑</h2>
-        <ul class="box1200">
-    		<li>
-                <div>
-                    <h3>最新评价</h3>
-                    <p class="wx"><img src="/templets/lawyer/images/wuxing.png" alt=""></p>
-                </div>
-                <p><span>2018-09-18 15:57 * 用户 136****7870：</span></p>
-                <p>回答的很好</p>
-                <p><span>法易通</span>回复：感谢你的认可</p>
-            </li><li>
-                <div>
-                    <h3>最新评价</h3>
-                    <p class="wx"><img src="/templets/lawyer/images/wuxing.png" alt=""></p>
-                </div>
-                <p><span>2018-09-05 18:27 * 用户 136****7870：</span></p>
-                <p>回答的很专业，不错</p>
-                <p><span>法易通</span>回复：尽最大的服务</p>
-            </li><li>
-                <div>
-                    <h3>最新评价</h3>
-                    <p class="wx"><img src="/templets/lawyer/images/wuxing.png" alt=""></p>
-                </div>
-                <p><span>2018-09-04 15:02 * 用户 131****0000：</span></p>
-                <p>这是最新问题评论</p>
-                <p><span>法易通</span>回复：尽最大的服务</p>
-            </li><li>
-                <div>
-                    <h3>最新评价</h3>
-                    <p class="wx"><img src="/templets/lawyer/images/wuxing.png" alt=""></p>
-                </div>
-                <p><span>2018-09-03 09:19 * 用户 138****9630：</span></p>
-                <p>还挺好用</p>
-                <p><span>法易通</span>回复：感谢您的认可</p>
-            </li>
-        </ul> 
-        <a href="/plus/feedback.php">查看更多</a></section>
-    <div class="qc-gaoduan"> <img src="/templets/lawyer/images/gaoduan.jpg" alt=""> </div>
-    <div class="cpgb-fw-pingjia"> <a class="gogo4" name="gogo4"></a> <link href="/plus/dedemao-comment/css.css" rel="stylesheet">
-
-<div class="dedemao-comment">
-
-    <div class="dedemao-comment-box">
-
-        <img class="b-head-img" src="/plus/dedemao-comment/img/default_head_img.gif">
-
-        <div class="b-box-textarea">
-
-            <div class="b-box-textarea-body">
-
-            <div class="b-box-content" contenteditable="true" onfocus="delete_hint(this)">说点什么吧</div>
-
-            <ul class="b-emote-submit">
-
-                <li class="b-emote">
-
-                    <a class="ds-toolbar-button ds-add-emote" title="插入表情" onclick="getTuzki(this)"></a>
-
-                    <!-- <input class="b-email" type="text" name="email" placeholder="接收回复的email地址" value=""> -->
-
-                    <div class="b-tuzki"></div>
-
-                </li>
-
-                <li class="b-submit-button">
-
-                    <input type="button" value="评 论" aid="125" pid="0" onclick="comment(this)" style="background-color: ;">
-
-                </li>
-
-                <li class="b-clear-float"></li>
-
-            </ul>
-
-            </div>
-
-            <div class="error-tip"></div>
-
-        </div>
-
-
-
-        <div class="b-clear-float"></div>
-
-    </div>
-
-    <div class="dedemao-comment-title" style="border-bottom: 2px solid ;">
-
-        <ul class="row">
-
-            <li class="" style="float: left;">全部评论（<span class="comment-count">0</span>）</li>
-
-            <li class=" text-right" style="float: right;">
-
-                <span class="icon2">
-
-                    <input type="radio" name="commentorder" id="commentnew" checked="checked" value="DESC">
-
-                    <label for="commentnew">最新</label>
-
-                    <input type="radio" name="commentorder" id="commentlatest" value="ASC">
-
-                    <label for="commentlatest">最早</label>
-
-                </span>
-
-            </li>
-
-        </ul>
-
-    </div>
-
-    <div class=" b-user-comment">
-
-        <div class="comment-load" style="display: none;"><img src="/plus/dedemao-comment/img/loader.gif" alt=""></div>
-
-        <div class="row b-user b-parent comm_list">
-
-            <ul class="list" id="ulcommentlist">
-
-                <div class="empty-prompt-w">
-
-                    <span class="prompt-null-w">还没有评论，快来抢沙发吧！</span>
-
-                </div>
-
-            </ul>
-
-        </div>
-
-        <div class="row">
-
-            <div class="">
-
-                <div class="b-border"></div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="">
-
-            <div class="b-border"></div>
-
-        </div>
-
-    </div>
-
-    <div class="section-page-w"></div>
-
-</div>
-
-
-
-<script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
-
-<script>
-
-    var jDedemao = jQuery.noConflict(true);
-
-    jDedemao(function () {
-
-        jDedemao(".comment-load").show();
-
-        get_ajax_comment('125', 0, 5);
-
-        getHeadPic();
-
-    });
-
-    jDedemao("input[name='commentorder']").change(function () {
-
-        jDedemao(".comment-load").show();
-
-        var orderWay = $(this).val();
-
-        get_ajax_comment('125', 0, 5,orderWay,'refresh');
-
-    });
-
-    var showZan = '';
-
-    var comment_tips = '说点什么吧';
-
-    var show_floor = '1';
-
-    var showQQ = '';
-
-    var comment_ipaddr = '';
-
-    var PLUS_URL = "/plus";
-
-</script>
-
-<script src="/plus/dedemao-comment/comment.js"></script>
-
-<script>
-
-    var a = jDedemao.noConflict(true);
-
-    //其它库的代码
-
-    window.$ = window.jQuery = a;
-
-</script> </div>
-    <div class="cpgb-yiwen"> <a class="gogo5" name="gogo5"></a>
-        <div class="yw-title">
-            <h2><span class="da">关于购买你可能还有以下疑问</span><br>
-                问清楚了才敢放心的购买</h2>
-        </div>
-        <a href="javascript:void(0)" id="zx01" class="yw-nav" rel="nofollow" target="_blank">
-        <p><span class="tu"><img src="/templets/lawyer/images/tu1.png" alt="咨询"></span>付款后怎么联系？<span class="link"><img src="/templets/lawyer/images/list-qq.png" alt="QQ"></span></p>
-        <p><span class="tu"><img src="/templets/lawyer/images/tu4.png" alt="咨询"></span>怎么提供服务？<span class="link"><img src="/templets/lawyer/images/list-qq.png" alt="QQ"></span></p>
-        <p><span class="tu"><img src="/templets/lawyer/images/tu7.png" alt="咨询"></span>起草合同需要多久？<span class="link"><img src="/templets/lawyer/images/list-qq.png" alt="QQ"></span></p>
-        <p><span class="tu"><img src="/templets/lawyer/images/tu10.png" alt="咨询"></span>对合同不满意怎么办？<span class="link"><img src="/templets/lawyer/images/list-qq.png" alt="QQ"></span></p>
-        <p><span class="tu"><img src="/templets/lawyer/images/tu7.png" alt="咨询"></span>会有额外收费？<span class="link"><img src="/templets/lawyer/images/list-qq.png" alt="QQ"></span></p>
-        <p><span class="tu"><img src="/templets/lawyer/images/tu5.png" alt="咨询"></span>没见面怎么沟通？<span class="link"><img src="/templets/lawyer/images/list-qq.png" alt="QQ"></span></p>
-        <p><span class="tu"><img src="/templets/lawyer/images/tu8.png" alt="咨询"></span>可以开发票？<span class="link"><img src="/templets/lawyer/images/list-qq.png" alt="QQ"></span></p>
-        <p><span class="tu"><img src="/templets/lawyer/images/tu12.png" alt="咨询"></span>更多问题......<span class="link"><img src="/templets/lawyer/images/list-qq.png" alt="QQ"></span></p>
-        </a> </div>
-    <div class="cpgb-shuju"> <a href="/flgw/124.html"><img src="/templets/lawyer/images/ad.jpg" alt="" /></a> </div>
-</div>
-<script>
-$(function(){
-	$(window).scroll(function () {
-		if ($(window).scrollTop() > 780 ) {
-			$(".cpgb-fw-title").addClass('fixedtop');
-			$(".cpgb-fuwu").css("padding-top","71px");
-		}else if($(window).scrollTop() < 780){
-			$(".cpgb-fw-title").removeClass('fixedtop');
-			$(".cpgb-fuwu").css("padding-top","0");
-		}
-	});
-});
-</script> 
- </div>
-</div>
-<div class="index-new">
-    <div class="in-brand">
-        <div class="gdn-shangbiao">
-            <div class="sb-inner"> </div>
-            <div class="sb-inner"> </div>
-            <div class="sb-inner"> </div>
-            <div class="sb-inner"> </div>
-            <div class="sb-inner"> </div>
-            <div class="sb-inner"> </div>
-            <div class="sb-inner"> </div>
-            <div class="sb-inner"> </div>
-            <div class="sb-inner"> </div>
-            <div class="sb-inner"> </div>
-        </div>
-        <div class="in-brand-title"></div>
-        <div class="in-brand-btns"> <a target="_blank" href="/">了解更多，点我</a> </div>
-    </div>
-</div>
-<div class="cpgb-fixed"> <a id="BizQQBottomCommon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2448211596&amp;site=qq&amp;menu=yes" class="cpgb-fixed-zixun">
-    <p><img src="/templets/lawyer/images/qq.png" alt="QQ"><br>
-        在线咨询</p>
-    </a> <a class="cpgb-fixed-zixun cpgb-fixed-dianhua">
-    <p><span class="ico-font tubiao">&#xea89;</span><br>
-        联系电话</p>
-    <span class="zx-haoma"> 18202835355 <img src="/templets/lawyer/images/jiantou.png" alt="箭头"> </span> </a> <a class="cpgb-fixed-zixun cpgb-fixed-dingbu">
-    <p><img src="/templets/lawyer/images/dingbu.png" alt="QQ"><br>
-        返回顶部</p>
-    </a> </div>
-<footer class="new-foot">
-    <div class="nf-main">
-        <div class="inner-box p-r">
-            <div class="foot-logo">
-                <h1><img src="/templets/lawyer/images/foot-logo.png" width="250px" alt="法易通法务服务"></h1>
-            </div>
-            <div class="nf-items">
-                <section class="nf-item fl">
-                    <h2 class="title">平台保障</h2>
-                    <a>赔付保障</a> <a>执业认证</a> <a>网站认证</a> </section>
-                <section class="nf-item fl">
-                    <h2 class="title">关于我们</h2>
-                    <a class="link-hover" target="_blank" href="/about/">关于法易通</a> <a class="link-hover" target="_blank" href="/team/">法易通团队</a> <a class="link-hover" target="_blank" href="/news/">法易通新闻</a> </section>
-                <section class="nf-item fl">
-                    <h2 class="title">加入我们</h2>
-                    <a class="link-hover" target="_blank" href="/joinus/">加入法易通</a> <a class="link-hover" target="_blank" href="/linkus/">联系我们</a> </section>
-                <section class="nf-item fl">
-                    <h2 class="title">关注我们</h2>
-                    <div class="nf-item-code"> <img src="/templets/lawyer/images/code.jpg" alt=""> </div>
-                </section>
-            </div>
-            <div class="nf-message">
-                <h2 class="nf-message-telephone">全国服务热线</h2>
-                <h2 class="nf-message-telephonenumber">18202835355</h2>
-            </div>
-        </div>
-    </div>
-    <div class="nf-link">
-        <div class="inner-box">
-            <h5> <span>友情链接：</span>  <a href='http://www.lawls.cn/' target='_blank'>法易通</a>   <a href='http://www.cdmzm.com' target='_blank'>成都木子木科技</a>   <a href='http://www.shu64.com/' target='_blank'>蜀律网</a>   </h5>
-            <h4> <a rel="nofollow" target="_blank" href="http://www.miitbeian.gov.cn/">蜀ICP备18006717号-3</a> <span>版权：法易通
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id=cnzz_stat_icon_1274584658%3E%3C/span%3E%3Cscript src=" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1274584658%26show%3Dpic1 type=text/javascript%3E%3C/script%3E"));</script></span> </h4>
-        </div>
-    </div>
-</footer>
- 
-<script type="text/javascript" charset="utf-8">
-$(function(){
-//导航切换
-$(".fw-title-inner ul li").click(function(event) {
-	/* Act on the event */
-	$(this).addClass('lanzibaidi').siblings('li').removeClass('lanzibaidi')
-});
-//切换增值服务 及价格
-$(".meitishi-box").click(function(event) {//普通按钮
-    /* Act on the event */
-    $(this).siblings('.tishi-box').children('.tishi').hide();
-	$("#combName").html("包月法务");
-    var price0=2000;
-    $("span#spProductPrice").html(price0);
-    /*$("a.btnBuy").attr("href","/Orders/create/52a93101cfa33?increment=0");*/
-	$("#choose").attr("value",0);
-});
-$(".tishi-box").click(function(event) {	//加急按钮
-    /* Act on the event */
-    $(this).children('.tishi').show();
-	$("#combName").html("企业法律顾问");
-    var price1=14000;			
-    $("span#spProductPrice").html(price1);
-	$("#choose").attr("value",1);
-});
-$(".company-box").click(function(event) {	//加急按钮
-    /* Act on the event */
-    $(this).children('.tishi').show();
-	$("#combName").html("中小企业特惠服务方案");
-    var price1=23000;
-    $("span#spProductPrice").html(price1);
-	$("#choose").attr("value",2);
-});
-//切换增值服务边框
-$(".r-button .btn-inner .huikuang").click(function(event) {
-    /* Act on the event */
-    $(this).addClass('chengkuang').siblings('.huikuang').removeClass('chengkuang');
-});
-})
-var currentType = '';
-function getPage(num,type)
-{
-    if(type == '')
-    {
-	if(currentType != '')
-		type = currentType;
-    }
-    else
-    {
-        currentType = type;
-        $(".chooseAll").removeClass("lanse");
-        $("#current_"+type).addClass("lanse");
-    }
-    $.ajax({
-        type: "POST",
-        url: 'Products/ajaxGetReview',
-        data: {'page':num,'type':type},
-        //async : false,
-        success: function(data)
-        {
-            if(data)
-            {						
-                $("#orderReviewPage").html(data);																
-            }							
-        }
-    });
-}
-BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'zx01'});
-BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'zx02'});
-BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'zx03'});
-BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'zx04'});
-</script> 
 <script type="text/javascript">
-$(function(){
-$('.cpgb-fixed-dingbu').click(function(){
-    $(window).scrollTop(0);
-});
-$(window).scroll(function () {
-    if ($(window).scrollTop() > 1018 ) {			
-        $(".cpgb-fixed-dingbu").css("display","block");
-    }else if($(window).scrollTop() < 1016){			
-        $(".cpgb-fixed-dingbu").css("display","none");
-    }
-});
-})
-BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'BizQQBottomCommon'});
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(116.331398, 39.897445);
+	map.centerAndZoom(point, 12);
+
+	function myFun(result) {
+		var cityName = result.name;
+		map.setCenter(cityName);
+		$("#spCurrentCity").html(cityName);
+	}
+	var myCity = new BMap.LocalCity();
+	myCity.get(myFun);
 </script>
-</body>
+
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 幻灯片 -->
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/guwen.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/guwen.jpg" /></a></div>
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/guwen.jpg" /></a></div>
+							</div>
+						</div>
+						<!-- 主体 -->
+						<div class="qiyeguwen" style="margin-top: 6rem;">
+							<div id="slider">
+								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+									<div class="guwen-title">
+										<h3>企业法律顾问</h3>
+									</div>
+									<form class="mui-input-group">
+										<div class="mui-input-row mui-radio mui-left">
+											<label>普通：一个工作日</label>
+											<input name="radio1" type="radio">
+										</div>
+										<div class="mui-input-row mui-radio mui-left">
+											<label>合同加急（加收50%）</label>
+											<input name="radio1" type="radio" checked="">
+										</div>
+									</form>
+									<div class="guwen-menu">
+										<a class="mui-control-item  mui-active" onclick="goto1()">
+											服务流程
+										</a>
+										<a class="mui-control-item" onclick="goto2()">
+											服务说明
+										</a>
+										<a class="mui-control-item" onclick="goto3()">
+											服务优势
+										</a>
+										<a class="mui-control-item" onclick="goto4()">
+											用户评价
+										</a>
+									</div>
+								</div>
+								<div class="mui-slider-group">
+									<div class="services">
+										<div class="liucheng pdt10">
+											<h3 id="goto1">为什么需要我们</h3><span></span>
+											<h5>专业的服务，意味着降低风险</h5>
+											<ul class="mui-table-view mui-grid-view">
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-right: 1px solid #dcdcdc;border-bottom: 1px solid #dcdcdc;padding:2px;padding-bottom: 9px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/qiye1.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>股权风险</h4>
+															<p>股权架构随意，怎么分蛋糕？</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-bottom: 1px solid #dcdcdc;padding:2px;padding-bottom: 8px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/qiye2.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>用工风险</h4>
+															<p>员工说走就走，还要仲裁赔钱？</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-right: 1px solid #dcdcdc;border-bottom: 1px solid #dcdcdc;padding:2px;padding-bottom: 9px;">
+													<a href="#"><img class="mui-media-object" src="/images/qiye3.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>合同风险</h4>
+															<p>合同无人审，责任模糊风险大</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-bottom: 1px solid #dcdcdc;padding:2px;padding-bottom: 8px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/qiye4.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>债权风险</h4>
+															<p>用张图被起诉，赔成冤大头</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="border-right: 1px solid #dcdcdc;padding:2px;padding-bottom: 9px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/qiye5.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>税务风险</h4>
+															<p>税务管理不规范，一不注意就罚款</p>
+														</div>
+													</a></li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-6" style="padding:2px;">
+													<a href="#">
+														<img class="mui-media-object" src="/images/qiye6.jpg">
+														<div class="mui-media-body" style="height: auto; line-height: normal;">
+															<h4>债务风险</h4>
+															<p>客户欠款不还，如何追讨和预防</p>
+														</div>
+													</a></li>
+											</ul>
+										</div><br>
+
+										<div class="shuoming pdt10">
+											<h3 id="goto2">我们的优势</h3><span></span>
+											<h5>您的满意，是我们最大的动力</h5>
+											<img src="/images/dongli.jpg" alt="">
+										</div>
+										<div id="goto3" class="changjian pdt10" style="padding-left: 0px;padding-right: 0px;">
+											<h3 id="goto3">法易通-企业法律顾问-一站式服务</h3>
+											<dl>
+												<dd>
+													<h4>公司设立法律咨询</h4>
+													<p>公司风险评估建议<br>组织形式选择建议<br>股权构成及股东出资相关事宜<br>工商注册相关法律事项</p>
+												</dd>
+												<dd>
+													<h4>股权治理法律事务咨询</h4>
+													<p>股权分配增资扩股法律意见<br>股东权益纠纷咨询解答<br>股东转让/代持注意释明<br>股权激励操作方法法律建议<br>股权纠纷法律意见</p>
+												</dd>
+												<dd>
+													<h4>劳动人事法律事务咨询</h4>
+													<p>劳动合同/保密协议/竞业禁止协议</p>
+													<p>违纪离职额处理及操作方法意见</p>
+													<p>工伤/意外事故处理意见</p>
+													<p>劳动争议解决法律建议</p>
+													<p>劳动关系法律问题解答</p>
+												</dd>
+												<dd>
+													<h4>公司运营法律事务咨询</h4>
+													<p>合同订立履行及管理相关事项<br>商业密码管理及保护法律建议<br>投融资担保等业务的风险评估<br>债权债务纠纷法律意见</p>
+
+												</dd>
+												<dd>
+													<h4>知识产权法律事务咨询</h4>
+													<p>商标相关法律问题解答</p>
+													<p>著作权相关法律问题解答</p>
+													<p>专利权相关法律问题解答</p>
+												</dd>
+												<dd>
+													<h4>股权事务类合同</h4>
+													<p>公司章程、合伙协议、股东协议、股东会议协议、股权转让协议、增资扩股协议、股权激励方案、股权代持协议、分支机构设立协议、法律风险评估建议、法律风险评估建议</p>
+												</dd>
+												<dd>
+													<h4>劳动人事合同类</h4>
+													<p>劳动合同、集体合同、实习协议、保密协议、竞业限制协议、劳务合同、培训协议、工伤赔偿协议、人事规章制度合法性审查</p>
+												</dd>
+												<dd>
+													<h4>公司运营类合同</h4>
+													<p>销售合同、运输合同、采购合同、居间合同、抵押担保合同、加工承揽合同、软件开发合同、其他合同</p>
+												</dd>
+											</dl>
+											<div class="clear"></div>
+										</div>
+										<div class="pinpai"><img src="/images/pinpai.jpg"></div>
+										<h3 class="show_more" style="color: #d2deea;">全国服务热线：18202835355</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+
+					</div>
+					<div class="buy">
+						<a href="" class="call">客服咨询</a>
+						<a href="" class="buynow">立即购买</a>
+					</div>
+				</div>
+
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+	var gallery = mui('.mui-slider');
+	gallery.slider({
+		interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
+	});
+	mui.init({
+		swipeBack: false,
+	});
+	//侧滑容器父节点
+	var offCanvasWrapper = mui('#offCanvasWrapper');
+	//主界面容器
+	var offCanvasInner = offCanvasWrapper[0].querySelector('.mui-inner-wrap');
+	//菜单容器
+	var offCanvasSide = document.getElementById("offCanvasSide");
+
+	//移动效果是否为整体移动
+	var moveTogether = false;
+	//侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
+	var classList = offCanvasWrapper[0].classList;
+	//主界面和侧滑菜单界面均支持区域滚动；
+	mui('#offCanvasSideScroll').scroll();
+	mui('#offCanvasContentScroll').scroll();
+	//实现ios平台的侧滑关闭页面；
+	if (mui.os.plus && mui.os.ios) {
+		offCanvasWrapper[0].addEventListener('shown', function(e) { //菜单显示完成事件
+			plus.webview.currentWebview().setStyle({
+				'popGesture': 'none'
+			});
+		});
+		offCanvasWrapper[0].addEventListener('hidden', function(e) { //菜单关闭完成事件
+			plus.webview.currentWebview().setStyle({
+				'popGesture': 'close'
+			});
+		});
+	}
+	// 选项卡
+	(function($) {
+		var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+		$('.mui-input-group').on('change', 'input', function() {
+			if (this.checked) {
+				sliderSegmentedControl.className =
+					'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+				//force repaint
+				sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+			}
+		});
+	})(mui);
+</script>
+
+	<script type="text/javascript">
+		function goto1() {
+			window.location.hash = "#goto1";
+		}
+
+		function goto2() {
+			window.location.hash = "#goto2";
+		}
+
+		function goto3() {
+			window.location.hash = "#goto3";
+		}
+	</script>
 </html>

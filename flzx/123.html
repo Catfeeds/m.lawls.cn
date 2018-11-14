@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>电话问律师_法易通法律咨询</title>
+		<meta name="keywords" content="电话,问,律师,电话,问,律师," />
+		<meta name="description" content="" />
+		<script src="/js/mui.min.js"></script>
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+
+	</head>
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			<aside id="offCanvasSide" class="mui-off-canvas-right">
+	<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<!-- 菜单具体展示内容 -->
+			<div class="title">侧滑导航</div>
+			<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+				<li class="mui-table-view-cell">
+					<a href="/" class="mui-navigate-right">首页</a>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a href="/flgw/124.html" class="mui-navigate-right">法律顾问</a>
+					<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/124.html">企业法律顾问</a></li>
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/125.html">个人法律顾问</a></li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/nsht/" class="mui-navigate-right">审查合同</a>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a href="/ask/?ct=question&ac=ask_complete" class="mui-navigate-right">法律咨询</a>
+					<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/ask/?ct=question&ac=ask_complete">在线法律咨询</a></li>
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flzx/123.html">电话法律咨询</a></li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/zls/" class="mui-navigate-right">找律师</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/flbk/" class="mui-navigate-right">法律百科</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</aside>
+
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+	<span id="spCurrentCity">正在加载...</span>
+	<h1 class="mui-title mui-logo"><a href="/"><img src="/images/logo.png"></a></h1>
+	<a id="offCanvasBtn" href="#offCanvasSide" class="mui-pull-right mui-btn-link mui-icon mui-icon-bars"></a>
+</header>
+<div id="allmap" style="display: none"></div>
+<!-- <script type="text/javascript" src="/js/rem.js"></script> -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MuNvHFgbfd42G9ZcLoB7sBvSECNMwzUW"></script>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(116.331398, 39.897445);
+	map.centerAndZoom(point, 12);
+
+	function myFun(result) {
+		var cityName = result.name;
+		map.setCenter(cityName);
+		$("#spCurrentCity").html(cityName);
+	}
+	var myCity = new BMap.LocalCity();
+	myCity.get(myFun);
+</script>
+
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 幻灯片 -->
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/ask.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/ask.jpg" /></a></div>
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/ask.jpg" /></a></div>
+							</div>
+						</div>
+						<!-- 主体 -->
+						<div class="phone-ask" style="margin-top: 6rem;">
+							<div id="slider">
+								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+									<a class="mui-control-item  mui-active" onclick="goto1()">
+										服务流程
+									</a>
+									<a class="mui-control-item" onclick="goto2()">
+										服务说明
+									</a>
+									<a class="mui-control-item" onclick="goto3()">
+										常见问题
+									</a>
+								</div>
+								<div class="mui-slider-group">
+									<img src="/images/service.jpg" alt="" class="big-img">
+									<div class="services">
+										<div class="liucheng pdt10">
+											<h3 id="goto1">服务流程</h3><span></span>
+											<img src="/images/services.jpg" alt="">
+										</div><br>
+
+										<div class="shuoming pdt10">
+											<h3 id="goto2">服务说明</h3><span></span>
+											<img src="/images/shuoming.jpg" alt="">
+										</div>
+										<div id="goto3" class="changjian pdt10">
+											<h3 id="goto2">常见问题</h3><span></span>
+											<h4>1.咨询律师前需做什么准备？</h4>
+											<p>为了高效地利用您的咨询时间，在下单前想好您的问题即可，专业律师解答和引导问题。如有不清楚的地方，可提前联系在线客服协助梳理。</p>
+											<h4>2.咨询时间满30分钟后还有问题怎么办？</h4>
+											<p>一般情况下，超过30分钟左右律师是不会打断您，但是超出时间太久，律师会善意的提醒您，需再次购买我们的电话咨询服务。</p>
+											<h4>3.电话咨询通话过程中由于外来事务打断了通话怎么办？</h4>
+											<p>您可以与律师沟通，约定下次通话时间律师会根据您的时间来给你回电话，你也可以拨打客户热线和联系客服，确定通话时间。</p>
+											<h4>4.不能见面会谈，会很有效沟通吗？</h4>
+											<p>我们是专业的律师团队解答您的问题各个方面为您考虑和您有效的沟通，我们理解您传统心理上希望和律师面对面谈以求放心的心态。我们用大量的数据、和法律咨询的经验沉淀告诉我们，98%用户的咨询和合同服务需求，当事人配合和律师引导电话沟通就很好的完成。大大提高服务效率和工作质量。</p>
+                                            <h4>5.服务购买错误了，并且已经下单支付了怎么办？</h4>
+                                            <p>您可以和我们客服联系，说明情况，服务人员会在后台修改服务信息，您就不需要重新下订单了。如果您下单支付的产品和您准备要处理的事项，需要退款或者补足差，我们的客服人员也会帮您调整处理的。</p>
+										</div>
+										<div class="pinpai"><img src="/images/pinpai.jpg"></div>
+										<h3 class="show_more">全国服务热线：18202835355</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+
+					</div>
+					<div class="buy">
+						<a href="" class="call">客服咨询</a>
+						<a href="" class="buynow">立即购买</a>
+					</div>
+				</div>
+
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+
+	</body>
+    <script type="text/javascript">
+	var gallery = mui('.mui-slider');
+	gallery.slider({
+		interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
+	});
+	mui.init({
+		swipeBack: false,
+	});
+	//侧滑容器父节点
+	var offCanvasWrapper = mui('#offCanvasWrapper');
+	//主界面容器
+	var offCanvasInner = offCanvasWrapper[0].querySelector('.mui-inner-wrap');
+	//菜单容器
+	var offCanvasSide = document.getElementById("offCanvasSide");
+
+	//移动效果是否为整体移动
+	var moveTogether = false;
+	//侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
+	var classList = offCanvasWrapper[0].classList;
+	//主界面和侧滑菜单界面均支持区域滚动；
+	mui('#offCanvasSideScroll').scroll();
+	mui('#offCanvasContentScroll').scroll();
+	//实现ios平台的侧滑关闭页面；
+	if (mui.os.plus && mui.os.ios) {
+		offCanvasWrapper[0].addEventListener('shown', function(e) { //菜单显示完成事件
+			plus.webview.currentWebview().setStyle({
+				'popGesture': 'none'
+			});
+		});
+		offCanvasWrapper[0].addEventListener('hidden', function(e) { //菜单关闭完成事件
+			plus.webview.currentWebview().setStyle({
+				'popGesture': 'close'
+			});
+		});
+	}
+	// 选项卡
+	(function($) {
+		var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+		$('.mui-input-group').on('change', 'input', function() {
+			if (this.checked) {
+				sliderSegmentedControl.className =
+					'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+				//force repaint
+				sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+			}
+		});
+	})(mui);
+</script>
+
+	<script type="text/javascript">
+		function goto1() {
+			window.location.hash = "#goto1";
+		}
+
+		function goto2() {
+			window.location.hash = "#goto2";
+		}
+
+		function goto3() {
+			window.location.hash = "#goto3";
+		}
+	</script>
+</html>
