@@ -782,3 +782,6 @@ ul li{
   height: 50px;
   padding: 10px;
 }
+.mui-content-padded{
+  text-align: center;
+}

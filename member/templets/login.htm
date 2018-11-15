@@ -86,27 +86,84 @@
 					<div class="mui-scroll">
 						<!-- 主体 -->
 						<div class="login" style="margin-top: 6rem;">
+							<div id="slider" class="mui-slider" style="top: 0px;">
+								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+									<a class="mui-control-item" href="#item1mobile">账号登录</a>
+									<a class="mui-control-item" href="#item2mobile">短信登录</a>
+								</div>
+								<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+								<div class="mui-slider-group">
+									<div id="item1mobile" style="height: 400px;" class="mui-slider-item mui-control-content mui-active">
+										<div id="scroll1" class="mui-scroll-wrapper">
+											<div class="mui-scroll">
+												<form name='form1' method='POST' action='index_do.php' id='login-form' class="mui-input-group">
+													<div style="display:none;"><input type="hidden" name="fmdo" value="login">
+														<input type="hidden" name="dopost" value="login">
+														<input type="hidden" name="gourl" value="<?php if(!empty($gourl)) echo $gourl;?>">
+													</div>
+													<div class="mui-input-row">
+														<label for="txtUsername">用户名</label>
+														<input name="userid" type="text" class="mui-input-clear mui-input" maxLength="40" maxlength="50" id="txtUsername"
+														 required="required" placeholder="请输入用户名">
+													</div>
+													<div class="mui-input-row">
+														<label for="txtPassword">密 码</label>
+														<input type="password" class="mui-input-password" name="pwd" maxLength="40" type="password" id="txtPassword"
+														 required="required" placeholder="请输入密码">
+													</div>
+													<div class="mui-content-padded">
+														<button id='login' type="submit" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
+														<div class="link-area"><a id='reg'>注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
+														</div>
+													</div>
+													<div class="mui-content-padded oauth-area">
+														<a href="https://open.weixin.qq.com/connect/qrconnect?appid=&redirect_uri=/plus/wx_login.php&response_type=code&scope=snsapi_login&state=123#wechat_redirect" class="mui-btn mui-btn-success mui-icon mui-icon-weixin">微信登录</a>
+														<a href="/qqLogin/index.php" class="mui-btn mui-btn-primary mui-icon mui-icon-qq">QQ登录</a>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div id="item2mobile" style="height: 400px;" class="mui-slider-item mui-control-content">
+										<div id="scroll2" class="mui-scroll-wrapper">
+											<div class="mui-scroll">
+												<form name='form1' method='POST' action='login_do.php' id='login-form' class="mui-input-group">
+													<div style="display:none;">
+														<input type="hidden" name="fmdo" value="login">
+														<input type="hidden" name="dopost" value="msglogin">
+														<input type="hidden" name="gourl" value="<?php if(!empty($gourl)) echo $gourl;?>">
+													</div>
+													<div class="mui-input-row">
+														<label for="txtPhone">手机号</label>
+														<input id='txtPhone' type="text" class="mui-input-clear mui-input" name="phone" maxLength="11" onkeyup="value=value.replace(/[^1234567890-]+/g,'')"
+														 required="required" placeholder="请输入手机号">
+													</div>
+													<div class="mui-input-row">
+														<label for="sms_code">短信验证</label>
+														<input id='message' style="width: 120px; float: left;" type="text" class="mui-input-clear mui-input" name="sms_code"
+														 maxLength="6" onkeyup="value=value.replace(/[^1234567890-]+/g,'')" id="sms_code" placeholder="请输入验证码">
+														<input type="button" id="btn-sms" style="width: 90px; background: #007aff;color: #fff;height: 39px;line-height: 30px;"
+														 value="获取短信" />
+													</div>
+													<div class="mui-content-padded">
+														<button id='msglogin' type="submit" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
+														<div class="link-area"><a id='reg'>注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
+														</div>
+													</div>
+													<div class="mui-content-padded oauth-area">
+														<a href="https://open.weixin.qq.com/connect/qrconnect?appid=&redirect_uri=/plus/wx_login.php&response_type=code&scope=snsapi_login&state=123#wechat_redirect" class="mui-btn mui-btn-success mui-icon mui-icon-weixin">微信登录</a>
+														<a href="/qqLogin/index.php" class="mui-btn mui-btn-primary mui-icon mui-icon-qq">QQ登录</a>
+													</div>
+												</form>
+											</div>
+										</div>
 
-							<form id='login-form' class="mui-input-group">
-								<h3>用户登录</h3>
-								<div class="mui-input-row">
-									<label>用户名</label>
-									<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入用户名">
-								</div>
-								<div class="mui-input-row">
-									<label>密 码</label>
-									<input id='password' type="password" class="mui-input-password" placeholder="请输入密码">
-								</div>
-							</form>
-							<div class="mui-content-padded">
-								<button id='login' type="submit" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
-								<div class="link-area"><a id='reg'>注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
-								</div>
-								<div class="link-area"><a href="/qqLogin/index.php"><img src="images/qq_login.png"></a></div>
-							</div>
-							<div class="mui-content-padded oauth-area">
+									</div>
 
+								</div>
 							</div>
+
+
 						</div>
 						<div class="clear"></div>
 					</div>
@@ -116,43 +173,132 @@
 		</div>
 
 	</body>
-	{dede:include filename='commonJs.htm'/}
 	<script type="text/javascript">
-		//半小时咨询
-		$("#onetime").click(function(event) {
-			var price1 = "{dede:field.onetime/}";
-			$("#spProductPrice").html(price1);
-			$(".choose").attr("value", 0);
+		var gallery = mui('.mui-slider');
+		gallery.slider({
+			interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
 		});
-		//48小时咨询
-		$("#oneday").click(function(event) {
-			var price1 = "{dede:field.oneday/}";
-			$("#spProductPrice").html(price1);
-			$(".choose").attr("value", 1);
+		mui.init({
+			swipeBack: false,
 		});
-		//一个月咨询
-		$("#onemonth").click(function(event) {
-			var price1 = "{dede:field.onemonth/}";
-			$("#spProductPrice").html(price1);
-			$(".choose").attr("value", 2);
-		});
-		//一个月加文书咨询
-		$("#monthbook").click(function(event) {
-			var price1 = "{dede:field.monthbook/}";
-			$("#spProductPrice").html(price1);
-			$(".choose").attr("value", 3);
+		//侧滑容器父节点
+		var offCanvasWrapper = mui('#offCanvasWrapper');
+		//主界面容器
+		var offCanvasInner = offCanvasWrapper[0].querySelector('.mui-inner-wrap');
+		//菜单容器
+		var offCanvasSide = document.getElementById("offCanvasSide");
+
+		//移动效果是否为整体移动
+		var moveTogether = false;
+		//侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
+		var classList = offCanvasWrapper[0].classList;
+		//主界面和侧滑菜单界面均支持区域滚动；
+		mui('#offCanvasSideScroll').scroll();
+		mui('#offCanvasContentScroll').scroll();
+		//实现ios平台的侧滑关闭页面；
+		if (mui.os.plus && mui.os.ios) {
+			offCanvasWrapper[0].addEventListener('shown', function(e) { //菜单显示完成事件
+				plus.webview.currentWebview().setStyle({
+					'popGesture': 'none'
+				});
+			});
+			offCanvasWrapper[0].addEventListener('hidden', function(e) { //菜单关闭完成事件
+				plus.webview.currentWebview().setStyle({
+					'popGesture': 'close'
+				});
+			});
+		}
+	</script>
+
+	<script type="text/javascript">
+		$("#btn-sms").click(function() {
+			if (!check_mobile()) {
+				return false;
+			}
+			$('#btn-sms').addClass('disable');
+			$('#btn-sms').attr('disabled', true);
+			sendSMS();
 		});
 
-		function goto1() {
-			window.location.hash = "#goto1";
+		function confirm() {
+			smsCode = $.trim($('#sms_code').val());
+			if (smsCode == '') {
+				alert("请生成验证码！");
+				return false;
+			}
 		}
 
-		function goto2() {
-			window.location.hash = "#goto2";
+		function sendSMS() {
+			if (check_mobile()) {
+				mobile = $.trim($('#txtPhone').val());
+				smsCode = $.trim($('#sms_code').val());
+				$.post("/plus/sendSMS/getLoginSMS.php", {
+					"phone": mobile,
+					"sms_code": smsCode
+				}, function(data) {
+					if (data == 'success') {
+						$("input[type='submit']").attr('disabled', false);
+						lSeconds = 60;
+						$("#btn-sms").attr('value', '已成功发送');
+						displayInterval();
+					} else {
+						alert(data);
+						$("input[type='submit']").attr('disabled', true);
+						//alert('获取短信出错，请重试或联系管理员1！');
+						$('#btn-sms').removeClass('disable');
+						$('#btn-sms').attr('disabled', false);
+					}
+				})
+			}
+		}
+		//手机验证
+		function check_mobile() {
+			var m = $.trim($('#txtPhone').val());
+			if (m != '') {
+				var reg = /^1[345789]\d{9}$/;
+				var result = false;
+				if (reg.test(m))
+					result = true;
+				if (result) {
+					return true;
+				} else {
+					alert("请输入正确的手机号");
+					return false;
+				}
+			} else {
+				alert("请输入手机号");
+				return false;
+			}
 		}
 
-		function goto3() {
-			window.location.hash = "#goto3";
+		function hasRead() {
+			if ($('#cbkRead').is(":checked")) {
+				$("input[type='submit']").attr('disabled', false);
+			} else {
+				$("input[type='submit']").attr('disabled', true);
+			}
+		}
+		var lSeconds = 60;
+
+		function displayInterval() {
+			$("#btn-sms").unbind('click');
+			timeIntervalSMS = setInterval(function() {
+				if (lSeconds <= 1) {
+					$('#btn-sms').removeClass('disable');
+					$('#btn-sms').attr('disabled', false);
+					$("#btn-sms").attr('value', '重新发送');
+					clearInterval(timeIntervalSMS);
+					$("#btn-sms").click(function() {
+						$('#btn-sms').addClass('disable');
+						$('#btn-sms').attr('disabled', true);
+						sendSMS();
+					});
+					return;
+				}
+				lSeconds--;
+				$('#btn-sms').addClass('disable');
+				$("#btn-sms").attr('value', lSeconds + "秒后重发");
+			}, 1000);
 		}
 	</script>
 </html>
