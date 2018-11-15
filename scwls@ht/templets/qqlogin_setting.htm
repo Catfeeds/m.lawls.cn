@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<title>QQ一键登录助手</title>
+<script language="javascript" type="text/javascript" src="/include/js/jquery/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="qqLogin/jBox/jquery.jBox-2.3.min.js"></script>
+<link id="skin" rel="stylesheet" href="qqLogin/jBox/Skins/Default/jbox.css" />
+
+<script language="javascript">
+$ = jQuery;
+$(document).ready(function(){
+    $.get("qqLogin.php",{ac:'get'},function(result){
+		if(result != 2)
+		{
+			$.jBox("<img src='qqLogin/qq.gif'>",{title: "使用教程",width:600,height:480,top:5,buttons: { '下次观看': 1, '不再提醒': 2 },submit:function (v, h, f){
+			$.get("qqLogin.php",{ac:'ajax',v:v});	
+		}
+	})
+
+}});
+})
+
+</script>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+</head>
+<body background="images/allbg.gif" leftmargin="8" topmargin="8">
+<script type="text/javascript" src="http://cas.yiqiu.org/ad/ad.php?lang=<?php echo $cfg_soft_lang ?>&plugname=qqLogin"></script>
+<table height="10">
+</table>
+<div class="bodytitle">
+	<div class="bodytitleleft"></div>
+	
+	<div class="bodytitletxt" style="padding-left:10px;">亦秋工作室免费插件</div>
+</div><table width="98%" border="0" align="center" cellpadding="4" cellspacing="1" class="tbtitle" style="background:#CFCFCF;">
+  <tr>
+    <td bgcolor="#EDF9D5" colspan="2" background='images/tbg.gif' style="padding-left:10px;">
+    	<strong>QQ一键登录插件</strong>
+    </td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF" colspan="2">
+    	<p>此插件是方便会员进行注册登录操作，为站长带来更多活跃会员</p>
+    	<p>使用此插件要注意一下几点：</p>
+      <p>1、此插件使用前请到 <a href="http://connect.opensns.qq.com" target="_blank">http://connect.opensns.qq.com</a>申请appid, appkey, 并注册callback地址</p>
+	  <p>2、配置完成参数，复制下面的代码，添加到你需要的页面，路径位置根据需要做相应改动</p>
+      <p>3、此插件为<a href='http://www.yiqiu.org' target="_blank"><font color="red">亦秋工作室</font></a>开发，站长可以免费使用，请保留我们的版权！</p>  
+      <p>4、<b><font color=red>将member表字段face字段修改为VARCHAR类型,并且设置长度为250</font> <a href='http://www.yiqiu.org/jzzs/20130407266.html' target='_blank'>[详细教程]</a></b></p>
+	  <p>5、示例网站：<a href="http://www.yingsheji.com" target="_blank">http://www.yingsheji.com</a></p>
+	  <p>6、如有什么疑问或者不能使用者可以提交官方定制（最低150元/次）：客服一 <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1417270001&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1417270001:41 &r=0.955037692328915" alt="点击这里给我发消息" title="点击这里给我发消息"></a> 客服二 <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2253851679&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2253851679:41 &r=0.955037692328915" alt="点击这里给我发消息" title="点击这里给我发消息"></a>  客服三 <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3627256&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:3627256:41 &r=0.955037692328915" alt="点击这里给我发消息" title="点击这里给我发消息"></a></p>
+	    </td>
+  </tr>
+  <form id="form2" name="form1" method="post" action="qqLogin.php">
+  <input type="hidden" name="ac" value="save" />
+  <tr>
+    <td colspan="2" bgcolor="#F9FCEF">&nbsp;<b>参数配置：</b></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF" width="180">&nbsp;<b>AppId：</b></td>
+    <td bgcolor="#FFFFFF">&nbsp;
+      <input name="appid" type="text" id="textfield"  size="30" class='alltxt' value="<?php echo $keyarr->appid ?>" />
+     </td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">&nbsp;<b>AppKey：</b></td>
+    <td bgcolor="#FFFFFF">&nbsp;
+      <input name="appkey" type="text" id="textfield"  size="30" class='alltxt' value="<?php echo $keyarr->appkey ?>" />
+     </td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">&nbsp;<b>回调地址：</b></td>
+    <td bgcolor="#FFFFFF">&nbsp;
+      <input name="callurl" type="text" id="textfield"  size="30" class='alltxt' value="<?php if(empty($keyarr->callback)){echo $cfg_basehost."/qqLogin/callback.php";}else{echo $keyarr->callback;} ?>" />
+     </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" bgcolor="#FFFFFF">
+    	<input name="button" type="submit" class="np coolbg" id="button" value="保存" />
+    </td>
+  </tr>
+</form>
+</table>
+<table width="98%" border="0" align="center" cellpadding="4" cellspacing="1" class="tbtitle" style="background:#CFCFCF;">
+	<tr>
+		<td bgcolor="#FFFFFF">&nbsp;<b>复制代码：</b></td>
+		<td bgcolor="#FFFFFF"><textarea name="code" style="width:400px;height:150px;"> <div><a href="/qqLogin/index.php"><img src="images/qq_login.png"></a></div>
+		</textarea></td>
+	</tr>
+</table>
+<script type="text/javascript" src="http://www.yiqiu.org/plug.php?url=<?php echo $cfg_basehost ?>&ver=<?php echo $cfg_version ?>&lang=<?php echo $cfg_soft_lang ?>&plugname=qqLogin2"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>婚姻家庭_法易通法律咨询</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<script src="/js/mui.min.js"></script>
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</head>
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			<aside id="offCanvasSide" class="mui-off-canvas-right">
+	<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<!-- 菜单具体展示内容 -->
+			<div class="title">侧滑导航</div>
+			<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+				<li class="mui-table-view-cell">
+					<a href="/" class="mui-navigate-right">首页</a>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a href="/flgw/124.html" class="mui-navigate-right">法律顾问</a>
+					<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/124.html">企业法律顾问</a></li>
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/125.html">个人法律顾问</a></li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/nsht/" class="mui-navigate-right">审查合同</a>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a href="/ask/?ct=question&ac=ask_complete" class="mui-navigate-right">法律咨询</a>
+					<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/ask/?ct=question&ac=ask_complete">在线法律咨询</a></li>
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flzx/123.html">电话法律咨询</a></li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/zls/" class="mui-navigate-right">找律师</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/flbk/" class="mui-navigate-right">法律百科</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</aside>
+
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+	<span id="spCurrentCity">正在加载...</span>
+	<h1 class="mui-title mui-logo"><a href="/"><img src="/images/logo.png"></a></h1>
+	<a id="offCanvasBtn" href="#offCanvasSide" class="mui-pull-right mui-btn-link mui-icon mui-icon-bars"></a>
+</header>
+<div id="allmap" style="display: none"></div>
+<!-- <script type="text/javascript" src="/js/rem.js"></script> -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MuNvHFgbfd42G9ZcLoB7sBvSECNMwzUW"></script>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(116.331398, 39.897445);
+	map.centerAndZoom(point, 12);
+
+	function myFun(result) {
+		var cityName = result.name;
+		map.setCenter(cityName);
+		$("#spCurrentCity").html(cityName);
+	}
+	var myCity = new BMap.LocalCity();
+	myCity.get(myFun);
+</script>
+
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/banner1.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/banner1.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/banner1.jpg" /></a></div>
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/banner1.jpg" /></a></div>
+							</div>
+						</div>
+
+						<div class="clear"></div>
+						<!-- 推荐新闻-->
+						<div class="news-list">
+							<h2 class="list-nav">法易通专注法律服务，让您远离法律风险</h2>
+							<div id="slider" class="mui-slider">
+								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+									<a class="mui-control-item" href="#item1mobile">
+										婚姻家庭
+									</a>
+								</div>
+								<div class="mui-slider-group">
+									<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+										<div id="scroll1" class="mui-scroll-wrapper">
+											<div class="mui-scroll">
+												<ul class="mui-table-view">
+													<li class="mui-table-view-cell"><a href="/hyjt/537.html">重婚罪地域管辖如何确定？</a></li><li class="mui-table-view-cell"><a href="/hyjt/538.html">协议离婚子女归属是否可以约定</a></li><li class="mui-table-view-cell"><a href="/hyjt/536.html">夫妻离婚时财产分割债权人怎么办</a></li><li class="mui-table-view-cell"><a href="/hyjt/535.html">如何进行维护离婚妇女居住权</a></li><li class="mui-table-view-cell"><a href="/hyjt/534.html">现在离婚都必须在当地离吗?</a></li><li class="mui-table-view-cell"><a href="/hyjt/387.html">法易通解读 子女年满18岁父母可以不抚养吗</a></li><li class="mui-table-view-cell"><a href="/hyjt/386.html">法易通解读 女方无收入抚养权能争取到吗？</a></li><li class="mui-table-view-cell"><a href="/hyjt/385.html">法易通解读 孩子多大会判给妈妈</a></li><li class="mui-table-view-cell"><a href="/hyjt/384.html">解读离婚后双方都不想养孩子怎么办？</a></li><li class="mui-table-view-cell"><a href="/hyjt/383.html">法易通解读 非婚生子能要求男方抚养孩子吗？</a></li><li class="mui-table-view-cell"><a href="/hyjt/382.html">法易通解读 没抚养权能带走孩子吗</a></li><li class="mui-table-view-cell"><a href="/hyjt/381.html">法易通解读 离婚轮流抚养主负之分</a></li><li class="mui-table-view-cell"><a href="/hyjt/380.html">法易通解读 老公坐牢离婚小孩给谁</a></li><li class="mui-table-view-cell"><a href="/hyjt/379.html">法易通解读 探望子女受阻能否更抚养权？</a></li><li class="mui-table-view-cell"><a href="/hyjt/378.html">法易通解读 变更抚养关系的前提</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<ul class="mui-pagination mui-pagination-lg">
+									<li><a href='list_1.html'>首页</a></li>
+<li><a href='list_1.html'>上一页</a></li>
+<li><a href='list_1.html'>1</a></li>
+<li class="thisclass">2</li>
+<li><a href='list_3.html'>3</a></li>
+<li><a href='list_4.html'>4</a></li>
+<li><a href='list_5.html'>5</a></li>
+<li><a href='list_3.html'>下一页</a></li>
+<li><a href='list_5.html'>末页</a></li>
+<li><select name='sldd' style='width:36px' onchange='location.href=this.options[this.selectedIndex].value;'>
+<option value='list_1.html'>1</option>
+<option value='list_2.html' selected>2</option>
+<option value='list_3.html'>3</option>
+<option value='list_4.html'>4</option>
+<option value='list_5.html'>5</option>
+</select></li>
+<li><span class="pageinfo">共 <strong>5</strong>页<strong>67</strong>条</span></li>
+
+								</ul>
+							</div>
+						</div>
+						<!-- 服务热线-->
+						<div class="bottom">
+							<div class="bottom-con">
+								<h4>近一周，已有<span>1325人</span>获得解决方案</h4>
+								<p>“互联网+法务团队”通过集体智慧，提供卓越的法律服务</p>
+								<p>服务热线：<span>18202835355</span></p>
+							</div>
+						</div>
+						<!-- 底部 -->
+						<div class="footer">
+	<div class="login-reg">
+		<a href="/member/login.php">登录 | </a>
+		<a href="/member/reg_new.php">注册</a>
+	</div>
+	<div class="foot">
+		<div class="foot-menu">
+			<a href="">首页</a><a href="/joinus/">关于法易通</a><a href="/news/">法易通新闻</a><a href="/flbk/">法律百科</a>
+		</div>
+		<div class="foot-logo">
+			<a href="/"><img src="/images/logo.png"></a>
+		</div>
+		<div class="foot-ico">
+			<a class="ico1">律师认证</a><a class="ico2">服务保障</a><a class="ico3">法务协助</a><a class="ico4">信息安全</a>
+		</div>
+		<div class="zixun">
+			法律咨询热线
+		</div>
+		<p>建议拨打时间 早上：8:00~晚上：22:00</p>
+	</div>
+</div>
+
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	var gallery = mui('.mui-slider');
+	gallery.slider({
+		interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
+	});
+	mui.init({
+		swipeBack: false,
+	});
+	//侧滑容器父节点
+	var offCanvasWrapper = mui('#offCanvasWrapper');
+	//主界面容器
+	var offCanvasInner = offCanvasWrapper[0].querySelector('.mui-inner-wrap');
+	//菜单容器
+	var offCanvasSide = document.getElementById("offCanvasSide");
+
+	//移动效果是否为整体移动
+	var moveTogether = false;
+	//侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
+	var classList = offCanvasWrapper[0].classList;
+	//主界面和侧滑菜单界面均支持区域滚动；
+	mui('#offCanvasSideScroll').scroll();
+	mui('#offCanvasContentScroll').scroll();
+	//实现ios平台的侧滑关闭页面；
+	if (mui.os.plus && mui.os.ios) {
+		offCanvasWrapper[0].addEventListener('shown', function(e) { //菜单显示完成事件
+			plus.webview.currentWebview().setStyle({
+				'popGesture': 'none'
+			});
+		});
+		offCanvasWrapper[0].addEventListener('hidden', function(e) { //菜单关闭完成事件
+			plus.webview.currentWebview().setStyle({
+				'popGesture': 'close'
+			});
+		});
+	}
+	// 选项卡
+	/* (function($) {
+		var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+		$('.mui-input-group').on('change', 'input', function() {
+			if (this.checked) {
+				sliderSegmentedControl.className =
+					'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+				//force repaint
+				sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+			}
+		});
+	})(mui); */
+</script>
+
+</html>

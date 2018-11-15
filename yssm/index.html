@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>隐私声明_法易通法律咨询</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<script src="/js/mui.min.js"></script>
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+
+	</head>
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			<aside id="offCanvasSide" class="mui-off-canvas-right">
+	<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<!-- 菜单具体展示内容 -->
+			<div class="title">侧滑导航</div>
+			<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+				<li class="mui-table-view-cell">
+					<a href="/" class="mui-navigate-right">首页</a>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a href="/flgw/124.html" class="mui-navigate-right">法律顾问</a>
+					<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/124.html">企业法律顾问</a></li>
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/125.html">个人法律顾问</a></li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/nsht/" class="mui-navigate-right">审查合同</a>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a href="/ask/?ct=question&ac=ask_complete" class="mui-navigate-right">法律咨询</a>
+					<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/ask/?ct=question&ac=ask_complete">在线法律咨询</a></li>
+						<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flzx/123.html">电话法律咨询</a></li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/zls/" class="mui-navigate-right">找律师</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="/flbk/" class="mui-navigate-right">法律百科</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</aside>
+
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+	<span id="spCurrentCity">正在加载...</span>
+	<h1 class="mui-title mui-logo"><a href="/"><img src="/images/logo.png"></a></h1>
+	<a id="offCanvasBtn" href="#offCanvasSide" class="mui-pull-right mui-btn-link mui-icon mui-icon-bars"></a>
+</header>
+<div id="allmap" style="display: none"></div>
+<!-- <script type="text/javascript" src="/js/rem.js"></script> -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MuNvHFgbfd42G9ZcLoB7sBvSECNMwzUW"></script>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(116.331398, 39.897445);
+	map.centerAndZoom(point, 12);
+
+	function myFun(result) {
+		var cityName = result.name;
+		map.setCenter(cityName);
+		$("#spCurrentCity").html(cityName);
+	}
+	var myCity = new BMap.LocalCity();
+	myCity.get(myFun);
+</script>
+
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 幻灯片 -->
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/ask.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/ask.jpg" /></a></div>
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/ask.jpg" /></a></div>
+							</div>
+						</div>
+						<!-- 主体 -->
+						<div class="article-con" style="margin-top: 6rem;">
+							<div class="guwen-title">
+								<h3>隐私声明</h3>
+							</div>
+
+							<div class="art-content">&nbsp;<strong>法易通用户注册服务协议</strong><br />
+&nbsp;<br />
+<strong>一、总则</strong><br />
+1.1&nbsp;法易通的所有权和运营权归四川法易通法律咨询公司。&nbsp;<br />
+1.2&nbsp;法易通用户在注册前应请仔细阅读本协议内容，并同意遵守本协议后方可成为注册用户。用户注册成功后应当受本协议的约束。<br />
+用户在使用本网站服务商品时，应当同意接受相关服务产品协议后方能使用。&nbsp;<br />
+1.3 本协议由法易通根据实际情况随时更新，例如公开法律咨询、下载产品、发表评论等。&nbsp;法易通保留随时变更、中断或终止部分<br />
+或全部网络服务的权利。用户应当及时关注并同意本站不承担通知义务。本站的通知、公告、声明或其它类似内容是本协议的一<br />
+部分。一旦条款内容发生变动，法易通将会在相关的页面提示修改内容，如用户不同意修改内容，用户有权停止使用网络服务。<br />
+如果用户继续使用网络服务，则视为用户已经接受服务条款的变动，协议继续有效。<br />
+1.4用户同意保障和维护法易通及其他用户的利益，如因用户违反有关法律、法规以及本协议项下的任何条款而给法易通或任何其<br />
+他第三人造成损失，用户将承担由此产生的所有责任。<br />
+&nbsp;<br />
+<strong>二、服务内容</strong><br />
+2.1&nbsp;法易通具体服务内容和商品是由本站根据用户实际需求提供，并且本站在提供服务时部分产品会收取一定的费用。&nbsp;<br />
+2.2 本站仅提供相关的网络服务，除此之外与相关网络服务有关的设备(如个人电脑、手机、及其他与接入互联网或移动网有关的装<br />
+置)及所需的费用(如为接入互联网而支付的电话费及上网费、为使用移动网而支付的手机费)均由用户自行负担。<br />
+&nbsp;<br />
+<strong>三、用户帐号</strong><br />
+3.1 用户需按照注册要求注册，注册时需提供真实准确的资料信息，并对真实性予以负责。<br />
+3.2 用户需自己保管账户和密码信息并保证帐号和密码安全，用户应当对以其用户帐号进行的所有活动和事件负法律责任。<br />
+&nbsp;<br />
+<strong>四、使用规则</strong><br />
+4.1用户在使用法易通网络服务过程中，必须遵循以下原则，予以遵守：<br />
+(1) 不得违反国家相关的法律法规；&nbsp;<br />
+(2) 不得以非法目的而使用本网络服务系统；&nbsp;<br />
+(3) 遵守所有与网络服务有关的网络协议、规定和程序；&nbsp;<br />
+(4) 不得利用法易通网络服务系统进行任何可能对互联网的正常运转造成不利影响的行为；&nbsp;<br />
+(5) 不得利用法易通网络服务系统传输任何有关淫秽、色情、赌博、暴力、恐怖、危害国家安全、教唆犯罪，以及侮辱或者诽谤<br />
+他人，侵害他人合法权益的信息；&nbsp;&nbsp;<br />
+(6) 不得利用本网络服务系统进行任何不利于本网站的行为；&nbsp;<br />
+(7) 如发现任何非法使用用户帐号或帐号出现安全漏洞的情况，应及时通告法易通。<br />
+4.2 如用户在使用网络服务时违反上述任何规定，本站有权要求用户改正或直接采取一切必要的措施(包括但不限于删除用户张贴的<br />
+内容、暂停或终止用户使用网络服务的权利)以减轻用户不当行为而造成的影响。<br />
+<strong>五、隐私保护</strong><br />
+5.1 本站不对外公开或向第三方提供单个用户的注册资料及用户在使用网络服务时存储在本站的非公开内容，但下列情况除外：<br />
+(1) 事先获得用户的明确授权；&nbsp;<br />
+(2) 根据有关的法律法规要求；<br />
+(3) 按照相关政府主管部门的要求；<br />
+(4) 为维护社会公众的利益。<br />
+5.2 本站可能会与第三方合作向用户提供相关的网络服务，在此情况下，如该第三方同意承担与本站同等的保护用户隐私的责任，<br />
+则本站有权将用户的注册资料等提供给该第三方。<br />
+5.3在不透露单个用户隐私资料的前提下，法易通有权对整个用户数据库进行分析并对用户数据库进行商业上的合法利用<br />
+&nbsp;<br />
+<strong>六、版权声明</strong><br />
+6.1 本站的文字、图片、音频、视频等版权均归四川法易通法律咨询公司享有或与作者共同享有，未经本站许可，不得任意转载。&nbsp;<br />
+6.2 本站特有的标识、版面设计、编排方式等版权均属四川法易通法律咨询公司享有，未经本站许可，不得任意复制或转载。&nbsp;<br />
+6.3 本站享有所有作品除部分免费外其他服务需根据实际情况支付费用。<br />
+6.4 恶意复制、转载本站内容的，本站保留将其诉诸法律的权利。<br />
+&nbsp;<br />
+<strong>七、责任声明</strong><br />
+7.1 用户明确同意其使用本站网络服务所存在的风险及一切后果将完全由用户本人承担，法易通对此不承担任何责任。<br />
+7.2 本站无法保证网络服务一定能满足用户的要求，也不保证网络服务的及时性、安全性、准确性。<br />
+7.3 本站不保证为方便用户而设置的外部链接的准确性和完整性，同时，对于该等外部链接指向的不由本站实际控制的任何网页上的<br />
+内容，本站不承担任何责任。<br />
+7.4 对于因不可抗力或本站不能控制的原因造成的网络服务中断或其它缺陷，本站不承担任何责任，但将尽力减少因此而给用户造成<br />
+的损失和影响。<br />
+7.5 本站有权于任何时间暂时或永久修改或终止本服务(或其任何部分)，而无论其通知与否，本站对用户和任何第三人均无需承担任<br />
+何责任。<br />
+&nbsp;<br />
+<strong>八、服务变更、中断或终止</strong><br />
+8.1 如发生下列任何一种情形，法答有权随时中断或终止向用户提供本协议项下的网络服务而无需通知用户：<br />
+(1) 用户提供的个人资料不真实；&nbsp;<br />
+(2) 恶意注册；&nbsp;<br />
+(3) 长期不登陆网站达到两年以上（包含两年）；&nbsp;<br />
+(4) 用户违反本协议中规定的使用规则。<br />
+8.2 除前款所述情形外，法易通同时保留在不事先通知用户的情况下随时中断或终止部分或全部网络服务的权利，对于所有服务的中断<br />
+或终止而造成的任何损失，法易通无需对用户或任何第三方承担任何责任。<br />
+&nbsp;<br />
+<strong>九、附则</strong><br />
+9.1 本协议的订立、执行和解释及争议的解决均应适用中华人民共和国法律，一旦发生纠纷在无法协商的情况下任何一方可向法易通所<br />
+在地的人民法院提起诉讼。&nbsp;<br />
+9.2 如本协议中的任何条款无论因何种原因完全或部分无效或不具有执行力，本协议的其余条款仍应有效并且有约束力。<br />
+9.3 本协议解释权及修订权归四川法易通法律咨询公司所有。<br />
+&nbsp;<br />
+</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+	var gallery = mui('.mui-slider');
+	gallery.slider({
+		interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
+	});
+	mui.init({
+		swipeBack: false,
+	});
+	//侧滑容器父节点
+	var offCanvasWrapper = mui('#offCanvasWrapper');
+	//主界面容器
+	var offCanvasInner = offCanvasWrapper[0].querySelector('.mui-inner-wrap');
+	//菜单容器
+	var offCanvasSide = document.getElementById("offCanvasSide");
+
+	//移动效果是否为整体移动
+	var moveTogether = false;
+	//侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
+	var classList = offCanvasWrapper[0].classList;
+	//主界面和侧滑菜单界面均支持区域滚动；
+	mui('#offCanvasSideScroll').scroll();
+	mui('#offCanvasContentScroll').scroll();
+	//实现ios平台的侧滑关闭页面；
+	if (mui.os.plus && mui.os.ios) {
+		offCanvasWrapper[0].addEventListener('shown', function(e) { //菜单显示完成事件
+			plus.webview.currentWebview().setStyle({
+				'popGesture': 'none'
+			});
+		});
+		offCanvasWrapper[0].addEventListener('hidden', function(e) { //菜单关闭完成事件
+			plus.webview.currentWebview().setStyle({
+				'popGesture': 'close'
+			});
+		});
+	}
+	// 选项卡
+	/* (function($) {
+		var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+		$('.mui-input-group').on('change', 'input', function() {
+			if (this.checked) {
+				sliderSegmentedControl.className =
+					'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+				//force repaint
+				sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+			}
+		});
+	})(mui); */
+</script>
+
+	<script type="text/javascript">
+		//半小时咨询
+		$("#onetime").click(function(event) {
+			var price1 = "";
+			$("#spProductPrice").html(price1);
+			$(".choose").attr("value", 0);
+		});
+		//48小时咨询
+		$("#oneday").click(function(event) {
+			var price1 = "";
+			$("#spProductPrice").html(price1);
+			$(".choose").attr("value", 1);
+		});
+		//一个月咨询
+		$("#onemonth").click(function(event) {
+			var price1 = "";
+			$("#spProductPrice").html(price1);
+			$(".choose").attr("value", 2);
+		});
+		//一个月加文书咨询
+		$("#monthbook").click(function(event) {
+			var price1 = "";
+			$("#spProductPrice").html(price1);
+			$(".choose").attr("value", 3);
+		});
+
+		function goto1() {
+			window.location.hash = "#goto1";
+		}
+
+		function goto2() {
+			window.location.hash = "#goto2";
+		}
+
+		function goto3() {
+			window.location.hash = "#goto3";
+		}
+	</script>
+</html>

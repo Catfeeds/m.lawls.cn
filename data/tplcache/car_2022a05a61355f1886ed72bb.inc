@@ -45,17 +45,22 @@ $fields = array();
 						<!-- 推荐新闻-->
 						<div class="car" style="margin-top: 6rem;">
 							<h4>收件信息</h4>
-							<form class="mui-input-group">
+							<form class="mui-input-group" id="fixupformid" name="fixupform" action="carbuyaction.php" method="post">
+								<div style="display:none;">
+									<input name="do" type="hidden" value="clickout">
+								</div>
 								<div class="mui-input-row">
 									<label>手 机：</label>
-									<input type="text" name="tel" class="mui-input-clear" placeholder="律师解答咨询的联系方式"  maxLength="11" onkeyup="value=value.replace(/[^1234567890-]+/g,'')" id="OrderMobile" required="required" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+									<input type="text" name="tel" class="mui-input-clear" placeholder="律师解答咨询的联系方式" maxLength="11" onkeyup="value=value.replace(/[^1234567890-]+/g,'')"
+									 id="OrderMobile" required="required" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
 								</div>
 								<div class="mui-input-row">
 									<label>邮 箱：</label>
-									<input type="text" name="email" class="mui-input-clear" placeholder="接收律师起草合同的邮箱" maxLength="30" type="text" value="" id="OrderEmail" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+									<input type="text" name="email" class="mui-input-clear" placeholder="接收律师起草合同的邮箱" maxLength="30" type="text"
+									 value="" id="OrderEmail" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
 								</div>
 								<h4>订单详情 (编号：<?php echo $GLOBALS['_vars']['carts']['orders_id']; ?>)</h4>
-                                <?php  foreach($GLOBALS['Items'] as $key=>$value){ ?>
+								<?php  foreach($GLOBALS['Items'] as $key=>$value){ ?>
 								<ul class="mui-table-view">
 									<li class="mui-table-view-cell mui-media">
 										<a href="javascript:;" class="">
@@ -79,22 +84,20 @@ $fields = array();
 
 								<h4>支付方式</h4>
 								<div class="ddgb-zf-xuanzhe">
-									<input type="hidden" name="paytype" value="7" id="OrderPaymentType"/>
-									<input type="hidden" name="data[Order][payment_bank]" value="" id="OrderPaymentBank"/>
+									<input type="hidden" name="paytype" value="7" id="OrderPaymentType" />
 									<?php  foreach($GLOBALS['shops_paymentarr'] as $key=>$value){ ?>
-									<div class="zf-xz-inner ">
-										<label class="guanlian" for="pay05"  id="pay0<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-										<!--<input class="danxuan" type="radio"  value="<?php echo $value['id']; ?>"  name="payment_option">--> 
+									<div class="zf-xz-inner">
+										<label class="guanlian" for="pay05" id="pay0<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 									</div>
 									<?php  }    ?>
  </div>
-									<h3>应付金额：<span class="dahong"><span class="youjianju">¥</span> <span class="confirm-price"><?php echo $GLOBALS['_vars']['carts']['price_count']; ?></span></span></h3>
-									<tr>
+								<h3>应付金额：<span class="dahong"><span class="youjianju">¥</span> <span class="confirm-price"><?php echo $GLOBALS['_vars']['carts']['price_count']; ?></span></span></h3>
+								<!-- <tr>
 										<td width="180" class="td1">验证码</td>
 										<td><a name="mate_vdimgck" />
 											<input name="vdcode" id="vdcode" type="text" class="ipt-txt" size="10" style="text-transform:uppercase;" />
 											<a href="#mate_vdimgck"><img id="vdimgck_img" src="../include/vdimgck.php" hspace="6" align="absmiddle" onClick="vdimgck();" title="看不清换一张" /></a> <a href="#mate_vdimgck" onClick="vdimgck();">看不清换一张</a></td>
-									</tr>
+									</tr> -->
 								<button type="submit" id="btnPaySubmit" class="mui-btn mui-btn-primary mui-btn-block">提交订单</button>
 							</form>
 						</div>
@@ -116,56 +119,53 @@ $fields = array();
 		</div>
 	</body>
 	<script src="/js/jquery-1.8.1.min.js"></script>
+	<script type="text/javascript" src="/js/order-payment-selection-stylexin.js"></script>
 	<script>
-	$(function(){
-		$(".zf-xz-inner").click(function(event) {
-			$(this).addClass('zf-xz-inner-cheng').siblings('.zf-xz-inner').removeClass('zf-xz-inner-cheng');
+		$(function() {
+			$(".zf-xz-inner").click(function(event) {
+				$(this).addClass('zf-xz-inner-cheng').siblings('.zf-xz-inner').removeClass('zf-xz-inner-cheng');
+			});
 		});
-	});
-	//手机验证
-function check_mobile(obj)
-{
-	var m=$.trim(obj.val());
-	if(m!='')
-	{
-		var reg = /^1[345789]\d{9}$/;
-		var result = false;
-		if (reg.test(m))
-			result=true;		
-		if (result)
-		{
-			return true;
-		}else{
-			alert("请输入正确的手机号！");
-			obj.focus();
-			return false;
+		//手机验证
+		function check_mobile(obj) {
+			var m = $.trim(obj.val());
+			if (m != '') {
+				var reg = /^1[345789]\d{9}$/;
+				var result = false;
+				if (reg.test(m))
+					result = true;
+				if (result) {
+					return true;
+				} else {
+					alert("请输入正确的手机号！");
+					obj.focus();
+					return false;
+				}
+			} else {
+				alert("请输入手机号！");
+				obj.focus();
+				return false;
+			}
 		}
-	}else{
-		alert("请输入手机号！");
-		obj.focus();
-		return false;
-	}
-}
-function validateEmail(email)
-{
-	if(email=="")
-		return true;
-	var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	if(!pattern.test(email))
-	{
-		return false;
-	}else 
-	{
-		return true;
-	}
-}
-$("#btnPaySubmit").click(function(){
-	//var smsCode=$('#OrderSmsCode').val();
-	var mobileObj=$('#OrderMobile');
-	if(!check_mobile(mobileObj)){
-		return false;
-	}
-});
+
+		function validateEmail(email) {
+			if (email == "")
+				return true;
+			var pattern =
+				/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			if (!pattern.test(email)) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+		$("#btnPaySubmit").click(function() {
+			//var smsCode=$('#OrderSmsCode').val();
+			var mobileObj = $('#OrderMobile');
+			if (!check_mobile(mobileObj)) {
+				return false;
+			}
+		});
 	</script>
 	<?php include $this->CompilerInclude("commonJs.htm");
  ?>

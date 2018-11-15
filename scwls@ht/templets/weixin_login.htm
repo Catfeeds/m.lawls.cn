@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<title>织梦猫微信登录插件</title>
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#basic" role="tab" data-toggle="tab">基本设置</a></li>
+    <li role="presentation"><a href="#code" role="tab" data-toggle="tab">粘贴代码</a></li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="basic">
+      <form action="?do=basic" method="post" target="_self" id="set_basic">
+      <table class="table table-bordered">
+        <input type="hidden" name="dopost" value="save">
+          <tr>
+            <th style="width: 150px">说明</th>
+            <td colspan="2">《织梦猫微信登录插件》是织梦猫发布的微信登录插件，前提是你已注册了<a href="https://open.weixin.qq.com"  target="_blank">微信开放平台</a>，并通过了开发者资质认证。同时该账号下创建了网站应用，且处于已通过状态。
+              <p>使用步骤：</p>
+              <ul>
+                <li>1.将AppID和AppSecret填写到下面的输入框中，点击保存按钮。</li>
+                <li>2.添加微信登录按钮至模板。</li>
+                <li>3.线上测试。</li>
+              </ul>
+              <p><a href="http://www.dedemao.com/dedeplug/weixin_login.html">详情参见</a></p>
+            </td>
+          </tr>
+          <tr>
+            <th>AppID</th>
+            <td><input name="basic[wxkf_appid]" type="text" value="<?php echo $data['wxkf_appid']?>" class="form-control"/> </td>
+            <td>注：登录<a href="https://open.weixin.qq.com" target="_blank">微信开放平台</a>在“管理中心”->“网站应用”中查看</td>
+            <input type="hidden" name="info[wxkf_appid]" value="微信AppID" style="width:80%">
+          </tr>
+        <tr>
+          <th>AppSecret</th>
+          <td><input name="basic[wxkf_appsecret]" type="text" value="<?php echo $data['wxkf_appsecret']?>" class="form-control"/> </td>
+          <td>注：登录<a href="https://open.weixin.qq.com" target="_blank">微信开放平台</a>在“管理中心”->“网站应用”中查看</td>
+          <input type="hidden" name="info[wxkf_appsecret]" value="微信AppSecret" style="width:80%">
+        </tr>
+        <tr>
+          <th>跳转网址</th>
+          <td><input name="basic[wxkf_jump]" type="text" value="<?php echo $data['wxkf_jump'] ? $data['wxkf_jump'] : '/member'?>" class="form-control" /> </td>
+          <td>登录成功后跳转到哪个网址</td>
+          <input type="hidden" name="info[wxkf_jump]" value="跳转网址" style="width:80%">
+        </tr>
+          <tr>
+            <td colspan="3">
+              <button class="btn btn-primary">保存</button>
+            </td>
+          </tr>
+
+      </table>
+      </form>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="code">
+      <table class="table table-bordered">
+		<tr>
+		<td>
+            <p>手动将代码粘贴到需要添加微信登录功能的地方，一般粘贴到登录按钮的旁边</p>
+          </td>
+		</tr>
+        <tr>
+          <td>
+			<pre>
+&lt;a href=&#x27;https://open.weixin.qq.com/connect/qrconnect?appid=<?php echo $wxkf_appid?>&amp;redirect_uri=<?php echo rtrim($cfg_basehost,'/')?>/plus/wx_login.php&amp;response_type=code&amp;scope=snsapi_login&amp;state=123#wechat_redirect&#x27;
+                target=&#x27;_blank&#x27;&gt;微信登录&lt;/a&gt;
+			</pre>
+          </td>
+        </tr>
+      </table>
+      </form>
+    </div>
+  </div>
+  <br>
+  <h5 class="text-center">Powered by <a href="https://www.dedemao.com/"><span class="label label-primary">织梦猫</span></a></h5>
+  <br>
+</div>
+</body>
+</html>

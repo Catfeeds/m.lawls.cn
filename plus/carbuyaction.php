@@ -81,11 +81,11 @@ if(!isset($dopost) || empty($dopost)){
     } else if ($do == 'clickout')
     {
         $svali = GetCkVdValue();
-        if((strtolower($vdcode) != $svali || $svali == "") && $payment == 'none')
+        /* if((strtolower($vdcode) != $svali || $svali == "") && $payment == 'none')
         {
             ShowMsg("验证码错误！","-1");
             exit();
-        }
+        } */
         /*if(empty($address))
         {
             ShowMsg("请填写收货地址！","-1");
@@ -137,7 +137,7 @@ if(!isset($dopost) || empty($dopost)){
             
             if(empty($username) || $password)
             {
-                ShowMsg("请选登录！","-1",0,2000);
+                ShowMsg("请先登录！","/member/login.php",0,2000);
                 exit();
             }
             

@@ -38,6 +38,38 @@
 						</div>
 						<!-- 主体 -->
 						<div class="phone-ask" style="margin-top: 6rem;">
+                            <div class="guwen-title">
+                            	<h3>{dede:field.title/}</h3>
+                            </div>
+                            <div class="r-jiage">
+                            	<h3>市场价：<del>&yen;{dede:field.market/}</del></h3>
+                            	<h3>法易通价：<strong id='spProductPrice'>{dede:field.onetime/}</strong>元
+                            	</h3>
+                            </div>
+                            <form id="formcar" name="formcar" method="post" action="{dede:field name='phpurl'/}/telcar.php">
+                            	<input type="hidden" name="id" value="{dede:field.id/}" />
+                            	<input type="hidden" name="title" value="{dede:field.title/}" />
+                            	<input type="hidden" name="price" value="{dede:field.onetime/}" />
+                            	<input type="hidden" name="choose" class="choose" value="0">
+                                <h4>服务类型:</h4>
+                            	<div class="mui-input-row mui-radio mui-left">
+                            		<label for="onetime">电话问律师（半个小时）</label>
+                            		<input name="price" id="onetime" value="{dede:field.onetime/}" type="radio" checked="">
+                            	</div>
+                            	<div class="mui-input-row mui-radio mui-left">
+                            		<label for="oneday">电话问律师（48小时内不限次数）</label>
+                            		<input name="price" id="oneday" value="{dede:field.onemonth/}" type="radio">
+                            	</div>
+                                <div class="mui-input-row mui-radio mui-left">
+                                	<label for="onemonth">电话问律师（一个星期不限次数）</label>
+                                	<input name="price" id="onemonth" value="{dede:field.onemonth/}" type="radio">
+                                </div>
+                                <div class="mui-input-row mui-radio mui-left">
+                                	<label for="monthbook">包月咨询+ 1份文书服务</label>
+                                	<input name="price" id="monthbook" value="{dede:field.monthbook/}" type="radio">
+                                </div>
+                            	<button type="submit" class="mui-btn mui-btn-primary mui-btn-block">立即购买</button>
+                            </form>
 							<div id="slider">
 								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 									<a class="mui-control-item  mui-active" onclick="goto1()">
@@ -84,10 +116,16 @@
 						<div class="clear"></div>
 
 					</div>
-					<div class="buy">
-						<a href="" class="call">客服咨询</a>
-						<a href="" class="buynow">立即购买</a>
-					</div>
+					<form id="formcar" name="formcar" method="post" action="{dede:field name='phpurl'/}/telcar.php">
+						<input type="hidden" name="id" value="{dede:field.id/}" />
+						<input type="hidden" name="title" value="{dede:field.title/}" />
+						<input type="hidden" name="price" value="{dede:field.onetime/}" />
+						<input type="hidden" name="choose" class="choose" value="0">
+						<div class="buy">
+							<a href="" class="call">客服咨询</a>
+							<input type="submit" class="buynow" value="立即购买">
+						</div>
+					</form>
 				</div>
 
 				<div class="mui-off-canvas-backdrop"></div>
@@ -97,6 +135,30 @@
 	</body>
     {dede:include filename='commonJs.htm'/}
 	<script type="text/javascript">
+        //半小时咨询
+        $("#onetime").click(function(event) {
+        	var price1="{dede:field.onetime/}";
+        	$("#spProductPrice").html(price1);
+        	$(".choose").attr("value", 0);
+        });
+        //48小时咨询
+        $("#oneday").click(function(event) {
+        	var price1="{dede:field.oneday/}";
+        	$("#spProductPrice").html(price1);
+        	$(".choose").attr("value", 1);
+        });
+        //一个月咨询
+        $("#onemonth").click(function(event) {
+        	var price1="{dede:field.onemonth/}";
+        	$("#spProductPrice").html(price1);
+        	$(".choose").attr("value", 2);
+        });
+        //一个月加文书咨询
+        $("#monthbook").click(function(event) {
+        	var price1="{dede:field.monthbook/}";
+        	$("#spProductPrice").html(price1);
+        	$(".choose").attr("value", 3);
+        });
 		function goto1() {
 			window.location.hash = "#goto1";
 		}

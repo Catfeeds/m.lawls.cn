@@ -25,15 +25,15 @@ $z[7]=Array("channel","\r\n									<a href=\"[field:typeurl/]\">[field:typename
 $z[7][4]=array();
 $z[7][4]['typeid']="10";
 $z[7][4]['type']="son";
-$z[8]=Array("arclist","\r\n								<div class=\"service-block\">\r\n									<a href=\"[field:arcurl/]\">\r\n									<h4>[field:title/]</h4>\r\n									<p>￥<strong>[field:trueprice/]</strong>元</p>\r\n									<span>查看详情</span></a>\r\n								</div>\r\n								",2239,2547);
+$z[8]=Array("list","\r\n								<div class=\"service-block\">\r\n									<a href=\"[field:arcurl/]\">\r\n									<h4>[field:title/]</h4>\r\n									<p>￥<strong>[field:trueprice/]</strong>元</p>\r\n									<span>查看详情</span></a>\r\n								</div>\r\n								",2239,2546);
 $z[8][4]=array();
 $z[8][4]['addfields']="trueprice";
 $z[8][4]['channelid']="6";
-$z[8][4]['row']="100";
-$z[9]=Array("include","",2675,2712);
+$z[8][4]['pagesize']="100";
+$z[9]=Array("include","",2674,2711);
 $z[9][4]=array();
 $z[9][4]['filename']="footer.htm";
-$z[10]=Array("include","",3826,3865);
+$z[10]=Array("include","",3825,3864);
 $z[10][4]=array();
 $z[10][4]['filename']="commonJs.htm";
 

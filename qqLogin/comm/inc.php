@@ -1,0 +1,1 @@
+{"appid":"1101075819","appkey":"sn9U7LIOEeb9nzGh","callback":"\/qqLogin\/callback.php"}

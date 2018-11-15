@@ -40,26 +40,32 @@
 							<div id="slider">
 								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 									<div class="guwen-title">
-										<h3>企业法律顾问</h3>
+										<h3>{dede:field.title/}</h3>
 									</div>
                                     <div class="r-jiage">
-                                    	<h3>市场价：<del>&yen; {dede:field.price/}</del></h3>
-										<h3>法易通价：<strong id='spProductPrice'>{dede:field.trueprice/}</strong>元
+                                    	<h3>市场价：<del>&yen; {dede:field.market/}</del></h3>
+										<h3>法易通价：<strong id='spProductPrice'>{dede:field.month/}</strong>元
 										</h3>
                                     </div>
-                                    <form class="mui-input-group" id="formcar" name="formcar" method="post" action="{dede:field name='phpurl'/}/posttocar.php">
+                                    <form id="formcar" name="formcar" method="post" action="{dede:field name='phpurl'/}/advisercar.php">
                                     	<input type="hidden" name="id" value="{dede:field.id/}" />
                                     	<input type="hidden" name="title" value="{dede:field.title/}" />
-                                    	<input type="hidden" name="price" value="{dede:field.trueprice/}" />
-                                    	<input type="hidden" name="choose" class="choose" value="0">
+                                    	<input type="hidden" name="price" value="{dede:field.month/}" />
+                                    	<input type="hidden" name="choose" id="choose" value="0">
+                                        <h4>服务类型:</h4>
 										<div class="mui-input-row mui-radio mui-left">
-											<label for="trueprice">普通：一个工作日</label>
-											<input name="price" id="trueprice" value="{dede:field.trueprice/}" type="radio" checked="">
+											<label for="month">包月法务</label>
+											<input name="price" id="month" value="{dede:field.month/}" type="radio" checked="">
 										</div>
 										<div class="mui-input-row mui-radio mui-left">
-											<label for="jiaji">合同加急（加收50%）</label>
-											<input name="price" id="jiaji" value="{dede:field.jiaji/}" type="radio">
+											<label for="company">企业法律顾问</label>
+											<input name="price" id="company" value="{dede:field.company/}" type="radio">
 										</div>
+                                        <div class="mui-input-row mui-radio mui-left">
+                                        	<label for="method">中小企业特惠服务方案</label>
+                                        	<input name="price" id="method" value="{dede:field.method/}" type="radio">
+                                        </div>
+
                                         <button type="submit" class="mui-btn mui-btn-primary mui-btn-block">立即购买</button>
 									</form>
 									<div class="guwen-menu">
@@ -192,11 +198,11 @@
 						<div class="clear"></div>
 
 					</div>
-					<form class="mui-input-group" id="formcar" name="formcar" method="post" action="{dede:field name='phpurl'/}/posttocar.php">
+					<form id="formcar" name="formcar" method="post" action="{dede:field name='phpurl'/}/advisercar.php">
 						<input type="hidden" name="id" value="{dede:field.id/}" />
 						<input type="hidden" name="title" value="{dede:field.title/}" />
-						<input type="hidden" name="price" value="{dede:field.trueprice/}" />
-						<input type="hidden" name="choose" class="choose" value="0">
+						<input type="hidden" name="price" value="{dede:field.month/}" />
+						<input type="hidden" name="choose" id="choose" value="0">
 						<div class="buy">
 							<a href="" class="call">客服咨询</a>
 							<!-- <a href="" class="buynow">立即购买</a> -->
@@ -212,17 +218,23 @@
 	</body>
 	{dede:include filename='commonJs.htm'/}
 	<script type="text/javascript">
-        //点击普通按钮
-        $("#trueprice").click(function(event) {
-            var price1="{dede:field.trueprice/}";		
+        //包月法务
+        $("#month").click(function(event) {
+            var price1="{dede:field.month/}";		
             $("#spProductPrice").html(price1);
         	$(".choose").attr("value",0);
         });
-        //点击加急按钮
-        $("#jiaji").click(function(event) {
-            var price1="{dede:field.jiaji/}";
+        //企业法律顾问
+        $("#company").click(function(event) {
+            var price1="{dede:field.company/}";
             $("#spProductPrice").html(price1);
         	$(".choose").attr("value",1);
+        });
+        //中小企业特惠服务方案
+        $("#method").click(function(event) {
+        	var price1="{dede:field.method/}";
+        	$("#spProductPrice").html(price1);
+        	$(".choose").attr("value",2);
         });
 		function goto1() {
 			window.location.hash = "#goto1";

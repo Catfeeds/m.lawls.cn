@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>{dede:field.seotitle/}_{dede:global.cfg_indexname/}</title>
+		<meta name="keywords" content="{dede:field name='keywords'/}" />
+		<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+		<script src="/js/mui.min.js"></script>
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</head>
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			{dede:include filename='aside.htm'/}
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				{dede:include filename='header.htm'/}
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/banner1.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/banner1.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/banner1.jpg" /></a></div>
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/banner1.jpg" /></a></div>
+							</div>
+						</div>
+
+						<div class="clear"></div>
+						<!-- 推荐新闻-->
+						<div class="news-list">
+							<h2 class="list-nav">法易通专注法律服务，让您远离法律风险</h2>
+							<div id="slider" class="mui-slider">
+								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+									<a class="mui-control-item" href="#item1mobile">
+										{dede:field.typename/}
+									</a>
+								</div>
+								<div class="mui-slider-group">
+									<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+										<div id="scroll1" class="mui-scroll-wrapper">
+											<div class="mui-scroll">
+												<ul class="mui-table-view">
+													{dede:list pagesize='15'}
+													<li class="mui-table-view-cell"><a href="[field:arcurl/]">[field:title/]</a></li>
+													{/dede:list}
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<ul class="mui-pagination mui-pagination-lg">
+									{dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+								</ul>
+							</div>
+						</div>
+						<!-- 服务热线-->
+						<div class="bottom">
+							<div class="bottom-con">
+								<h4>近一周，已有<span>1325人</span>获得解决方案</h4>
+								<p>“互联网+法务团队”通过集体智慧，提供卓越的法律服务</p>
+								<p>服务热线：<span>18202835355</span></p>
+							</div>
+						</div>
+						<!-- 底部 -->
+						{dede:include filename='footer.htm'/}
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+	</body>
+	{dede:include filename='commonJs.htm'/}
+</html>

@@ -46,14 +46,14 @@
 									{/dede:channel}</span>
 							</div>
 							<div class="block proList">
-                                {dede:arclist addfields='trueprice' channelid='6' row='100'}
+                                {dede:list addfields='trueprice' channelid='6' pagesize='100'}
 								<div class="service-block">
 									<a href="[field:arcurl/]">
 									<h4>[field:title/]</h4>
 									<p>￥<strong>[field:trueprice/]</strong>元</p>
 									<span>查看详情</span></a>
 								</div>
-								{/dede:arclist}
+								{/dede:list}
 								<div class="clear"></div>
 							</div>
 						</div>

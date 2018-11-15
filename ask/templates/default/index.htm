@@ -1,423 +1,342 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>在线问答</title>
+		<script src="/js/mui.min.js"></script>
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+	</head>
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			<aside id="offCanvasSide" class="mui-off-canvas-right">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 菜单具体展示内容 -->
+						<div class="title">侧滑导航</div>
+						<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+							<li class="mui-table-view-cell">
+								<a href="/" class="mui-navigate-right">首页</a>
+							</li>
+							<li class="mui-table-view-cell mui-collapse">
+								<a href="/flgw/124.html" class="mui-navigate-right">法律顾问</a>
+								<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/124.html">企业法律顾问</a></li>
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/125.html">个人法律顾问</a></li>
+								</ul>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="/nsht/" class="mui-navigate-right">审查合同</a>
+							</li>
+							<li class="mui-table-view-cell mui-collapse">
+								<a href="/ask/?ct=question&ac=ask_complete" class="mui-navigate-right">法律咨询</a>
+								<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/ask/?ct=question&ac=ask_complete">在线法律咨询</a></li>
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flzx/123.html">电话法律咨询</a></li>
+								</ul>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="/zls/" class="mui-navigate-right">找律师</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="/flbk/" class="mui-navigate-right">法律百科</a>
+							</li>
 
-<head>
+						</ul>
+					</div>
+				</div>
+			</aside>
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+					<span>成都</span>
+					<h1 class="mui-title mui-logo"><a href="/"><img src="/images/logo.png"></a></h1>
+					<a id="offCanvasBtn" href="#offCanvasSide" class="mui-pull-right mui-btn-link mui-icon mui-icon-bars"></a>
+				</header>
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 幻灯片 -->
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/answer.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/answer.jpg" /></a></div>
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/answer.jpg" /></a></div>
+							</div>
+						</div>
+						<!-- 主体 -->
+						<div class="ask" style="margin-top: 6rem;">
+							<div class="col-xs-12 col-lg-9">
+								<form action="?ct=question&amp;ac=ask_save" target="_blank" id="QnaIndexForm" method="post" accept-charset="utf-8">
+									<div style="display:none;">
+										<input type="hidden" name="reward" value="20" id="QnaCredit">
+										<input type="hidden" name="ClassLevel1" value="25" id="ClassLevel1">
+										<input type="hidden" name="ClassLevel2" value="合同事务" id="classname">
+									</div>
+									<div class="lvshizhinan-body">
+										<div class="lszn-leimu">
+											<div class="lszn-lm-title" style="padding-left: 10px;">
+												<div class="title-l">
+													<h2 style="border-bottom: none;">类&nbsp;&nbsp;&nbsp;&nbsp;型：</h2>
+												</div>
+											</div>
+											<div class="lszn-lm-inner" style="padding-left: 10px;">
+												<a target="_self" href="javascript:;" class="lm-kuai  lanse"><span class="tubiao"><img src="/images/htsw.png"
+														 width="30px" height="30px"></span>合同事务</a>
+												<a target="_self" href="javascript:;" class="lm-kuai "><span class="tubiao"><img src="/images/jtsg.jpg"
+														 width="30px" height="30px"></span>交通事故</a>
+												<a target="_self" href="javascript:;" class="lm-kuai "><span class="tubiao"><img src="/images/hyjt.jpg"
+														 width="30px" height="30px"></span>婚姻家庭</a>
+												<a target="_self" href="javascript:;" class="lm-kuai "><span class="tubiao"><img src="/images/fcjf.jpg"
+														 width="30px" height="30px"></span>房产纠纷</a>
+												<a target="_self" href="javascript:;" class="lm-kuai "><span class="tubiao"><img src="/images/zwjf.jpg"
+														 width="30px" height="30px"></span>债权债务</a>
+												<a target="_self" href="javascript:;" class="lm-kuai "><span class="tubiao"><img src="/images/zscq.jpg"
+														 width="30px" height="30px"></span>知识产权</a>
+												<a target="_self" href="javascript:;" class="lm-kuai "><span class="tubiao"><img src="/images/xsss.jpg"
+														 width="30px" height="30px"></span>刑事诉讼</a>
+												<a target="_self" href="javascript:;" class="lm-kuai "><span class="tubiao"><img src="/images/shpc.jpg"
+														 width="30px" height="30px"></span>损害赔偿</a>
+												<a target="_self" href="javascript:;" class="lm-kuai "><span class="tubiao"><img src="/images/yljf.jpg"
+														 width="30px" height="30px"></span>医疗纠纷</a>
+												<a target="_self" href="javascript:;" class="lm-kuai "><span class="tubiao"><img src="/images/ldgs.jpg"
+														 width="30px" height="30px"></span>劳动工伤</a>
+												<a target="_bl_selfank" href="javascript:;" class="lm-kuai "><span class="tubiao"><img src="/images/gsfw.jpg"
+														 width="30px" height="30px"></span>公司法务</a>
+												<a target="_self" href="javascript:;" class="lm-kuai "><span class="tubiao"><img src="/images/zxqt.jpg"
+														 width="30px" height="30px"></span>咨询其他</a>
+											</div>
+										</div>
+									</div>
+									<div class="qnas-box p-r">
+										<div class="ask-pay-bar">
+											<div class="changprice">价格：<p>￥</p><span>20</span></div>
+											<div class="topic"><span class="active major">
+													<h5>专业</h5>解答
+												</span><span class="senior">
+													<h5>资深</h5>解答
+												</span><span class="project">
+													<h5>出方案</h5>解答
+												</span></div>
+										</div>
 
-<meta charset="utf-8"> 
+										<h4 class="text-black"> 问题名称 </h4>
+										<input type="text" name="title" placeholder="问题需要清晰易懂,不能少于8个汉字，也不能过多" required="">
+										<h4 class="text-black" style="margin-top: 20px;"> 案情描述 <small class=""> &nbsp;
+												您已输入 <span class="text-red" id="wordCount">0</span> 个汉字（不少于8个汉字） <span class="text-red">*</span> </small>
+										</h4>
+										<textarea name="content" class="w6" placeholder="例如：我与妻子协议离婚，现在想把婚后买的房子协议归儿子所有。但是儿子还不到十八岁，请问可以把房子过户给未成年的子女吗？需要什么手续呢？"
+										 id="QnaQuestion" style="height: 120px;" required=""></textarea>
+										<div class="p-r input-bar h100p o-h">
+											<div class="input-part" id="unLogin">
+												<label for="" class="code">验证码：</label>
+												<input name="vdcode" value="" maxlength="6" class="code" type="text"  style="width: 110px;" id="vdcode">
+												<img src="/include/vdimgck.php" alt="看不清？点击更换" align="absmiddle" style="cursor:pointer" onclick="this.src=this.src+'?'">
+											</div>
+										</div>
+										<input name="submit" type="submit" value="提交问题" style="color: #fff;font-weight: bold; width: 40%; background:linear-gradient(#77d9e6, #3bbed0);opacity: 1;"
+										 class="btn btn-block btn-yellow" id="askbtn">
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+									</div>
+								</form>
+								<!--没安装畅言模块-->
+								<link href="/plus/dedemao-comment/css.css" rel="stylesheet">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+								<div class="dedemao-comment">
 
-<title><?php echo $cfg_ask_sitename;?></title>
+									<div class="dedemao-comment-box">
 
-<link href="/favicon.ico" type="image/x-icon" rel="icon" />
+										<img class="b-head-img" src="/plus/dedemao-comment/img/default_head_img.gif">
 
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/layout-new.css" />
+										<div class="b-box-textarea">
 
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-new.css" />
+											<div class="b-box-textarea-body">
 
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/bootstrap.min.css" />
+												<div class="b-box-content" contenteditable="true" onfocus="delete_hint(this)">说点什么吧</div>
 
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/box.css" />
+												<ul class="b-emote-submit">
 
-<script type="text/javascript" src="/templets/lawyer/js/jquery-1.8.1.min.js"></script>
+													<li class="b-emote">
 
-<script type="text/javascript" src="/templets/lawyer/js/modal.min.js"></script>
+														<a class="ds-toolbar-button ds-add-emote" title="插入表情" onclick="getTuzki(this)"></a>
 
-<script type="text/javascript" src="/templets/lawyer/js/box.js"></script>
+														<!-- <input class="b-email" type="text" name="email" placeholder="接收回复的email地址" value=""> -->
 
-<script type="text/javascript" src="/templets/lawyer/js/iealert.js"></script>
+														<div class="b-tuzki"></div>
 
-<script type="text/javascript">
+													</li>
 
-	$(function(){
+													<li class="b-submit-button">
 
-		$('.web-header .user-box ul > li:nth-of-type(2) div.fl b').click(function(){
+														<input type="button" value="评 论" aid="" pid="0" onclick="comment(this)" style="background-color: ;">
 
-			$('.web-header .user-box ul > li:nth-of-type(2) div.fl ol').show();
+													</li>
 
-			$('.model-box').show();
+													<li class="b-clear-float"></li>
 
+												</ul>
+
+											</div>
+
+											<div class="error-tip"></div>
+
+										</div>
+
+
+
+										<div class="b-clear-float"></div>
+
+									</div>
+
+									<div class="dedemao-comment-title" style="border-bottom: 2px solid ;">
+
+										<ul class="row">
+
+											<li class="" style="float: left;">全部评论（<span class="comment-count">0</span>）</li>
+
+											<li class=" text-right" style="float: right;">
+
+												<span class="icon2">
+
+													<input type="radio" name="commentorder" id="commentnew" checked="checked" value="DESC">
+
+													<label for="commentnew">最新</label>
+
+													<input type="radio" name="commentorder" id="commentlatest" value="ASC">
+
+													<label for="commentlatest">最早</label>
+
+												</span>
+
+											</li>
+
+										</ul>
+
+									</div>
+
+									<div class=" b-user-comment">
+
+										<div class="comment-load" style=""><img src="/plus/dedemao-comment/img/loader.gif" alt=""></div>
+
+										<div class="row b-user b-parent comm_list">
+
+											<ul class="list" id="ulcommentlist">
+
+												<div class="empty-prompt-w">
+
+													<span class="prompt-null-w">还没有评论，快来抢沙发吧！</span>
+
+												</div>
+
+											</ul>
+
+										</div>
+
+										<div class="row">
+
+											<div class="">
+
+												<div class="b-border"></div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="row">
+
+										<div class="">
+
+											<div class="b-border"></div>
+
+										</div>
+
+									</div>
+
+									<div class="section-page-w"></div>
+
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+
+					</div>
+				</div>
+
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		var gallery = mui('.mui-slider');
+		gallery.slider({
+			interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
 		});
-
-		$('.model-box').click(function(){
-
-			$('.web-header .user-box ul > li:nth-of-type(2) div.fl ol').hide();
-
-			$('.web-header .inner-box .fr > div.dropdown ul.menu').hide();
-
-			$(this).hide();
-
+		mui.init({
+			swipeBack: false,
 		});
-
-		$('.web-header .inner-box .fr > div.dropdown span').click(function(){
-
-			$('.web-header .inner-box .fr > div.dropdown ul.menu').show();
-
-			$('.model-box').show();
-
-		})
-
-		$("#search-btn").leanModal();
-
-		$("body").iealert();
-
-		$('footer .link .row .inner-box .top-box ul li').click(function(){
-
-			$(this).addClass('click').siblings().removeClass('click');
-
-			var numb = $(this).index()
-
-			$('footer .link .row .inner-box .bottom-box div').eq(numb).show().siblings().hide()
-
-		});
-
-	});
-
-	</script>
-
-</head>
-
-<body>
-
-<?php pasterTempletDiy("lawyer/header2.htm"); ?>
-
-    <!--<div class="nav-box">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-xs-12">
-
-                    <nav>
-
-                        <ul class="list-unstyled">
-
-                            <li class="p-r">
-
-                                <p><a class="text-darkgray" href="/ask">法律咨询首页</a></p>
-
-                            </li>
-
-                            <?php
-
-								$temp = 0;
-
-								foreach($asktypes as $asktype)
-
-								{
-
-									if($asktype['reid'] == 0) {
-
-										if($temp > 0) echo "</li></ol></div></li>\n";
-
-										if($cfg_ask_rewrite == 'Y') $url= $asktype['id'];
-
-										else $url='?ct=browser&tid='.$asktype['id'];
-
-										echo '<li class="p-r click"><p><a class="text-darkgray" href="'.$url.'">'.$asktype['name'].'</a></p><div class="inner-box p-a"><ol class="list-unstyled">';
-
-										$temp++;
-
-									} else {
-
-										if($cfg_ask_rewrite == 'Y') $url= 't'.$asktype['id'];
-
-										else $url='?ct=browser&tid2='.$asktype['id'];
-
-										echo '<li><a href="'.$url.'">'.$asktype['name'].'</a></li>';
-
-									}
-
-								}
-
-								echo "</li></ol></div></li>\n";
-
-							?>
-
-                        </ul>
-
-                    </nav>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>-->
-
-</header>
-
-<div id="lean_overlay">
-
-    <form class="form-inline p-r" action="?ct=search" method="post" name="search">
-
-        <div class="search-bar">
-
-            <div class="input-part">
-
-                <input id="exampleInputEmail2"  type="text" placeholder="搜索在线问答" name="q">
-
-            </div>
-
-            <button class="text-white btn btn-link " type="submit"><img width="29" height="25" alt="搜索" src="/templets/lawyer/images/search.png"></button>
-
-        </div>
-
-        <div class="inner-box"></div>
-
-    </form>
-
-</div>
-
-<!-- 问答头部 -->
-
-<div class="lvshijieda-body">
-
-    <div class="breadcrumb-box visible-lg">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-xs-12">
-
-                    <p> <span class="icon-font text-blue">&#xe610;</span> <a href="/ask/" class=" text-blue">首页</a> - <a href="/ask/" class=" text-blue">在线法律咨询</a> </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="jieda-3-mod">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="l-box col-lg-9 col-xs-12">
-
-                    <div class="bg-white">
-
-						 <div class="h100p o-h">
-
-                            <div class="fl">
-
-                                <h4 class="text-blue w3"> 最新经营管理法律咨询 </h4>
-
-                            </div>
-
-                            <div class="search-bar fr">
-
-                                <form id="searchForm1" action="?ct=search" method="post" name="search">
-
-                                    <input placeholder="请输入您的案例问题" id="searchtext1" name="q" type="text" class="fl">
-
-                                    
-
-                                    <input type="submit" id="asksear" class="text-center text-white fl" value="搜索提问">
-
-                                    <a href="?ct=question&ac=ask_complete" class="text-white fl">
-
-                                    <p class="text-center">我要提问</p>
-
-                                    </a>
-
-                                </form>
-
-                            </div>
-
-                        </div>
-
-                        <h5 class=" "> <span>最新解决问题</span><span>目前解答用户咨询 <b class="text-orange"><?php echo $solvenum['solved']; ?></b> 条</span> </h5>
-
-                        <ul class="list-unstyled">
-
-                           <?php
-
-							 if($solutions != ""){
-
-								foreach($solutions as $key => $v)
-
-								{
-
-							 ?>
-
-                            <li class="p-r"> <span class="p-a w5-5"><?php echo MyDate('Y-m-d',$v['solvetime']);?></span>
-
-                                <div class="dot p-a"></div>
-
-                                <?php 
-
-                                if($v['tid2name']){
-
-                                ?>
-
-                                <h3 class="w4"> <a class="text-blue" href="?ct=browser&tid2=<?php echo $v['tid2'];?>">[<?php echo $v['tid2name']; ?>]</a> <a class="text-darkgray" href="<?php echo $v['qurl'];?>"><?php echo cn_substr($v['title'],50);?></a> <span class="fr"> 已回答 </span> </h3>
-
-                                <?php 
-
-                                }else{
-
-                                ?>
-
-                                <h3 class="w4"> <a class="text-blue" href="?ct=browser&tid=<?php echo $v['tid'];?>">[<?php echo $v['tidname']; ?>]</a> <a class="text-darkgray" href="<?php echo $v['qurl'];?>"><?php echo cn_substr($v['title'],50);?></a> <span class="fr"> 已回答 </span> </h3>
-
-                                <?php } ?>
-
-                            </li>
-
-                            <?php }}?>
-
-                        </ul>
-
-                    </div>
-
-                    <div class="bg-white">
-
-                        <h5 class=" "> <span>待解决问题</span><span>未解答的有 <b class="text-orange"><?php echo $solvenum['solving']; ?></b> 条</span> </h5>
-
-                        <ul class="list-unstyled">
-
-                           <?php
-
-							 if($notoks != ""){
-
-								foreach($notoks as $key => $v){
-
-							 ?>
-
-                            <li class="p-r"> <span class="p-a w5-5"><?php echo MyDate('Y-m-d',$v['dateline']);?></span>
-
-                                <div class="dot p-a"></div>
-
-                                <?php 
-
-                                if($v['tid2name']){
-
-                                ?>
-
-                                	<h3 class="w4"> <a class="text-blue" href="?ct=browser&tid2=<?php echo $v['tid2'];?>">[<?php echo $v['tid2name']; ?>]</a>  <a class="text-darkgray" href="<?php echo $v['qurl'];?>"><?php echo cn_substr($v['title'],50);?></a> <span class="fr"> 已解决 </span> </h3>
-
-                                <?php 
-
-                                }else{
-
-                                ?>
-
-                                <h3 class="w4"> <a class="text-blue" href="?ct=browser&tid=<?php echo $v['tid'];?>">[<?php echo $v['tidname']; ?>]</a>  <a class="text-darkgray" href="<?php echo $v['qurl'];?>"><?php echo cn_substr($v['title'],50);?></a> <span class="fr"> 已解决 </span> </h3>
-
-                                <?php } ?>
-
-                            </li>
-
-                            <?php }}?>
-
-                        </ul>
-
-                        <!--<div class="web-page">
-
-                            <h1> <span class="current">1</span> <span><a href="/ask/maimaigouxiao/p2.html">2</a></span> </h1>
-
-                        </div>-->
-
-                    </div>
-
-                </div>
-
-                <div class="r-box col-xs-3 visible-lg">
-
-                    <div class="pin">
-
-                        <div class="inner-bar bg-white text-center">
-
-                            <h2 class="text-center">好服务，敢于邀请你来</h2>
-
-                            <h3 class="text-center">体验</h3>
-
-                            <ol class="list-unstyled">
-
-                                <li class="text-center"> <a href="?ct=question&ac=ask_complete" target="_blank"><img src="/templets/lawyer/images/function-4.png" alt="咨询" /></a>
-
-                                    <p class="text-center">在线专业解答</p>
-
-                                    <a href="?ct=question&ac=ask_complete" target="_blank" class="btn-part">首次咨询免费</a> </li>
-
-                                <li class="text-center"> <a href="/nsht/"><img src="/templets/lawyer/images/function-3.png" alt="劳动合同" /></a>
-
-                                    <p class="text-center">最新合同范本下载</p>
-
-                                    <a href="/swt/" class="btn-part">首次下载免费</a> </li>
-
-                            </ol>
-
-                            <a href="/swt/" target="_blank" class="btn-bar"> 你给企业做体检了吗 </a> </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<?php pasterTempletDiy("lawyer/footer2.htm"); ?>
-
-<script type="text/javascript">
-
-	$(function(){
-
-		$(".pin").pin({
-
-			containerSelector: ".jieda-3-mod"
-
-		});
-
-	});
-
-	</script> 
-
-<script type="text/javascript">
-
-$(function(){
-
-	$('.cpgb-fixed-dingbu').click(function(){
-
-		$(window).scrollTop(0);
-
-	});
-
-	$(window).scroll(function () {
-
-		if ($(window).scrollTop() > 1018 ) {			
-
-			$(".cpgb-fixed-dingbu").css("display","block");
-
-		}else if($(window).scrollTop() < 1016){			
-
-			$(".cpgb-fixed-dingbu").css("display","none");
-
+		//侧滑容器父节点
+		var offCanvasWrapper = mui('#offCanvasWrapper');
+		//主界面容器
+		var offCanvasInner = offCanvasWrapper[0].querySelector('.mui-inner-wrap');
+		//菜单容器
+		var offCanvasSide = document.getElementById("offCanvasSide");
+
+		//移动效果是否为整体移动
+		var moveTogether = false;
+		//侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
+		var classList = offCanvasWrapper[0].classList;
+		//主界面和侧滑菜单界面均支持区域滚动；
+		mui('#offCanvasSideScroll').scroll();
+		mui('#offCanvasContentScroll').scroll();
+		//实现ios平台的侧滑关闭页面；
+		if (mui.os.plus && mui.os.ios) {
+			offCanvasWrapper[0].addEventListener('shown', function(e) { //菜单显示完成事件
+				plus.webview.currentWebview().setStyle({
+					'popGesture': 'none'
+				});
+			});
+			offCanvasWrapper[0].addEventListener('hidden', function(e) { //菜单关闭完成事件
+				plus.webview.currentWebview().setStyle({
+					'popGesture': 'close'
+				});
+			});
+		}
+		// 选项卡
+		(function($) {
+			var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+			$('.mui-input-group').on('change', 'input', function() {
+				if (this.checked) {
+					sliderSegmentedControl.className =
+						'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+					//force repaint
+					sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+				}
+			});
+		})(mui);
+
+		function goto1() {
+			window.location.hash = "#goto1";
 		}
 
-	});
+		function goto2() {
+			window.location.hash = "#goto2";
+		}
 
-})
-
-BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'BizQQBottomCommon'});
-
-</script> 
-
-</body>
-
+		function goto3() {
+			window.location.hash = "#goto3";
+		}
+	</script>
 </html>

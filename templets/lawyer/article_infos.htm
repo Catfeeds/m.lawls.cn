@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>{dede:field.title/}_{dede:global.cfg_indexname/}</title>
+		<meta name="keywords" content="{dede:field name='keywords'/}" />
+		<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+		<script src="/js/mui.min.js"></script>
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+
+	</head>
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			{dede:include filename='aside.htm'/}
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				{dede:include filename='header.htm'/}
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 幻灯片 -->
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/ask.jpg" /></a></div>
+								<div class="mui-slider-item"><a href="#"><img src="/images/ask.jpg" /></a></div>
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/images/ask.jpg" /></a></div>
+							</div>
+						</div>
+						<!-- 主体 -->
+						<div class="article-con" style="margin-top: 6rem;">
+                            <div class="guwen-title">
+                            	<h3>{dede:field.title/}</h3>
+                            </div>
+                            
+							<div class="art-content">{dede:field.body/}</div>
+                            <div class="context">
+                            
+                                <ul>
+                            
+                                 <li>{dede:prenext get='pre'/}</li>
+                            
+                                 <li>{dede:prenext get='next'/}</li>
+                            
+                                </ul>
+                            
+                               </div>
+						</div>
+						<div class="clear"></div>
+
+					</div>
+				</div>
+
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+
+	</body>
+    {dede:include filename='commonJs.htm'/}
+	<script type="text/javascript">
+        //半小时咨询
+        $("#onetime").click(function(event) {
+        	var price1="{dede:field.onetime/}";
+        	$("#spProductPrice").html(price1);
+        	$(".choose").attr("value", 0);
+        });
+        //48小时咨询
+        $("#oneday").click(function(event) {
+        	var price1="{dede:field.oneday/}";
+        	$("#spProductPrice").html(price1);
+        	$(".choose").attr("value", 1);
+        });
+        //一个月咨询
+        $("#onemonth").click(function(event) {
+        	var price1="{dede:field.onemonth/}";
+        	$("#spProductPrice").html(price1);
+        	$(".choose").attr("value", 2);
+        });
+        //一个月加文书咨询
+        $("#monthbook").click(function(event) {
+        	var price1="{dede:field.monthbook/}";
+        	$("#spProductPrice").html(price1);
+        	$(".choose").attr("value", 3);
+        });
+		function goto1() {
+			window.location.hash = "#goto1";
+		}
+
+		function goto2() {
+			window.location.hash = "#goto2";
+		}
+
+		function goto3() {
+			window.location.hash = "#goto3";
+		}
+	</script>
+</html>
