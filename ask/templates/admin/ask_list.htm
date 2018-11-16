@@ -143,24 +143,33 @@
                     <td width="10%" align="center">所属分类</td>
                     <td width="6%" align="center">修改问题</td>
                     <td width="8%" align="center">是否解答</td>
-                    <td width="6%" align="center">问题状态</td>
+                    <td width="6%" align="center">支付状态</td>
                 </tr>
                 {dede:datalist}
                 <?php
                     global $dsql;
                     $id = $fields['id'];
                     $rows = $dsql->GetOne("SELECT s.state FROM #@__ask AS a LEFT JOIN #@__shops_orders AS s ON a.oid=s.oid WHERE a.id='$id'");
-                    if($fields['replies'] > 0){
+                    if($rows['state']==0){
+                        $fields['status'] = '未付款';
+                    }else if(($rows['state']==1)){
+                        $fields['status'] = '已付款';
+                    }else{
+                        $fields['status'] = '待解答';
+                    }
+                    /*if($fields['replies'] > 0){
                         $fields['status'] = '已解答';
                     }else if($fields['replies'] <=0){
                         if($rows['state']==0){
                             $fields['status'] = '未付款';
+                        }else if(($rows['state']==1)){
+                            $fields['status'] = '已付款';
                         }else{
                             $fields['status'] = '待解答';
                         }
                     }else if($fields['status']<0){
                         $fields['status'] = '未审核';
-                    }
+                    }*/
                     /*if($fields['status'] == 0){
                         $fields['status'] = '待解决';
                     }else if($fields['status'] == 1 || $fields['status'] == 2 || $fields['status'] == 3){

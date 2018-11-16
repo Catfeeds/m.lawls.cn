@@ -12,7 +12,7 @@
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 		</script>
-
+        <script src="/js/jquery-1.8.1.min.js"></script>
 	</head>
 	<body>
 		<!-- 侧滑导航根容器 -->
@@ -140,7 +140,7 @@
 										<div class="p-r input-bar h100p o-h">
 											<div class="input-part" id="unLogin">
 												<label for="" class="code">验证码：</label>
-												<input name="vdcode" value="" maxlength="6" class="code" type="text"  style="width: 110px;" id="vdcode">
+												<input name="vdcode" value="" maxlength="6" class="code" type="text" style="width: 110px;" id="vdcode">
 												<img src="/include/vdimgck.php" alt="看不清？点击更换" align="absmiddle" style="cursor:pointer" onclick="this.src=this.src+'?'">
 											</div>
 										</div>
@@ -280,6 +280,31 @@
 
 	</body>
 	<script type="text/javascript">
+		//选择栏目
+		$(".lszn-lm-inner a").click(function() {
+			$(this).addClass("lanse").siblings().removeClass('lanse');
+			var classname = $(this).text();
+			$('#classname').val(classname);
+		});
+		//价格选择
+		$(".major").click(function() {
+			$(this).addClass("active").siblings().removeClass('active');
+			var price = "20";
+			$('#QnaCredit').val(price);
+			$(".changprice span").html(price);
+		});
+		$(".senior").click(function() {
+			$(this).addClass("active").siblings().removeClass('active');
+			var price = "98";
+			$('#QnaCredit').val(price);
+			$(".changprice span").html(price);
+		});
+		$(".project").click(function() {
+			$(this).addClass("active").siblings().removeClass('active');
+			var price = "198";
+			$('#QnaCredit').val(price);
+			$(".changprice span").html(price);
+		});
 		var gallery = mui('.mui-slider');
 		gallery.slider({
 			interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
@@ -326,17 +351,5 @@
 				}
 			});
 		})(mui);
-
-		function goto1() {
-			window.location.hash = "#goto1";
-		}
-
-		function goto2() {
-			window.location.hash = "#goto2";
-		}
-
-		function goto3() {
-			window.location.hash = "#goto3";
-		}
 	</script>
 </html>

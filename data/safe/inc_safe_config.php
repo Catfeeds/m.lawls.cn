@@ -1,6 +1,6 @@
 <?php
 
-$safe_gdopen = '1,2,3,4,5,7';
+$safe_gdopen = '1,2,3,4,5,6,7';
 
 $safe_codetype = '3';
 

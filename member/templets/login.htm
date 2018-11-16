@@ -12,7 +12,18 @@
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 		</script>
-
+		<script type="text/javascript">
+			function changeAuthCode() {
+				var num = new Date().getTime();
+				var rand = Math.round(Math.random() * 10000);
+				num = num + rand;
+				$('#ver_code').css('visibility', 'visible');
+				if ($("#lgvdimgck")[0]) {
+					$("#lgvdimgck")[0].src = "../include/vdimgck.php?tag=" + num;
+				}
+				return false;
+			}
+		</script>
 	</head>
 	<body>
 		<!-- 侧滑导航根容器 -->
@@ -87,6 +98,7 @@
 						<!-- 主体 -->
 						<div class="login" style="margin-top: 6rem;">
 							<div id="slider" class="mui-slider" style="top: 0px;">
+								<h3>用户登录</h3>
 								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 									<a class="mui-control-item" href="#item1mobile">账号登录</a>
 									<a class="mui-control-item" href="#item2mobile">短信登录</a>
@@ -108,16 +120,26 @@
 													</div>
 													<div class="mui-input-row">
 														<label for="txtPassword">密 码</label>
-														<input type="password" class="mui-input-password" name="pwd" maxLength="40" type="password" id="txtPassword"
+														<input type="password" class="mui-input-password mui-input" name="pwd" maxLength="40" type="password" id="txtPassword"
 														 required="required" placeholder="请输入密码">
 													</div>
+													<div class="mui-input-row">
+														<label for="sms_code">验证码</label>
+														<input id='message' style="width: 95px; float: left;" type="text" class="mui-input-clear mui-input" name="vdcode"
+														 maxLength="4" id="CustomerCaptcha" placeholder="请输入验证码">
+														<img id="lgvdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="width: 85px;margin-top: 5px;cursor: pointer;" alt="看不清？点击更换"
+														 src="../include/vdimgck.php" />
+														<a onclick="changeAuthCode()" href="javascript:void(0);">换一张!</a>
+													</div>
+
 													<div class="mui-content-padded">
 														<button id='login' type="submit" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
 														<div class="link-area"><a id='reg'>注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
 														</div>
 													</div>
 													<div class="mui-content-padded oauth-area">
-														<a href="https://open.weixin.qq.com/connect/qrconnect?appid=&redirect_uri=/plus/wx_login.php&response_type=code&scope=snsapi_login&state=123#wechat_redirect" class="mui-btn mui-btn-success mui-icon mui-icon-weixin">微信登录</a>
+														<a href="https://open.weixin.qq.com/connect/qrconnect?appid=&redirect_uri=/plus/wx_login.php&response_type=code&scope=snsapi_login&state=123#wechat_redirect"
+														 class="mui-btn mui-btn-success mui-icon mui-icon-weixin">微信登录</a>
 														<a href="/qqLogin/index.php" class="mui-btn mui-btn-primary mui-icon mui-icon-qq">QQ登录</a>
 													</div>
 												</form>
@@ -151,7 +173,8 @@
 														</div>
 													</div>
 													<div class="mui-content-padded oauth-area">
-														<a href="https://open.weixin.qq.com/connect/qrconnect?appid=&redirect_uri=/plus/wx_login.php&response_type=code&scope=snsapi_login&state=123#wechat_redirect" class="mui-btn mui-btn-success mui-icon mui-icon-weixin">微信登录</a>
+														<a href="https://open.weixin.qq.com/connect/qrconnect?appid=&redirect_uri=/plus/wx_login.php&response_type=code&scope=snsapi_login&state=123#wechat_redirect"
+														 class="mui-btn mui-btn-success mui-icon mui-icon-weixin">微信登录</a>
 														<a href="/qqLogin/index.php" class="mui-btn mui-btn-primary mui-icon mui-icon-qq">QQ登录</a>
 													</div>
 												</form>
@@ -176,7 +199,7 @@
 	<script type="text/javascript">
 		var gallery = mui('.mui-slider');
 		gallery.slider({
-			interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
+			interval: 0 //自动轮播周期，若为0则不自动播放，默认为0；
 		});
 		mui.init({
 			swipeBack: false,

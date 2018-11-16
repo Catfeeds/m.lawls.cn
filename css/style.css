@@ -785,3 +785,12 @@ ul li{
 .mui-content-padded{
   text-align: center;
 }
+.login label{
+  width: 25%;
+}
+.login .mui-input{
+  float: left;
+}
+#_userlogin{
+  border-bottom: 2px solid #fff;
+}

@@ -23,8 +23,27 @@
 	<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
 		<div class="mui-scroll">
 			<!-- 菜单具体展示内容 -->
-			<div class="title">侧滑导航</div>
+			<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+			<script language="javascript" type="text/javascript">
+				<!--
+				function CheckLogin() {
+					var taget_obj = document.getElementById('_userlogin');
+					myajax = new DedeAjax(taget_obj, false, false, '', '', '');
+					myajax.SendGet2("/member/ajax_loginsta.php");
+					DedeXHTTP = null;
+				}
+				-->
+			</script>
 			<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+				<div id="_userlogin">
+					<!-- 未登录 -->
+					<li class="mui-table-view-cell"><a href="/member/login.php">登录</a></li>
+					<li class="mui-table-view-cell"><a href="/member/reg_new.php">注册</a></li>
+					<!-- 已登录 -->
+					<script language="javascript" type="text/javascript">
+						CheckLogin();
+					</script>
+				</div>
 				<li class="mui-table-view-cell">
 					<a href="/" class="mui-navigate-right">首页</a>
 				</li>
