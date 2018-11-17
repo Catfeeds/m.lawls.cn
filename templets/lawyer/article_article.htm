@@ -59,42 +59,4 @@
 
 	</body>
 	{dede:include filename='commonJs.htm'/}
-	<script type="text/javascript">
-		//半小时咨询
-		$("#onetime").click(function(event) {
-			var price1 = "{dede:field.onetime/}";
-			$("#spProductPrice").html(price1);
-			$(".choose").attr("value", 0);
-		});
-		//48小时咨询
-		$("#oneday").click(function(event) {
-			var price1 = "{dede:field.oneday/}";
-			$("#spProductPrice").html(price1);
-			$(".choose").attr("value", 1);
-		});
-		//一个月咨询
-		$("#onemonth").click(function(event) {
-			var price1 = "{dede:field.onemonth/}";
-			$("#spProductPrice").html(price1);
-			$(".choose").attr("value", 2);
-		});
-		//一个月加文书咨询
-		$("#monthbook").click(function(event) {
-			var price1 = "{dede:field.monthbook/}";
-			$("#spProductPrice").html(price1);
-			$(".choose").attr("value", 3);
-		});
-
-		function goto1() {
-			window.location.hash = "#goto1";
-		}
-
-		function goto2() {
-			window.location.hash = "#goto2";
-		}
-
-		function goto3() {
-			window.location.hash = "#goto3";
-		}
-	</script>
 </html>

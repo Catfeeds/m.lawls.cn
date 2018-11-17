@@ -1,306 +1,266 @@
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>浏览订单 - 法易通法律法务</title>
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/layout-new.css" />
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-new.css" />
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/bootstrap.min.css" />
-<script type="text/javascript" src="/templets/lawyer/js/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="/templets/lawyer/js/modal.min.js"></script>
-<script type="text/javascript" src="/templets/lawyer/js/box.js"></script>
-<script type="text/javascript">
-//获得选中文件的文件名
-function GetCheckfolderItem()
-{
-	var allSel='';
-	if(document.form1.deleteid.value) return document.form1.deleteid.value;
-	for(i=0;i<document.form1.deleteid.length;i++)
-	{
-		if(document.form1.deleteid[i].checked)
-		{
-			if(allSel=='')
-			allSel=document.form1.deleteid[i].value;
-			else
-			allSel=allSel+","+document.form1.deleteid[i].value;
-		}
-	}
-	return allSel;
-}
-function DoSubmit()
-{
-	var selid = GetCheckfolderItem();
-	if(selid=='') {
-		alert("你没选中任何信息！");
-		return false;
-	}
-	if(window.confirm("你确定要删除这些消息么？"))
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>订单管理 - 法易通法律法务</title>
+		<meta name="keywords" content="{dede:field name='keywords'/}" />
+		<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+		<script src="/js/mui.min.js"></script>
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
 
-	{
-		location = "shops_products.php?dopost=del&ids="+selid;
-	}
-}
-</script>
-<script type="text/javascript">
+	</head>
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+			<script language="javascript" type="text/javascript">
+				function CheckLogin() {
+					var taget_obj = document.getElementById('_userlogin');
+					myajax = new DedeAjax(taget_obj, false, false, '', '', '');
+					myajax.SendGet2("/member/ajax_loginsta.php");
+					DedeXHTTP = null;
+				}
+			</script>
+			<aside id="offCanvasSide" class="mui-off-canvas-right">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 菜单具体展示内容 -->
+						<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+							<div id="_userlogin">
+								<!-- 未登录 -->
+								<li class="mui-table-view-cell">
+									<a href="/member/login.php">登录</a>
+									<a href="/member/reg_new.php">注册</a>
+								</li>
+							</div>
+							<script language="javascript" type="text/javascript">
+								CheckLogin();
+							</script>
+							<li class="mui-table-view-cell">
+								<a href="/" class="mui-navigate-right">首页</a>
+							</li>
+							<li class="mui-table-view-cell mui-collapse">
+								<a href="/flgw/124.html" class="mui-navigate-right">法律顾问</a>
+								<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/124.html">企业法律顾问</a></li>
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/125.html">个人法律顾问</a></li>
+								</ul>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="/nsht/" class="mui-navigate-right">审查合同</a>
+							</li>
+							<li class="mui-table-view-cell mui-collapse">
+								<a href="/ask/?ct=question&ac=ask_complete" class="mui-navigate-right">法律咨询</a>
+								<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/ask/?ct=question&ac=ask_complete">在线法律咨询</a></li>
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flzx/123.html">电话法律咨询</a></li>
+								</ul>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="/zls/" class="mui-navigate-right">找律师</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="/flbk/" class="mui-navigate-right">法律百科</a>
+							</li>
 
-$(function(){
-
-	$('.web-header .user-box ul > li:nth-of-type(2) div.fl b').click(function(){
-
-		$('.web-header .user-box ul > li:nth-of-type(2) div.fl ol').show();
-
-		$('.model-box').show();
-
-	});
-
-	$('.model-box').click(function(){
-
-		$('.web-header .user-box ul > li:nth-of-type(2) div.fl ol').hide();
-
-		$('.web-header .inner-box .fr > div.dropdown ul.menu').hide();
-
-		$(this).hide();
-
-	});
-
-	$('.web-header .inner-box .fr > div.dropdown span').click(function(){
-
-		$('.web-header .inner-box .fr > div.dropdown ul.menu').show();
-
-		$('.model-box').show();
-
-	})
-
-	$('footer .link .row .inner-box .top-box ul li').click(function(){
-
-		$(this).addClass('click').siblings().removeClass('click');
-
-		var numb = $(this).index()
-
-		$('footer .link .row .inner-box .bottom-box div').eq(numb).show().siblings().hide()
-
-	});
-
-});
-
-</script>
-</head>
-
-<body>
-<header class="user-center">
-    <div class="uc-info o-h">
-        <div class="inner-box">
-            <div class="uc-info-left fl">
-                <h2>
-                <p>我的法易通法律法务</p>
-                
-                <!--<a href="/Customers/edit">完善资料>></a></h2>--> 
-                
-            </div>
-            
-            <!--<div class="uc-info-right fr">
-
-                <div class="uc-info-icon dollar"> <a href="/CreditOrders/recharge">
-
-                    <div class="icon"> ¥ </div>
-
-                    </a>
-
-                    <p>积分：0&nbsp;<a href="/CreditOrders/recharge">( 充值 )</a></p>
-
-                </div>
-
-                <a href="/Messages/index?isRead=0" class="uc-info-icon message">
-
-                <div class="icon"> <span class=ico-font>&#xf03b;</span> </div>
-
-                <p>未读消息：&nbsp;0</p>
-
-                </a> </div>--> 
-            
-        </div>
-    </div>
-    <div class="uc-header">
-        <div class="inner-box">
-            <div class="uc-header-logo fl o-h"><a href="/"><img height="45"  alt="法易通法律法务" src="/templets/lawyer/images/yifatonglogo_whithout_word.png"></a></div>
-            <div class="uc-header-bread fl">
-                <div class="breadcrumb-box visible-lg clean-m clean-p" style="height: 45px;line-height: 45px;padding: 0;margin: 0;">
-                    <p> <span class="icon-font text-blue">&#xe610;</span> <a target="_blank" href="/" class=" text-blue">首页</a> - <span>订单管理</span> </p>
-                </div>
-            </div>
-            <div class="fr uc-header-info">
-                <p><span class="ico-font">&#xee0a;</span>你好，欢迎 <?php echo $cfg_ml->M_Phone; ?> <a href="/member/index_do.php?fmdo=login&dopost=exit">退出</a></p>
-            </div>
-        </div>
-    </div>
-</header>
-<div id="lean_overlay">
-    <form class="form-inline p-r" action="/plus/search.php" method="post">
-        <div class="search-bar">
-            <div class="input-part">
-                <input id="exampleInputEmail2"  type="text" placeholder="劳动合同" name="q">
-            </div>
-            <button class="text-white btn btn-link " type="submit"><img width="29" height="25" alt="搜索" src="/templets/lawyer/images/search.png"></button>
-        </div>
-        <div class="inner-box"></div>
-    </form>
-</div>
-
-<!-------------- javascript -------------->
-
-<div class="user-center h100p o-h">
-<?php pasterTempletDiy("lawyer/aside.htm"); ?>
-<div class="user-center-contract-service">
-<div class="border-box">
-<div class="container">
-    <div class="row"> </div>
-</div>
-<div class="uccs-title">
-    <h2 class="fl">订单管理</h2>
-    <div class="uccs-title-img fr"> <img src="/templets/lawyer/images/qq.png" alt="qq" width="25"> <a href="http://wpa.qq.com/msgrd?v=3&uin=2448211596&site=qq&menu=yes" target="_blank">联系客服</a> </div>
-</div>
-<div class="uccs-type o-h">
-    <div class="uccs-type-product">
-        <h2>订单产品</h2>
-    </div>
-    <div class="uccs-type-price">
-        <h2>价格（元）</h2>
-    </div>
-    <div class="uccs-type-status">
-        <h2>订单状态</h2>
-    </div>
-    <div class="uccs-type-operate">
-        <h2>交易操作</h2>
-    </div>
-    <div class="uccs-type-message">
-        <h2>服务提醒</h2>
-    </div>
-</div>
-<form name='form1' action="shops_orders.php" method="post">
-<input type='hidden' name='dopost' value='del' />
-{dede:datalist}
-<div class="ucss-item">
-    <div class="ucss-item-title">
-        <h2>
-            <input type="checkbox" name="deleteid" value="{dede:field.oid/}"/>
-            <span>订单编号：</span><a href="shops_products.php?do=show&oid={dede:field.oid/}">{dede:field.oid/}</a></h2>
-    </div>
-    <div class="inner-box">
-        <div class="uccs-item-product"> <img class="p-a" src="/templets/lawyer/images/file.png">
-            <h3>{dede:field.title/}</h3>
-            <p>服务内容：法律咨询 + 股权转让协议起草/审查审查 + 7天不限次数修改 + 风... </p>
-        </div>
-        <div class="uccs-item-price">
-            <h3>¥ {dede:field.price/}</h3>
-        </div>
-        <div class="uccs-item-status">
-            <h3> <?php echo GetSta($fields["state"],$fields["oid"])?> </h3>
-        </div>
-        <div class="uccs-item-operate">
-            <div class="wait-pay"> <?php echo GoPay($fields["state"],$fields["oid"])?> <a class="consult" href="http://wpa.qq.com/msgrd?v=3&uin=2448211596&site=qq&menu=yes" target="_blank">咨询售前律师</a> </div>
-        </div>
-        <div class="uccs-item-message">
-            <p> 若付款遇到问题，请咨询客服；如购买前还有疑问，请咨询售前律师。 </p>
-        </div>
-    </div>
-</div>
-{/dede:datalist}
-<div class="uccs-item-operate">
-    <div class="wait-pay"><a class="cancel" href="javascript:void(0)" class="cancel-order" onclick="DoSubmit()">删除订单</a> <a class="consult" href="http://wpa.qq.com/msgrd?v=3&uin=2448211596&site=qq&menu=yes" target="_blank">咨询售前律师</a> </div>
-</div>
-<div class="web-page"> {dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/} </div>
-</div>
-<!--- tip start-->
-		<div style="display:none;" class="info-box ">
-			<div class="cancel-box-info">
-				<div class="text-center quxiao">
-					<p id="laa">您确认要取消该订单吗？</p>
-					<h3 class="text-center"> <a id="cancel-href"> <span>是</span> </a> <a onclick="hideCancelDialog()"> <span>否</span> </a> </h3>
+						</ul>
+					</div>
 				</div>
-				<div class="text-center qxchenggong">
-					<h2>取消订单成功</h2>
-					<p>系统将在<span id="spSeconds">10秒</span>后自动跳转或<a href="/Orders/index">回到频道首页</a></p>
+			</aside>
+
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!--页面标题栏开始-->
+				<header class="mui-bar mui-bar-nav order-menu">
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+					<h1 class="mui-title">个人中心</h1>
+					<a id="offCanvasBtn" href="#offCanvasSide" class="mui-pull-right mui-btn-link mui-icon mui-icon-more-filled"></a>
+					<a class="mui-icon mui-icon-search mui-pull-right"></a>
+
+				</header>
+				<div id="allmap" style="display: none"></div>
+				<!-- <script type="text/javascript" src="/js/rem.js"></script> -->
+				<script type="text/javascript" src="/js/jquery.min.js"></script>
+				<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MuNvHFgbfd42G9ZcLoB7sBvSECNMwzUW"></script>
+				<script type="text/javascript">
+					// 百度地图API功能
+					var map = new BMap.Map("allmap");
+					var point = new BMap.Point(116.331398, 39.897445);
+					map.centerAndZoom(point, 12);
+
+					function myFun(result) {
+						var cityName = result.name;
+						map.setCenter(cityName);
+						$("#spCurrentCity").html(cityName);
+					}
+					var myCity = new BMap.LocalCity();
+					myCity.get(myFun);
+				</script>
+
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主体 -->
+						<div class="order-con" style="margin-top: 5rem;">
+							<div class="mui-slider">
+								<div class="order-nav">
+									<a href="/member/shops_orders.php">订单管理</a>
+									<a href="/ask/?ct=myask">我的咨询</a>
+									<a href="/member/edit_baseinfo.php">修改密码</a>
+									<a href="/member/edit_fullinfo.php">修改账户</a>
+								</div>
+								<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+								<div class="mui-slider-group">
+									<div class="mui-slider-item mui-control-content">
+												<ul class="mui-table-view">
+													<li class="mui-table-view-cell mui-media">
+														<a href="javascript:;" class="">
+															<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
+															<div class="mui-media-body mui-pull-left">
+																离婚协议书
+																<p>不限次数咨询+不限合同次数</p>
+															</div>
+                                                            <div class="mui-media-body mui-pull-right">
+                                                            	<span>已支付</span>
+                                                            	<p class="mui-ellipsis">￥680 <i>x1</i></p>
+                                                                <span>已出单</span>
+                                                            </div>
+														</a>
+                                                        <div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
+													</li>
+													<li class="mui-table-view-cell mui-media">
+														<a href="javascript:;" class="">
+															<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
+															<div class="mui-media-body mui-pull-left">
+																离婚协议书
+																<p>不限次数咨询+不限合同次数</p>
+															</div>
+															<div class="mui-media-body mui-pull-right">
+																<span>已支付</span>
+																<p class="mui-ellipsis">￥680 <i>x1</i></p>
+																<span>已出单</span>
+															</div>
+														</a>
+														<div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
+													</li>
+                                                    <li class="mui-table-view-cell mui-media">
+                                                    	<a href="javascript:;" class="">
+                                                    		<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
+                                                    		<div class="mui-media-body mui-pull-left">
+                                                    			离婚协议书
+                                                    			<p>不限次数咨询+不限合同次数</p>
+                                                    		</div>
+                                                    		<div class="mui-media-body mui-pull-right">
+                                                    			<span>已支付</span>
+                                                    			<p class="mui-ellipsis">￥680 <i>x1</i></p>
+                                                    			<span>已出单</span>
+                                                    		</div>
+                                                    	</a>
+                                                    	<div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
+                                                    </li>
+                                                    <li class="mui-table-view-cell mui-media">
+                                                    	<a href="javascript:;" class="">
+                                                    		<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
+                                                    		<div class="mui-media-body mui-pull-left">
+                                                    			离婚协议书
+                                                    			<p>不限次数咨询+不限合同次数</p>
+                                                    		</div>
+                                                    		<div class="mui-media-body mui-pull-right">
+                                                    			<span>已支付</span>
+                                                    			<p class="mui-ellipsis">￥680 <i>x1</i></p>
+                                                    			<span>已出单</span>
+                                                    		</div>
+                                                    	</a>
+                                                    	<div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
+                                                    </li>
+                                                    <li class="mui-table-view-cell mui-media">
+                                                    	<a href="javascript:;" class="">
+                                                    		<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
+                                                    		<div class="mui-media-body mui-pull-left">
+                                                    			离婚协议书
+                                                    			<p>不限次数咨询+不限合同次数</p>
+                                                    		</div>
+                                                    		<div class="mui-media-body mui-pull-right">
+                                                    			<span>已支付</span>
+                                                    			<p class="mui-ellipsis">￥680 <i>x1</i></p>
+                                                    			<span>已出单</span>
+                                                    		</div>
+                                                    	</a>
+                                                    	<div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
+                                                    </li>
+                                                    <li class="mui-table-view-cell mui-media">
+                                                    	<a href="javascript:;" class="">
+                                                    		<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
+                                                    		<div class="mui-media-body mui-pull-left">
+                                                    			离婚协议书
+                                                    			<p>不限次数咨询+不限合同次数</p>
+                                                    		</div>
+                                                    		<div class="mui-media-body mui-pull-right">
+                                                    			<span>已支付</span>
+                                                    			<p class="mui-ellipsis">￥680 <i>x1</i></p>
+                                                    			<span>已出单</span>
+                                                    		</div>
+                                                    	</a>
+                                                    	<div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
+                                                    </li>
+
+												</ul>
+									</div>
+
+								</div>
+								<h3 class="show-more">全国服务电话：182-0283-5355</h3>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
 				</div>
+				<div class="mui-off-canvas-backdrop"></div>
 			</div>
 		</div>
-		<!--- tip end-->
-	</div>
-</div>
-</div>
-<div class="cpgb-fixed">
-	<a id="BizQQBottomCommon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2448211596&amp;site=qq&amp;menu=yes" class="cpgb-fixed-zixun">
-		<p><img src="/templets/lawyer/images/qq.png" alt="QQ"><br>在线咨询</p>
-	</a>
-	<a class="cpgb-fixed-zixun cpgb-fixed-dianhua">
-		<p><span class="ico-font tubiao">&#xea89;</span><br>400电话</p>
-		<span class="zx-haoma">
-			18202835355
-			<img src="/templets/lawyer/images/jiantou.png" alt="箭头">
-		</span>
-	</a>
-	<a class="cpgb-fixed-zixun cpgb-fixed-dingbu">
-		<p><img src="/templets/lawyer/images/dingbu.png" alt="QQ"><br>返回顶部</p>
-	</a>
-</div>
-<!-------------- javascript -------------->
-<div class="model-box p-a" ></div>
-<?php pasterTempletDiy("lawyer/footer2.htm"); ?>
-<!-- javascript -->
-<script type="text/javascript" charset="utf-8">
-$(function(){
-	$('.click').click(function(){
-		var num = $(this).parent('div').index();
-		$('.info-box>div.text-center').eq(num+1).show().siblings('div.text-center').hide();
-	})
-});
-function showCancelDialog()
-{
-	$(".qxchenggong").hide();
-	$(".quxiao").show();
-	var selid = GetCheckfolderItem();
-	if(selid=='') {
-		alert("你没选中任何信息！");
-		return false;
-	}
-	$("a#cancel-href").attr("href","shops_products.php?dopost=del&ids="+selid);
-	mask("info-box");
-}
-function hideCancelDialog()
-{
-	clearMask("info-box");
-}
-var redirectSeconds=10;
-function redirectInterval()
-{
-	timeIntervalRedirect=setInterval(function(){
-		if(redirectSeconds<=1)
-		{
-			clearInterval(timeIntervalRedirect);
-			clearMask("info-box");
-			window.location.href="/Orders/index";
-			return;
+
+	</body>
+	<script type="text/javascript">
+		var gallery = mui('.mui-slider');
+		gallery.slider({
+			interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
+		});
+		mui.init({
+			swipeBack: false,
+		});
+		//侧滑容器父节点
+		var offCanvasWrapper = mui('#offCanvasWrapper');
+		//主界面容器
+		var offCanvasInner = offCanvasWrapper[0].querySelector('.mui-inner-wrap');
+		//菜单容器
+		var offCanvasSide = document.getElementById("offCanvasSide");
+
+		//移动效果是否为整体移动
+		var moveTogether = false;
+		//侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
+		var classList = offCanvasWrapper[0].classList;
+		//主界面和侧滑菜单界面均支持区域滚动；
+		mui('#offCanvasSideScroll').scroll();
+		mui('#offCanvasContentScroll').scroll();
+		//实现ios平台的侧滑关闭页面；
+		if (mui.os.plus && mui.os.ios) {
+			offCanvasWrapper[0].addEventListener('shown', function(e) { //菜单显示完成事件
+				plus.webview.currentWebview().setStyle({
+					'popGesture': 'none'
+				});
+			});
+			offCanvasWrapper[0].addEventListener('hidden', function(e) { //菜单关闭完成事件
+				plus.webview.currentWebview().setStyle({
+					'popGesture': 'close'
+				});
+			});
 		}
-		redirectSeconds--;
-		$("span#spSeconds").html(redirectSeconds+"秒");
-	},1000)
-}
-</script>
-<script type="text/javascript">
-$(function(){
-	$('.cpgb-fixed-dingbu').click(function(){
-		$(window).scrollTop(0);
-	});
-	$(window).scroll(function () {
-		if ($(window).scrollTop() > 1018 ) {			
-			$(".cpgb-fixed-dingbu").css("display","block");
-		}else if($(window).scrollTop() < 1016){			
-			$(".cpgb-fixed-dingbu").css("display","none");
-		}
-	});
-})
-//BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'BizQQBottomCommon'});
-</script>
-</body>
+	</script>
+
 </html>

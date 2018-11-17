@@ -1,7 +1,4 @@
-<?php
-if(!isset($GLOBALS['_vars'])) $GLOBALS['_vars'] = array(); 
-$fields = array();
-?><!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
@@ -183,27 +180,20 @@ $(function(){
 </div>
 <form name='form1' action="shops_orders.php" method="post">
 <input type='hidden' name='dopost' value='del' />
-<?php
-$atts = array();
-$atts['tagname'] = 'datalist';
-$blockValue = $this->refObj->GetArcList($atts,$this->refObj,$fields); 
-if(is_array($blockValue)){
-foreach( $blockValue as $key=>$fields )
-{
-?>
+{dede:datalist}
 <div class="ucss-item">
     <div class="ucss-item-title">
         <h2>
-            <input type="checkbox" name="deleteid" value="<?php echo $fields['oid']; ?>"/>
-            <span>订单编号：</span><a href="shops_products.php?do=show&oid=<?php echo $fields['oid']; ?>"><?php echo $fields['oid']; ?></a></h2>
+            <input type="checkbox" name="deleteid" value="{dede:field.oid/}"/>
+            <span>订单编号：</span><a href="shops_products.php?do=show&oid={dede:field.oid/}">{dede:field.oid/}</a></h2>
     </div>
     <div class="inner-box">
         <div class="uccs-item-product"> <img class="p-a" src="/templets/lawyer/images/file.png">
-            <h3><?php echo $fields['title']; ?></h3>
+            <h3>{dede:field.title/}</h3>
             <p>服务内容：法律咨询 + 股权转让协议起草/审查审查 + 7天不限次数修改 + 风... </p>
         </div>
         <div class="uccs-item-price">
-            <h3>¥ <?php echo $fields['price']; ?></h3>
+            <h3>¥ {dede:field.price/}</h3>
         </div>
         <div class="uccs-item-status">
             <h3> <?php echo GetSta($fields["state"],$fields["oid"])?> </h3>
@@ -216,20 +206,11 @@ foreach( $blockValue as $key=>$fields )
         </div>
     </div>
 </div>
-<?php
-}
-}?>
+{/dede:datalist}
 <div class="uccs-item-operate">
     <div class="wait-pay"><a class="cancel" href="javascript:void(0)" class="cancel-order" onclick="DoSubmit()">删除订单</a> <a class="consult" href="http://wpa.qq.com/msgrd?v=3&uin=2448211596&site=qq&menu=yes" target="_blank">咨询售前律师</a> </div>
 </div>
-<div class="web-page"> <?php
-$atts = array();
-$atts['tagname'] = 'pagelist';
-$atts['listitem'] = 'info,index,end,pre,next,pageno';
-$atts['listsize'] = '5';
- echo $this->refObj->GetPageList($atts,$this->refObj,$fields); 
-?>
- </div>
+<div class="web-page"> {dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/} </div>
 </div>
 <!--- tip start-->
 		<div style="display:none;" class="info-box ">
