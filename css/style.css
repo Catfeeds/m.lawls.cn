@@ -966,3 +966,13 @@ ul li {
 .order-con .order-nav a:hover{
   color: #000;
 }
+
+.edit-user span{
+  font-size: 16px;
+  line-height: 25px;
+  display: block;
+  margin-top: 8px;
+}
+.edit-user span a{
+  margin-left: 10px;
+}

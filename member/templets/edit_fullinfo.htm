@@ -1,356 +1,193 @@
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>修改资料 - 法易通法律法务</title>
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/layout-new.css" />
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/style-new.css" />
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/box.css" />
-<script type="text/javascript" src="/templets/lawyer/js/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="/templets/lawyer/js/modal.min.js"></script>
-<script type="text/javascript" src="/templets/lawyer/js/box.js"></script>
-<script type="text/javascript" src="/templets/lawyer/js/iealert.js"></script>
-<style>
-.dizhi-bar span,.xin-bar span{color: red;}
-</style>
-<script type="text/javascript">
-$(function(){
-	$('.web-header .user-box ul > li:nth-of-type(2) div.fl b').click(function(){
-		$('.web-header .user-box ul > li:nth-of-type(2) div.fl ol').show();
-		$('.model-box').show();
-	});
-	$('.model-box').click(function(){
-		$('.web-header .user-box ul > li:nth-of-type(2) div.fl ol').hide();
-		$('.web-header .inner-box .fr > div.dropdown ul.menu').hide();
-		$(this).hide();
-	});
-	$('.web-header .inner-box .fr > div.dropdown span').click(function(){
-		$('.web-header .inner-box .fr > div.dropdown ul.menu').show();
-		$('.model-box').show();
-	})
-	$("#search-btn").leanModal();
-	$("body").iealert();
-	$('footer .link .row .inner-box .top-box ul li').click(function(){
-		$(this).addClass('click').siblings().removeClass('click');
-		var numb = $(this).index()
-		$('footer .link .row .inner-box .bottom-box div').eq(numb).show().siblings().hide()
-	});
-});
-</script>
-<script type="text/javascript">  
-  function checkSubmit()
-{
-	if(document.form2.oldpwd.value=='')
-	{
-		document.form2.oldpwd.focus();
-		alert("旧密码必须填写！");
-		return false;
-	}
-	if(document.form2.userpwd.value=='')
-	{
-		document.form2.userpwd.focus();
-		alert("新密码必须填写！");
-		return false;
-	}
-	if(document.form2.userpwdok.value!=document.form2.userpwd.value)
-	{
-		document.form2.userpwdok.focus();
-		alert("两次密码不一致！");
-		return false;
-	}
-	if(document.form2.vdcode.value=="")
-	{
-		document.form2.vdcode.focus();
-		alert("验证码不能为空！");
-		return false;
-	}
-}
-</script>
-</head>
-<body>
-<header class="user-center">
-    <div class="uc-info o-h">
-        <div class="inner-box">
-            <div class="uc-info-left fl">
-                <h2>
-                    <p>我的法易通法律法务</p>
-                </h2>
-            </div>
-        </div>
-    </div>
-    <div class="uc-header">
-        <div class="inner-box">
-            <div class="uc-header-logo fl o-h"><a href="/"><img height="45"  alt="法易通法律法务" src="/templets/lawyer/images/yifatonglogo_whithout_word.png"></a></div>
-            <div class="uc-header-bread fl">
-                <div class="breadcrumb-box visible-lg clean-m clean-p" style="height: 45px;line-height: 45px;padding: 0;margin: 0;">
-                    <p> <span class="icon-font text-blue">&#xe610;</span> <a target="_blank" href="/" class=" text-blue">首页</a> - <span>修改资料</span> </p>
-                </div>
-            </div>
-            <div class="fr uc-header-info">
-                <p><span class="ico-font">&#xee0a;</span>你好，欢迎 <?php echo $cfg_ml->M_Phone; ?> <a href="/member/index_do.php?fmdo=login&dopost=exit">退出</a></p>
-            </div>
-        </div>
-    </div>
-</header>
-<div id="lean_overlay">
-    <form class="form-inline p-r" action="/plus/search.php" method="post">
-        <div class="search-bar">
-            <div class="input-part">
-                <input id="exampleInputEmail2"  type="text" placeholder="劳动合同" name="q">
-            </div>
-            <button class="text-white btn btn-link " type="submit"><img width="29" height="25" alt="搜索" src="/templets/lawyer/images/search.png"></button>
-        </div>
-        <div class="inner-box"></div>
-    </form>
-</div>
-<script type="text/javascript" src="/templets/lawyer/js/move.min.js"></script> 
-<script type="text/javascript" src="/templets/lawyer/js/mask.js"></script>
-<link rel="stylesheet" type="text/css" href="/templets/lawyer/css/mask.css" />
-<!-------------- javascript -------------->
-<div class="ziliao-mod">
-    <?php pasterTempletDiy("lawyer/aside.htm"); ?>
-    <div class="r-box"> 
-        <!-- 信息显示 -->
-        <div class="container">
-            <div class="row"> </div>
-        </div>
-        <h2>修改资料</h2>
-        <div class="message-block">
-            <form method="post" action="edit_fullinfo.php" name="form1">
-                <div style="display:none;"><input type="hidden" name="dopost" value="save" /></div>			<div class="zhanghao-bar">
-              <div class="l-par">
-                <p class="anniu">您的账号：<?php echo $cfg_ml->M_Phone; ?></p>
-                <a href="/member/edit_baseinfo.php">修改密码</a>
-              </div>
-              <div class="r-par">
-                <p>注册时间：<?php echo date("Y-m-d H:i:s",$row['logintime']); ?></p>
-              </div>
-            </div>
-            <?php
-            if($row['pwd'] == '' || $row['userid'] == ''){
-            ?>
-            <div class="dizhi-bar">
-              <div class="l-par">
-                    <p><span>*</span>&nbsp;&nbsp;用&nbsp;户&nbsp;名：</p>
-                    <input name="userid" type="text" value="" id="CustomerMobile" required="required"> </div>
-              <div class="r-bar">
-                <p><span>* </span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</p>
-                <input name="pwd" type="password" value="" required="required">
-              </div>
-            </div>
-            <?php
-            }
-            ?>
-            <div class="dizhi-bar">
-                <div class="l-par">
-                    <p><span>* </span>联系手机：</p>
-                    <input name="phone" type="text" value="<?php echo $cfg_ml->M_Phone; ?>" id="CustomerMobile" required="required"> </div>
-               <div class="r-bar">
-                  <p>&nbsp;&nbsp; 昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</p>
-                  <input name="uname" maxlength="50" type="text" value="<?php echo $row['uname']; ?>" id="CustomerName">	
-               </div>
-            </div>
-      
-            <div class="dizhi-bar">
-               <div class="l-par">
-                  <p>&nbsp;&nbsp; 邮箱地址：</p>
-                 <input name="email" type="text" value="<?php echo $row['email']; ?>" id="CustomerEmail" required="required">
-               </div>
-               <div class="r-bar">
-                 <p>&nbsp;&nbsp;性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</p>
-                 <select name="sex" id="CustomerGender">
-      <option value="保密" <?php if($row['sex']=='保密') echo "selected"; ?>>保密</option>
-      <option value="男" <?php if($row['sex']=='男') echo "selected"; ?>>男</option>
-      <option value="女" <?php if($row['sex']=='女') echo "selected"; ?>>女</option>
-      </select>				 	
-               </div>
-            </div>
-            <div class="xin-bar">
-              <p><span>*</span>&nbsp;&nbsp;验&nbsp;证&nbsp;码：</p>
-              <input name="vdcode" type="text" id="vdcode" style='width:120px;text-transform:uppercase;' />
-              <img src="../include/vdimgck.php" align="absmiddle" alt="看不清？点击更换" style="cursor:pointer" onclick="this.src=this.src+'?'" /> </div>
-            <!-- <div class="fapiao-bar">
-              <p>发票抬头：</p>
-              <input name="data[Customer][invoice_title]" maxlength="100" type="text" value="" id="CustomerInvoiceTitle">			</div> -->
-      
-            <!-- <div class="shoujian-bar">
-              <p>收件地址：</p>
-              <select name="data[Customer][province]" onchange="locations(this,'city')" id="CustomerProvince">
-      <option value="">选择省份</option>
-      <option value="110000">北京市</option>
-      <option value="120000">天津市</option>
-      <option value="130000">河北省</option>
-      <option value="140000">山西省</option>
-      <option value="150000">内蒙古自治区</option>
-      <option value="210000">辽宁省</option>
-      <option value="220000">吉林省</option>
-      <option value="230000">黑龙江省</option>
-      <option value="310000" selected="selected">上海市</option>
-      <option value="320000">江苏省</option>
-      <option value="330000">浙江省</option>
-      <option value="340000">安徽省</option>
-      <option value="350000">福建省</option>
-      <option value="360000">江西省</option>
-      <option value="370000">山东省</option>
-      <option value="410000">河南省</option>
-      <option value="420000">湖北省</option>
-      <option value="430000">湖南省</option>
-      <option value="440000">广东省</option>
-      <option value="450000">广西壮族自治区</option>
-      <option value="460000">海南省</option>
-      <option value="500000">重庆市</option>
-      <option value="510000">四川省</option>
-      <option value="520000">贵州省</option>
-      <option value="530000">云南省</option>
-      <option value="540000">西藏自治区</option>
-      <option value="610000">陕西省</option>
-      <option value="620000">甘肃省</option>
-      <option value="630000">青海省</option>
-      <option value="640000">宁夏回族自治区</option>
-      <option value="650000">新疆维吾尔自治区</option>
-      </select>              <select name="data[Customer][city]" id="city" onchange="locations(this,'district')">
-      <option value="">选择城市</option>
-      <option value="310100">上海市辖区</option>
-      <option value="310200">县</option>
-      </select>              <select name="data[Customer][district]" id="district">
-      <option value="">选择县,区</option>
-      <option value="310100">上海市辖区</option>
-      <option value="310200">县</option>
-      </select><input name="data[Customer][address]" maxlength="100" type="text" value="" id="CustomerAddress">			<a>需要寄送发票等资料时的详细地址</a>
-            </div> -->
-      
-            <div class="btn-bar">
-              <div class="submit"><input class="buttom" type="submit" value="保存"></div> 
-            </div>
-            </form> </div>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>修改账户 - 法易通法律法务</title>
+		<script src="/js/mui.min.js"></script>
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/style.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<script type="text/javascript" language="javascript" src='/js/jquery-1.8.1.min.js'></script>
+		<script type="text/javascript">
 
-    </div>
-</div>
-<div class="cpgb-fixed"> <a id="BizQQBottomCommon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2448211596&amp;site=qq&amp;menu=yes" class="cpgb-fixed-zixun">
-    <p><img src="/templets/lawyer/images/qq.png" alt="QQ"><br>
-        在线咨询</p>
-    </a> <a class="cpgb-fixed-zixun cpgb-fixed-dianhua">
-    <p><span class="ico-font tubiao">&#xea89;</span><br>
-        联系电话</p>
-    <span class="zx-haoma"> 18202835355 <img src="/templets/lawyer/images/jiantou.png" alt="箭头"> </span> </a> <a class="cpgb-fixed-zixun cpgb-fixed-dingbu">
-    <p><img src="/templets/lawyer/images/dingbu.png" alt="QQ"><br>
-        返回顶部</p>
-    </a> </div>
-<!-------------- javascript -------------->
-<div class="model-box p-a" ></div>
-<?php pasterTempletDiy("lawyer/footer2.htm"); ?>
-<!-- javascript --> 
-<script type="text/javascript" charset="utf-8">
-$(function(){
-	});
-</script> 
-<script type="text/javascript">
-$(function(){
-	$('.cpgb-fixed-dingbu').click(function(){
-		$(window).scrollTop(0);
-	});
-
-
-
-	$(window).scroll(function () {
-
-
-
-		if ($(window).scrollTop() > 1018 ) {			
-
-			$(".cpgb-fixed-dingbu").css("display","block");
-
-		}else if($(window).scrollTop() < 1016){			
-
-			$(".cpgb-fixed-dingbu").css("display","none");
-
+		</script>
+	</head>
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			<?php pasterTempletDiy("lawyer/aside.htm");?>
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<?php pasterTempletDiy("lawyer/header.htm");?>
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主体 -->
+						<div class="login order-con" style="margin-top: 5rem;">
+							<div id="slider" class="mui-slider" style="top: 0px;">
+								<div class="order-nav">
+									<a href="/member/shops_orders.php">订单管理</a>
+									<a href="/ask/?ct=myask">我的咨询</a>
+									<a href="/member/edit_baseinfo.php">修改密码</a>
+									<a href="/member/edit_fullinfo.php">修改账户</a>
+								</div>
+								<h3>修改账户</h3>
+								<div class="mui-slider-group edit-user">
+									<div style="height: 400px;" class="mui-slider-item mui-control-content mui-active">
+										<div id="scroll1" class="mui-scroll-wrapper">
+											<div class="mui-scroll">
+												<form class="mui-input-group" action="edit_fullinfo.php" method="post" enctype="multipart/form-data" name="form2"
+												 accept-charset="utf-8" onsubmit="return checkSubmit();">
+													<div style="display:none;">
+														<input type="hidden" name="dopost" value="save" />
+													</div>
+													<div class="mui-input-row">
+														<label>您的账号</label>
+														<span>
+															<?php echo $cfg_ml->M_Phone; ?><a href="/member/edit_baseinfo.php">修改密码</a></span>
+													</div>
+													<div class="mui-input-row">
+														<label>注册时间</label>
+														<span>
+															<?php echo date("Y-m-d H:i:s",$row['logintime']); ?></span>
+													</div>
+													<?php
+                                                    if($row['pwd'] == '' || $row['userid'] == ''){
+                                                    ?>
+													<div class="mui-input-row">
+														<label for="CustomerMobile">用户名</label>
+														<input name="userid" type="text" value="" id="CustomerMobile" required="required" class="mui-input-clear mui-input"
+														 placeholder="请输入用户名">
+													</div>
+													<div class="mui-input-row">
+														<label for="pwd">密 码</label>
+														<input name="pwd" value="" maxlength="40" type="password" required="required" class="mui-input-clear mui-input"
+														 placeholder="请输入密码">
+													</div>
+													<?php
+                                                    }
+                                                    ?>
+													<div class="mui-input-row">
+														<label for="CustomerMobile">联系手机</label>
+														<input name="phone" type="text" value="<?php echo $cfg_ml->M_Phone; ?>" id="CustomerMobile" required="required" maxlength="11"
+														 class="mui-input-password mui-input" placeholder="请确认联系手机">
+													</div>
+													<div class="mui-input-row">
+														<label for="CustomerMobile">昵称</label>
+														<input name="uname" maxlength="50" type="text" value="<?php echo $row['uname']; ?>" id="CustomerName"
+														 class="mui-input-clear mui-input" placeholder="请输入昵称">
+													</div>
+													<div class="mui-input-row">
+														<label for="CustomerEmail">邮箱地址</label>
+														<input name="email" type="text" value="<?php echo $row['email']; ?>" id="CustomerEmail" required="required"
+														 class="mui-input-clear mui-input" placeholder="请输入邮箱地址">
+													</div>
+													<div class="mui-input-row">
+														<label for="CustomerGender">性 别</label>
+														<select class="mui-input-clear mui-input" name="sex" id="CustomerGender">
+															<option value="保密" <?php if($row['sex']=='保密' ) echo "selected" ; ?>>保密</option>
+															<option value="男" <?php if($row['sex']=='男' ) echo "selected" ; ?>>男</option>
+															<option value="女" <?php if($row['sex']=='女' ) echo "selected" ; ?>>女</option>
+														</select>
+													</div>
+													<div class="mui-input-row">
+														<label for="vdcode">验证码</label>
+														<input name="vdcode" type="text" id="vdcode" style="width: 120px; float: left;" class="mui-input-clear mui-input"
+														 placeholder="请输入验证码" maxlength="4">
+														<img src="../include/vdimgck.php" align="absmiddle" alt="看不清？点击更换" style="width: 90px; margin-top: 5px;cursor:pointer;float: left;"
+														 onclick="this.src=this.src+'?'" />
+													</div>
+													<div class="mui-content-padded">
+														<button type="submit" class="mui-btn mui-btn-block mui-btn-primary">修改密码</button>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+	</body>
+	<?php pasterTempletDiy("lawyer/commonJs.htm");?>
+	<script type="text/javascript">
+		var wasSubmitted = false;    
+		
+		function checkBeforeSubmit()
+		{
+			var isAllInput=true;
+			var email=$("#CustomerEmail").val();
+			if(email=="")
+				isAllInput=false;
+			else
+			{
+				var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				if(!pattern.test(email))
+				{
+					alert('请填写正确的邮箱！');
+					return false;
+				}
+			}
+		
+			var mobile=$("#CustomerMobile").val();
+			if(mobile=="")
+				isAllInput=false;
+			else
+			{
+				var pattern = /^1[34578]\d{9}$/;
+				if(!pattern.test(mobile))
+				{
+					alert("请输入正确的手机号码！");
+					return false;
+				}
+			}
+		
+			var name=$("#CustomerName").val();
+			if(name=="")
+				isAllInput=false;
+		
+			var gender=$("#CustomerGender").val();
+			if(gender=="0")
+				isAllInput=false;
+		
+			var invoiceTitle=$("#CustomerInvoiceTitle").val();
+			if(invoiceTitle=="")
+				isAllInput=false;
+		
+			var province=$("#CustomerProvince").val();
+			if(province=="")
+				isAllInput=false;
+		
+			var city=$("#CustomerCity").val();
+			if(city=="")
+				isAllInput=false;
+		
+			var address=$("#CustomerAddress").val();
+			if(address=="")
+				isAllInput=false;
+		
+			if(!isAllInput)
+			{
+				alert("请填写所有信息！");
+				return false;
+			}
+				
+			if(!wasSubmitted) 
+			{
+				wasSubmitted = true;
+				return wasSubmitted;
+			}
+			return false;
 		}
-
-	});
-
-})
-
-BizQQWPA.addCustom({aty: '1', a: '0', nameAccount: 4008515666, selector: 'BizQQBottomCommon'});
-
-</script> 
-<script type="text/javascript" charset="utf-8">
-
-  $(function(){	
-  
-    })
-  
-  
-  
-  var wasSubmitted = false;    
-  
-  function checkBeforeSubmit()
-  {
-    var isAllInput=true;
-    var email=$("#CustomerEmail").val();
-    if(email=="")
-      isAllInput=false;
-    else
-    {
-      var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      if(!pattern.test(email))
-      {
-        alert('请填写正确的邮箱！');
-        return false;
-      }
-    }
-  
-    var mobile=$("#CustomerMobile").val();
-    if(mobile=="")
-      isAllInput=false;
-    else
-    {
-      var pattern = /^1[34578]\d{9}$/;
-      if(!pattern.test(mobile))
-      {
-        alert("请输入正确的手机号码！");
-        return false;
-      }
-    }
-  
-    var name=$("#CustomerName").val();
-    if(name=="")
-      isAllInput=false;
-  
-    var gender=$("#CustomerGender").val();
-    if(gender=="0")
-      isAllInput=false;
-  
-    var invoiceTitle=$("#CustomerInvoiceTitle").val();
-    if(invoiceTitle=="")
-      isAllInput=false;
-  
-    var province=$("#CustomerProvince").val();
-    if(province=="")
-      isAllInput=false;
-  
-    var city=$("#CustomerCity").val();
-    if(city=="")
-      isAllInput=false;
-  
-    var address=$("#CustomerAddress").val();
-    if(address=="")
-      isAllInput=false;
-  
-    if(!isAllInput)
-    {
-      alert("请填写所有信息！");
-      return false;
-    }
-      
-    if(!wasSubmitted) 
-    {
-      wasSubmitted = true;
-      return wasSubmitted;
-    }
-    return false;
-  }
-  </script>
-  
+	</script>
+</html>
