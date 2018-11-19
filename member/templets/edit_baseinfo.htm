@@ -45,24 +45,31 @@
 			<?php pasterTempletDiy("lawyer/aside.htm");?>
 			<!-- 主页面容器 -->
 			<div class="mui-inner-wrap">
-				<?php pasterTempletDiy("lawyer/header.htm");?>
+				<header class="mui-bar mui-bar-nav order-menu">
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+					<h1 class="mui-title">个人中心</h1>
+					<a id="offCanvasBtn" href="#offCanvasSide" class="mui-pull-right mui-btn-link mui-icon mui-icon-more-filled"></a>
+					<a class="mui-icon mui-icon-search mui-pull-right"></a>
+
+				</header>
 				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll">
 						<!-- 主体 -->
 						<div class="login order-con" style="margin-top: 5rem;">
 							<div id="slider" class="mui-slider" style="top: 0px;">
-                <div class="order-nav">
-                	<a href="/member/shops_orders.php">订单管理</a>
-                	<a href="/ask/?ct=myask">我的咨询</a>
-                	<a href="/member/edit_baseinfo.php">修改密码</a>
-                	<a href="/member/edit_fullinfo.php">修改账户</a>
-                </div>
+								<div class="order-nav">
+									<a href="/member/shops_orders.php">订单管理</a>
+									<a href="/ask/?ct=myask">我的咨询</a>
+									<a href="/member/edit_baseinfo.php">修改密码</a>
+									<a href="/member/edit_fullinfo.php">修改账户</a>
+								</div>
 								<h3>修改密码</h3>
 								<div class="mui-slider-group">
 									<div style="height: 400px;" class="mui-slider-item mui-control-content mui-active">
 										<div id="scroll1" class="mui-scroll-wrapper">
 											<div class="mui-scroll">
-												<form class="mui-input-group" action="edit_baseinfo.php" method="post" enctype="multipart/form-data" name="form2" accept-charset="utf-8" onsubmit="return checkSubmit();">
+												<form class="mui-input-group" action="edit_baseinfo.php" method="post" enctype="multipart/form-data" name="form2"
+												 accept-charset="utf-8" onsubmit="return checkSubmit();">
 													<div style="display:none;">
 														<input type="hidden" name="dopost" value="save" />
 													</div>
@@ -83,8 +90,10 @@
 													</div>
 													<div class="mui-input-row">
 														<label for="vdcode">验证码</label>
-														<input name="vdcode" type="text" id="vdcode" style="width: 120px; float: left;" class="mui-input-clear mui-input" placeholder="请输入验证码" maxlength="4">
-														<img src="../include/vdimgck.php" align="absmiddle" alt="看不清？点击更换" style="width: 90px; margin-top: 5px;cursor:pointer;float: left;" onclick="this.src=this.src+'?'" />
+														<input name="vdcode" type="text" id="vdcode" style="width: 120px; float: left;" class="mui-input-clear mui-input"
+														 placeholder="请输入验证码" maxlength="4">
+														<img src="../include/vdimgck.php" align="absmiddle" alt="看不清？点击更换" style="width: 90px; margin-top: 5px;cursor:pointer;float: left;"
+														 onclick="this.src=this.src+'?'" />
 													</div>
 													<div class="mui-content-padded">
 														<button type="submit" class="mui-btn mui-btn-block mui-btn-primary">修改密码</button>

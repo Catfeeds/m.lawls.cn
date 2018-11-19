@@ -24,7 +24,13 @@
 			<?php pasterTempletDiy("lawyer/aside.htm");?>
 			<!-- 主页面容器 -->
 			<div class="mui-inner-wrap">
-				<?php pasterTempletDiy("lawyer/header.htm");?>
+				<header class="mui-bar mui-bar-nav order-menu">
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+					<h1 class="mui-title">个人中心</h1>
+					<a id="offCanvasBtn" href="#offCanvasSide" class="mui-pull-right mui-btn-link mui-icon mui-icon-more-filled"></a>
+					<a class="mui-icon mui-icon-search mui-pull-right"></a>
+
+				</header>
 				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll">
 						<!-- 主体 -->
@@ -74,8 +80,8 @@
                                                     ?>
 													<div class="mui-input-row">
 														<label for="CustomerMobile">联系手机</label>
-														<input name="phone" type="text" value="<?php echo $cfg_ml->M_Phone; ?>" id="CustomerMobile" required="required" maxlength="11"
-														 class="mui-input-password mui-input" placeholder="请确认联系手机">
+														<input name="phone" type="text" value="<?php echo $cfg_ml->M_Phone; ?>" id="CustomerMobile" required="required"
+														 maxlength="11" class="mui-input-password mui-input" placeholder="请确认联系手机">
 													</div>
 													<div class="mui-input-row">
 														<label for="CustomerMobile">昵称</label>
@@ -121,69 +127,63 @@
 	</body>
 	<?php pasterTempletDiy("lawyer/commonJs.htm");?>
 	<script type="text/javascript">
-		var wasSubmitted = false;    
-		
-		function checkBeforeSubmit()
-		{
-			var isAllInput=true;
-			var email=$("#CustomerEmail").val();
-			if(email=="")
-				isAllInput=false;
-			else
-			{
-				var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-				if(!pattern.test(email))
-				{
+		var wasSubmitted = false;
+
+		function checkBeforeSubmit() {
+			var isAllInput = true;
+			var email = $("#CustomerEmail").val();
+			if (email == "")
+				isAllInput = false;
+			else {
+				var pattern =
+					/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				if (!pattern.test(email)) {
 					alert('请填写正确的邮箱！');
 					return false;
 				}
 			}
-		
-			var mobile=$("#CustomerMobile").val();
-			if(mobile=="")
-				isAllInput=false;
-			else
-			{
+
+			var mobile = $("#CustomerMobile").val();
+			if (mobile == "")
+				isAllInput = false;
+			else {
 				var pattern = /^1[34578]\d{9}$/;
-				if(!pattern.test(mobile))
-				{
+				if (!pattern.test(mobile)) {
 					alert("请输入正确的手机号码！");
 					return false;
 				}
 			}
-		
-			var name=$("#CustomerName").val();
-			if(name=="")
-				isAllInput=false;
-		
-			var gender=$("#CustomerGender").val();
-			if(gender=="0")
-				isAllInput=false;
-		
-			var invoiceTitle=$("#CustomerInvoiceTitle").val();
-			if(invoiceTitle=="")
-				isAllInput=false;
-		
-			var province=$("#CustomerProvince").val();
-			if(province=="")
-				isAllInput=false;
-		
-			var city=$("#CustomerCity").val();
-			if(city=="")
-				isAllInput=false;
-		
-			var address=$("#CustomerAddress").val();
-			if(address=="")
-				isAllInput=false;
-		
-			if(!isAllInput)
-			{
+
+			var name = $("#CustomerName").val();
+			if (name == "")
+				isAllInput = false;
+
+			var gender = $("#CustomerGender").val();
+			if (gender == "0")
+				isAllInput = false;
+
+			var invoiceTitle = $("#CustomerInvoiceTitle").val();
+			if (invoiceTitle == "")
+				isAllInput = false;
+
+			var province = $("#CustomerProvince").val();
+			if (province == "")
+				isAllInput = false;
+
+			var city = $("#CustomerCity").val();
+			if (city == "")
+				isAllInput = false;
+
+			var address = $("#CustomerAddress").val();
+			if (address == "")
+				isAllInput = false;
+
+			if (!isAllInput) {
 				alert("请填写所有信息！");
 				return false;
 			}
-				
-			if(!wasSubmitted) 
-			{
+
+			if (!wasSubmitted) {
 				wasSubmitted = true;
 				return wasSubmitted;
 			}

@@ -1,54 +1,28 @@
-<!DOCTYPE html>
+<?php
+if(!isset($GLOBALS['_vars'])) $GLOBALS['_vars'] = array(); 
+$fields = array();
+?><!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<title>浏览订单 - 法易通法律法务</title>
-		<meta name="keywords" content="{dede:field name='keywords'/}" />
-		<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+		<title>我购买的产品 - 法易通法律法务</title>
+		<meta name="keywords" content="<?php echo $fields['keywords']; ?>" />
+		<meta name="description" content="<?php echo html2text($fields['description']); ?>" />
 		<script src="/js/mui.min.js"></script>
 		<link href="/css/mui.min.css" rel="stylesheet" />
 		<link href="/css/style.css" rel="stylesheet" />
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 		</script>
-		<script type="text/javascript">
-			//获得选中文件的文件名
-			function GetCheckfolderItem() {
-				var allSel = '';
-				if (document.form1.deleteid.value) return document.form1.deleteid.value;
-				for (i = 0; i < document.form1.deleteid.length; i++) {
-					if (document.form1.deleteid[i].checked) {
-						if (allSel == '')
-							allSel = document.form1.deleteid[i].value;
-						else
-							allSel = allSel + "," + document.form1.deleteid[i].value;
-					}
-				}
-				return allSel;
-			}
-
-			function DoSubmit() {
-				var selid = GetCheckfolderItem();
-				if (selid == '') {
-					alert("你没选中任何信息！");
-					return false;
-				}
-				if (window.confirm("你确定要删除这些消息么？"))
-
-				{
-					location = "shops_products.php?dopost=del&ids=" + selid;
-				}
-			}
-		</script>
 	</head>
 	<body>
 		<!-- 侧滑导航根容器 -->
 		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
 			<!-- 菜单容器 -->
-			<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+			<script language="javascript" type="text/javascript" src="<?php echo $GLOBALS['cfg_cmsurl']; ?>/include/dedeajax2.js"></script>
 			<script language="javascript" type="text/javascript">
 				function CheckLogin() {
 					var taget_obj = document.getElementById('_userlogin');
@@ -127,38 +101,48 @@
 								</div>
 								<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
 								<div class="mui-slider-group">
-                                    <h3>我的订单</h3>
+                                    
 									<div class="mui-slider-item mui-control-content">
-										<form name='form1' action="shops_orders.php" method="post">
-											<input type='hidden' name='dopost' value='del' />
-											<ul class="mui-table-view">
-												{dede:datalist}
-												<li class="mui-table-view-cell mui-media">
-
-														<!-- <input type="checkbox" name="deleteid" value="{dede:field.oid/}" /> -->
-														<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
-														<div class="mui-media-body mui-pull-left">
-															<a href="shops_products.php?do=show&oid={dede:field.oid/}"><?php echo GetTitle($fields["oid"]);?>
-															<p>不限次数咨询+不限合同次数</p></a>
-														</div>
-                                                        <div class="mui-media-body" style="margin-top: 10px;margin-bottom: 10px;float: left;">
-                                                        	<span>
-                                                        		<?php echo GetSta($fields["state"],$fields["oid"])?></span>
-                                                        	<p class="mui-ellipsis">￥{dede:field.price/} <i>x1</i></p>
-                                                        	<span>
-                                                        		<?php echo GoPay($fields["state"],$fields["oid"])?></span>
-                                                        </div>
-													<div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
-												</li>
-                                                <!-- <div class="wait-pay"><a class="cancel" href="javascript:void(0)" class="cancel-order" onclick="DoSubmit()">删除订单</a></div> -->
-												{/dede:datalist}
-											</ul>
-											
-											<ul class="mui-pagination mui-pagination-sm">
-												{dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/}
-											</ul>
+										<?php if(!empty($oid)){ ?>
+										<table width="100%" border="0" cellpadding="0" cellspacing="0" class="list">
+											<thead>
+												<tr>
+													<th colspan="2" style="padding-left: 10px;"><h3>我的订单</h3></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td width="25%" align="right" valign="top">订单号：</td>
+													<td><strong><?php echo $oid?></strong></td>
+												</tr>
+												<tr>
+													<td align="right" valign="top">支付方式：</td>
+													<td><?php echo GetSta($row['state'],$oid)?></td>
+												</tr>
+												<tr>
+													<td align="right" valign="top">数量：</td>
+													<td><?php echo $row['cartcount']?></td>
+												</tr>
+												<tr>
+													<td align="right" valign="top">总计：</td>
+													<td><?php echo $row['priceCount']?>元</td>
+												</tr>
+												<tr>
+													<td align="right" valign="top">订单时间：</td>
+													<td><?php echo GetDateTimeMk($row['stime'])?></td>
+												</tr>
+												<tr>
+													<td align="right" valign="top">联系电话：</td>
+													<td><?php echo $row['tel']?></td>
+												</tr>
+												<tr>
+													<td align="right" valign="top">邮箱：</td>
+													<td><?php echo $row['email']?></td>
+												</tr>
+											</tbody>
+										</table>
+										<?php }?>
 									</div>
-
 								</div>
 								<h3 class="show-more">全国服务电话：182-0283-5355</h3>
 							</div>

@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+if(!isset($GLOBALS['_vars'])) $GLOBALS['_vars'] = array(); 
+$fields = array();
+?><!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -6,8 +9,8 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<title>浏览订单 - 法易通法律法务</title>
-		<meta name="keywords" content="{dede:field name='keywords'/}" />
-		<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+		<meta name="keywords" content="<?php echo $fields['keywords']; ?>" />
+		<meta name="description" content="<?php echo html2text($fields['description']); ?>" />
 		<script src="/js/mui.min.js"></script>
 		<link href="/css/mui.min.css" rel="stylesheet" />
 		<link href="/css/style.css" rel="stylesheet" />
@@ -48,7 +51,7 @@
 		<!-- 侧滑导航根容器 -->
 		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
 			<!-- 菜单容器 -->
-			<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+			<script language="javascript" type="text/javascript" src="<?php echo $GLOBALS['cfg_cmsurl']; ?>/include/dedeajax2.js"></script>
 			<script language="javascript" type="text/javascript">
 				function CheckLogin() {
 					var taget_obj = document.getElementById('_userlogin');
@@ -132,30 +135,46 @@
 										<form name='form1' action="shops_orders.php" method="post">
 											<input type='hidden' name='dopost' value='del' />
 											<ul class="mui-table-view">
-												{dede:datalist}
+												<?php
+$atts = array();
+$atts['tagname'] = 'datalist';
+$blockValue = $this->refObj->GetArcList($atts,$this->refObj,$fields); 
+if(is_array($blockValue)){
+foreach( $blockValue as $key=>$fields )
+{
+?>
 												<li class="mui-table-view-cell mui-media">
 
-														<!-- <input type="checkbox" name="deleteid" value="{dede:field.oid/}" /> -->
+														<!-- <input type="checkbox" name="deleteid" value="<?php echo $fields['oid']; ?>" /> -->
 														<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
 														<div class="mui-media-body mui-pull-left">
-															<a href="shops_products.php?do=show&oid={dede:field.oid/}"><?php echo GetTitle($fields["oid"]);?>
+															<a href="shops_products.php?do=show&oid=<?php echo $fields['oid']; ?>"><?php echo GetTitle($fields["oid"]);?>
 															<p>不限次数咨询+不限合同次数</p></a>
 														</div>
                                                         <div class="mui-media-body" style="margin-top: 10px;margin-bottom: 10px;float: left;">
                                                         	<span>
                                                         		<?php echo GetSta($fields["state"],$fields["oid"])?></span>
-                                                        	<p class="mui-ellipsis">￥{dede:field.price/} <i>x1</i></p>
+                                                        	<p class="mui-ellipsis">￥<?php echo $fields['price']; ?> <i>x1</i></p>
                                                         	<span>
                                                         		<?php echo GoPay($fields["state"],$fields["oid"])?></span>
                                                         </div>
 													<div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
 												</li>
                                                 <!-- <div class="wait-pay"><a class="cancel" href="javascript:void(0)" class="cancel-order" onclick="DoSubmit()">删除订单</a></div> -->
-												{/dede:datalist}
+												<?php
+}
+}?>
 											</ul>
 											
 											<ul class="mui-pagination mui-pagination-sm">
-												{dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/}
+												<?php
+$atts = array();
+$atts['tagname'] = 'pagelist';
+$atts['listitem'] = 'info,index,end,pre,next,pageno';
+$atts['listsize'] = '5';
+ echo $this->refObj->GetPageList($atts,$this->refObj,$fields); 
+?>
+
 											</ul>
 									</div>
 

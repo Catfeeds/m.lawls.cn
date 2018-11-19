@@ -26,7 +26,8 @@ include_once DEDEINC.'/datalistcp.class.php';
 
 if(!$cfg_ml->IsLogin()) {
 
-	ShowMsg("你还未登录，请先登录!","login.php");
+	// ShowMsg("你还未登录，请先登录!","login.php");
+  include_once(dirname(__FILE__)."/templets/login.htm");
 
 	exit();
 

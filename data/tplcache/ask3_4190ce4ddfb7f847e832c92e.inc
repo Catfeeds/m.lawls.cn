@@ -15,14 +15,67 @@ $fields = array();
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 		</script>
-
+		<script src="/js/jquery-1.8.1.min.js"></script>
 	</head>
 	<body>
 		<!-- 侧滑导航根容器 -->
 		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
 			<!-- 菜单容器 -->
-			<?php include $this->CompilerInclude("aside.htm");
- ?>
+			<script language="javascript" type="text/javascript" src="<?php echo $GLOBALS['cfg_cmsurl']; ?>/include/dedeajax2.js"></script>
+			<script language="javascript" type="text/javascript">
+				function CheckLogin() {
+					var taget_obj = document.getElementById('_userlogin');
+					myajax = new DedeAjax(taget_obj, false, false, '', '', '');
+					myajax.SendGet2("/member/ajax_loginsta.php");
+					DedeXHTTP = null;
+				}
+			</script>
+			<aside id="offCanvasSide" class="mui-off-canvas-right">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 菜单具体展示内容 -->
+						<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+							<div id="_userlogin">
+								<!-- 未登录 -->
+								<li class="mui-table-view-cell">
+									<a href="/member/login.php">登录</a>
+									<a href="/member/reg_new.php">注册</a>
+								</li>
+							</div>
+							<script language="javascript" type="text/javascript">
+								CheckLogin();
+							</script>
+							<li class="mui-table-view-cell">
+								<a href="/" class="mui-navigate-right">首页</a>
+							</li>
+							<li class="mui-table-view-cell mui-collapse">
+								<a href="/flgw/124.html" class="mui-navigate-right">法律顾问</a>
+								<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/124.html">企业法律顾问</a></li>
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flgw/125.html">个人法律顾问</a></li>
+								</ul>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="/nsht/" class="mui-navigate-right">审查合同</a>
+							</li>
+							<li class="mui-table-view-cell mui-collapse">
+								<a href="/ask/?ct=question&ac=ask_complete" class="mui-navigate-right">法律咨询</a>
+								<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/ask/?ct=question&ac=ask_complete">在线法律咨询</a></li>
+									<li class="mui-table-view-cell"><a class="mui-navigate-right" href="/flzx/123.html">电话法律咨询</a></li>
+								</ul>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="/zls/" class="mui-navigate-right">找律师</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="/flbk/" class="mui-navigate-right">法律百科</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</aside>
 			<!-- 主页面容器 -->
 			<div class="mui-inner-wrap">
 				<header class="mui-bar mui-bar-nav">
@@ -45,9 +98,15 @@ $fields = array();
 						<!-- 主体 -->
 						<div class="ask" style="margin-top: 6rem;">
 							<div class="col-xs-12 col-lg-9">
+								<?php
+                                    //调用价格
+                                    global $dsql;
+                                    $sql = "Select * From dede_askprice";
+                                    $row=$dsql->getone($sql);
+                                ?>
 								<form action="?ct=question&amp;ac=ask_save" target="_blank" id="QnaIndexForm" method="post" accept-charset="utf-8">
 									<div style="display:none;">
-										<input type="hidden" name="reward" value="20" id="QnaCredit">
+										<input type="hidden" name="reward" value="<?php echo $row['major'];?>" id="QnaCredit">
 										<input type="hidden" name="ClassLevel1" value="25" id="ClassLevel1">
 										<input type="hidden" name="ClassLevel2" value="合同事务" id="classname">
 									</div>
@@ -88,7 +147,8 @@ $fields = array();
 									</div>
 									<div class="qnas-box p-r">
 										<div class="ask-pay-bar">
-											<div class="changprice">价格：<p>￥</p><span>20</span></div>
+											<div class="changprice">价格：<p>￥</p><span>
+													<?php echo $row['major'];?></span></div>
 											<div class="topic"><span class="active major">
 													<h5>专业</h5>解答
 												</span><span class="senior">
@@ -108,7 +168,7 @@ $fields = array();
 										<div class="p-r input-bar h100p o-h">
 											<div class="input-part" id="unLogin">
 												<label for="" class="code">验证码：</label>
-												<input name="vdcode" value="" maxlength="6" class="code" type="text"  style="width: 110px;" id="vdcode">
+												<input name="vdcode" value="" maxlength="6" class="code" type="text" style="width: 110px;" id="vdcode">
 												<img src="/include/vdimgck.php" alt="看不清？点击更换" align="absmiddle" style="cursor:pointer" onclick="this.src=this.src+'?'">
 											</div>
 										</div>
@@ -248,6 +308,31 @@ $fields = array();
 
 	</body>
 	<script type="text/javascript">
+		//选择栏目
+		$(".lszn-lm-inner a").click(function() {
+			$(this).addClass("lanse").siblings().removeClass('lanse');
+			var classname = $(this).text();
+			$('#classname').val(classname);
+		});
+		//价格选择
+		$(".major").click(function() {
+			$(this).addClass("active").siblings().removeClass('active');
+			var price = "<?php echo $row['major'];?>";
+			$('#QnaCredit').val(price);
+			$(".changprice span").html(price);
+		});
+		$(".senior").click(function() {
+			$(this).addClass("active").siblings().removeClass('active');
+			var price = "<?php echo $row['senior'];?>";
+			$('#QnaCredit').val(price);
+			$(".changprice span").html(price);
+		});
+		$(".project").click(function() {
+			$(this).addClass("active").siblings().removeClass('active');
+			var price = "<?php echo $row['project'];?>";
+			$('#QnaCredit').val(price);
+			$(".changprice span").html(price);
+		});
 		var gallery = mui('.mui-slider');
 		gallery.slider({
 			interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
@@ -294,17 +379,5 @@ $fields = array();
 				}
 			});
 		})(mui);
-
-		function goto1() {
-			window.location.hash = "#goto1";
-		}
-
-		function goto2() {
-			window.location.hash = "#goto2";
-		}
-
-		function goto3() {
-			window.location.hash = "#goto3";
-		}
 	</script>
 </html>

@@ -115,13 +115,17 @@ function GoPay($sta,$oid)
     }
 
 }
-
+function GetTitle($oid)
+{
+    global $dsql;
+    $row = $dsql->GetOne("SELECT title FROM #@__shops_products WHERE oid='".$oid."'");
+    return $row['title'];
+}
 if($dopost=='')
 
 {
 
   $sql = "SELECT * FROM #@__shops_orders WHERE userid='".$cfg_ml->M_ID."' ORDER BY stime DESC";
-
   $dl = new DataListCP();
 
   $dl->pageSize = 20;

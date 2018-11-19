@@ -111,7 +111,7 @@ $fields = array();
             <tr style="padding-left: 40px;">
                 <td width="30%" height="26" colspan="8" bgcolor="#fff" align="right"><b>
                 专业解答： &nbsp;</b></td>
-                <td height="26" colspan="8" bgcolor="#fff" align="left"><input type="number" name="major" style="width: 80px; font-size: 18px; text-align: center; height: 25px;" required min="0" max="10000" value="<?php echo $row['major']?>"></td>
+                <td height="26" colspan="8" bgcolor="#fff" align="left"><input type="text" name="major" style="width: 80px; font-size: 18px; text-align: center; height: 25px;" required max="10000" value="<?php echo $row['major']?>"></td>
             </tr>
             <tr style="padding-left: 40px;">
                 <td width="30%" height="26" colspan="8" bgcolor="#fff" align="right"><b>资深解答： &nbsp;</b></td>

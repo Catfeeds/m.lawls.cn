@@ -938,14 +938,19 @@ ul li {
   color: #706e6f;
   border-radius: 5px;
   padding: 8px 5px;
+  float: left;
 }
 .order-con li span{
   color: #f23900;
   font-weight: bold;
+  float: left;
+  margin-right: 10px;
 }
 .order-con li .mui-ellipsis{
   font-weight: bold;
   color: #000;
+  float: left;
+  margin-right: 10px;
 }
 .order-con li i{
   color: #706e6f;
@@ -975,4 +980,27 @@ ul li {
 }
 .edit-user span a{
   margin-left: 10px;
+}
+.person .mui-navigate-right{
+  font-size: 14px;
+  font-weight: bold;
+}
+.person .mui-active{
+  font-size: 14px;
+  font-weight: bold;
+  color: #1d7cd6;
+}
+.order-con .myask ul{
+  border-bottom: 1px solid #12B6CF;
+  margin-bottom: 10px;
+  background: #fff;
+}
+.order-con .myask li{
+  border-radius: 0px;
+}
+.order-con .myask .mui-card{
+  background: none;
+}
+.order-con .myask .menunav{
+  
 }

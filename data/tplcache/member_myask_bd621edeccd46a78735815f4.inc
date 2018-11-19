@@ -47,7 +47,9 @@ $fields = array();
 					<div class="mui-scroll">
 						<!-- 主体 -->
 						<div class="order-con" style="margin-top: 5rem;">
-							<div class="mui-slider">
+
+							<div class="mui-slider login myask">
+								
 								<div class="order-nav">
 									<a href="/member/shops_orders.php">订单管理</a>
 									<a href="/ask/?ct=myask">我的咨询</a>
@@ -56,100 +58,94 @@ $fields = array();
 								</div>
 								<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
 								<div class="mui-slider-group">
+                                    <h3>我的咨询</h3>
 									<div class="mui-slider-item mui-control-content">
-												<ul class="mui-table-view">
-													<li class="mui-table-view-cell mui-media">
-														<a href="javascript:;" class="">
-															<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
-															<div class="mui-media-body mui-pull-left">
-																离婚协议书
-																<p>不限次数咨询+不限合同次数</p>
-															</div>
-                                                            <div class="mui-media-body mui-pull-right">
-                                                            	<span>已支付</span>
-                                                            	<p class="mui-ellipsis">￥680 <i>x1</i></p>
-                                                                <span>已出单</span>
-                                                            </div>
-														</a>
-                                                        <div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
-													</li>
-													<li class="mui-table-view-cell mui-media">
-														<a href="javascript:;" class="">
-															<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
-															<div class="mui-media-body mui-pull-left">
-																离婚协议书
-																<p>不限次数咨询+不限合同次数</p>
-															</div>
-															<div class="mui-media-body mui-pull-right">
-																<span>已支付</span>
-																<p class="mui-ellipsis">￥680 <i>x1</i></p>
-																<span>已出单</span>
-															</div>
-														</a>
-														<div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
-													</li>
-                                                    <li class="mui-table-view-cell mui-media">
-                                                    	<a href="javascript:;" class="">
-                                                    		<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
-                                                    		<div class="mui-media-body mui-pull-left">
-                                                    			离婚协议书
-                                                    			<p>不限次数咨询+不限合同次数</p>
-                                                    		</div>
-                                                    		<div class="mui-media-body mui-pull-right">
-                                                    			<span>已支付</span>
-                                                    			<p class="mui-ellipsis">￥680 <i>x1</i></p>
-                                                    			<span>已出单</span>
-                                                    		</div>
-                                                    	</a>
-                                                    	<div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
-                                                    </li>
-                                                    <li class="mui-table-view-cell mui-media">
-                                                    	<a href="javascript:;" class="">
-                                                    		<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
-                                                    		<div class="mui-media-body mui-pull-left">
-                                                    			离婚协议书
-                                                    			<p>不限次数咨询+不限合同次数</p>
-                                                    		</div>
-                                                    		<div class="mui-media-body mui-pull-right">
-                                                    			<span>已支付</span>
-                                                    			<p class="mui-ellipsis">￥680 <i>x1</i></p>
-                                                    			<span>已出单</span>
-                                                    		</div>
-                                                    	</a>
-                                                    	<div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
-                                                    </li>
-                                                    <li class="mui-table-view-cell mui-media">
-                                                    	<a href="javascript:;" class="">
-                                                    		<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
-                                                    		<div class="mui-media-body mui-pull-left">
-                                                    			离婚协议书
-                                                    			<p>不限次数咨询+不限合同次数</p>
-                                                    		</div>
-                                                    		<div class="mui-media-body mui-pull-right">
-                                                    			<span>已支付</span>
-                                                    			<p class="mui-ellipsis">￥680 <i>x1</i></p>
-                                                    			<span>已出单</span>
-                                                    		</div>
-                                                    	</a>
-                                                    	<div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
-                                                    </li>
-                                                    <li class="mui-table-view-cell mui-media">
-                                                    	<a href="javascript:;" class="">
-                                                    		<img class="mui-media-object mui-pull-left" src="/images/defaultpic.gif">
-                                                    		<div class="mui-media-body mui-pull-left">
-                                                    			离婚协议书
-                                                    			<p>不限次数咨询+不限合同次数</p>
-                                                    		</div>
-                                                    		<div class="mui-media-body mui-pull-right">
-                                                    			<span>已支付</span>
-                                                    			<p class="mui-ellipsis">￥680 <i>x1</i></p>
-                                                    			<span>已出单</span>
-                                                    		</div>
-                                                    	</a>
-                                                    	<div class="tips">确认下单付款--30分钟内客服回电确认订单--发送服务函、企业风险调查表--法务对接，正式服务。</div>
-                                                    </li>
+										<div class="mui-card">
+											<?php
+$atts = array();
+$atts['tagname'] = 'datalist';
+$blockValue = $this->refObj->GetArcList($atts,$this->refObj,$fields); 
+if(is_array($blockValue)){
+foreach( $blockValue as $key=>$fields )
+{
 
-												</ul>
+                                            $fields['dateline'] = GetDateMk($fields['dateline']);
+                                            if($fields['replies']>0){
+                                            $fields['dbstatus'] = 1;
+                                            $fields['status'] = '<font color="green">已解决</font>';
+                                            }else{
+                                            $fields['dbstatus'] = 0;
+                                            $fields['status'] = '<font color="red">未解决</font>';
+                                            }
+                                            //对连接地址进行处理
+                                            if($cfg_ask_isdomain == 'Y')
+                                            {
+                                            if($cfg_ask_rewrite == 'Y')
+                                            	$qurl = $cfg_ask_domain.'/'.$fields['id'].'html';
+                                            	else
+                                            		$qurl = $cfg_ask_domain.'?ct=question&askaid='.$fields['id'];
+                                            }else{
+                                            	if($cfg_ask_rewrite == 'Y')
+                                            	$qurl = $cfg_ask_directory.'/'.$fields['id'].'html';
+                                            	else
+                                            		$qurl = $cfg_ask_directory.'/?ct=question&askaid='.$fields['id'];
+                                            }
+                                            ?>
+											<ul class="mui-table-view person">
+												<li class="mui-table-view-cell mui-collapse mui-active">
+													<a class="mui-navigate-right menunav" href="#">标 题</a>
+													<div class="mui-collapse-content">
+														<p>
+															<?php echo $fields['title'];?>
+														</p>
+													</div>
+												</li>
+												<li class="mui-table-view-cell mui-collapse">
+													<a class="mui-navigate-right menunav" href="#">状 态</a>
+													<div class="mui-collapse-content">
+														<p>
+															<?php echo $fields['status'];?>
+														</p>
+													</div>
+												</li>
+												<li class="mui-table-view-cell mui-collapse">
+													<a class="mui-navigate-right menunav" href="#">详细情况</a>
+													<div class="mui-collapse-content">
+														<p>
+															<?php echo strip_tags($fields['content']) ;?>
+														</p>
+													</div>
+												</li>
+												<li class="mui-table-view-cell mui-collapse">
+													<a class="mui-navigate-right menunav" href="#">律师回复</a>
+													<div class="mui-collapse-content">
+														<p>
+															<?php echo strip_tags($fields['askcon']) ;?>
+														</p>
+													</div>
+												</li>
+												<li class="mui-table-view-cell mui-collapse">
+													<a class="mui-navigate-right menunav" href="#">提问时间</a>
+													<div class="mui-collapse-content">
+														<p>
+															<?php echo $fields['dateline'];?>
+														</p>
+													</div>
+												</li>
+												<li class="mui-table-view-cell mui-collapse">
+													<a class="mui-navigate-right menunav" href="#">回复时间</a>
+													<div class="mui-collapse-content">
+														<p>
+															<?php if(!empty($fields['lastanswer'])) echo MyDate('Y-m-d h:m:s', $fields['lastanswer']);
+                                                			else echo '尚未回复';?>
+														</p>
+													</div>
+												</li>
+											</ul>
+											<?php
+}
+}?>
+										</div>
 									</div>
 
 								</div>
